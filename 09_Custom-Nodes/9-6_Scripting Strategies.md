@@ -1,7 +1,3 @@
-<style>
-img{display:block;margin-left: auto;   margin-right: auto }
-</style>
-
 ## Scripting Strategies
 
 ### 01 | Deciding When to Script and Which Libraries to Use
