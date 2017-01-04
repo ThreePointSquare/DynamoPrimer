@@ -61,7 +61,7 @@ h1,h2,h3,h4,h5,h6{
 .book .book-header h1 a{
 	color: transparent;
 	opacity: 1;
-	background-image: url('../images/logo.jpg');
+	background-image: url('../images/logo.png');
     background-repeat: no-repeat;
     background-position: center center;
     display: inline-block;
