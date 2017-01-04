@@ -3,7 +3,7 @@
 ### 01 | Deciding When to Script and Which Libraries to Use
 
 ### When to Script
-![](/09_Custom-Nodes/images/9-6/sculptingvsprogramming.PNG)
+![](/09_Custom-Nodes/images/9-6/sculptingvsprogramming.jpg)
  
 **A | Sculpting vs. Programming**
 * Parametric
@@ -15,7 +15,7 @@
 * Iteration and recursion
 
 ### Which Libraries to Use
-![](/09_Custom-Nodes/images/9-6/coding.PNG)
+![](/09_Custom-Nodes/images/9-6/coding.jpg)
 
 **C | Standard Libraries vs. Dynamo Libraries**
 * Flow Structures, Data Structures
@@ -431,12 +431,12 @@ Let’s talk through how we want it to work.
 
 **1. Import Libraries:**
 
-![](/09_Custom-Nodes/images/9-6/gd02.png)
+![](/09_Custom-Nodes/images/9-6/gd02.jpg)
 >We will need to import all the libraries that we intend on using.
 
 **2. Define Parameter Inputs:**
 
-![](/09_Custom-Nodes/images/9-6/gd03.png)
+![](/09_Custom-Nodes/images/9-6/gd03.jpg)
 > We will need to provide some key parameters:
 
 >1. The surface we want to walk down.
@@ -445,7 +445,7 @@ Let’s talk through how we want it to work.
 
 **3. Define Agent Class:**
 
-![](/09_Custom-Nodes/images/9-6/gd04.png)
+![](/09_Custom-Nodes/images/9-6/gd04.jpg)
 > We will need to define a class, or blueprint, for an agent with the intention of walking down a surface by choosing to travel in the steepest possible direction each time it takes a step:
 
 > 1. Name.
@@ -456,7 +456,7 @@ Let’s talk through how we want it to work.
 
 **4. Initialize Agents:**
 
-![](/09_Custom-Nodes/images/9-6/gd05.png)
+![](/09_Custom-Nodes/images/9-6/gd05.jpg)
 > We will need to instantiate all the agents we want to observe walk down the surface and define their initial attributes:
 
 > 1. Where they will start their journey on the surface.
@@ -464,14 +464,14 @@ Let’s talk through how we want it to work.
 
 **5. Update Agents:**
 
-![](/09_Custom-Nodes/images/9-6/gd06.png)
+![](/09_Custom-Nodes/images/9-6/gd06.jpg)
 >We will then need to enter a nested loop where for each agent and for each step, we update and record their position into their trail list. At each step we will also make sure the agent hasn’t reached a point on the surface where it cannot take another step which will allow it to descend. If that condition is met, we will end that agent's trip.
 
 **6. Draw Trails and Output Trails:**
 
-![](/09_Custom-Nodes/images/9-6/gd07.png)
+![](/09_Custom-Nodes/images/9-6/gd07.jpg)
 >After all the agents have either reached their limit of descent or their maximum number of steps we will create a polycurve through the points in their trail list and output the polycurve trails.
 
 **Our Script:**
 
-![](/09_Custom-Nodes/images/9-6/gd08.png)
+![](/09_Custom-Nodes/images/9-6/gd08.jpg)

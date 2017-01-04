@@ -27,7 +27,7 @@ The fundamental concept to learn from this section: **Dynamo treats lists as obj
 #### Exercise - Top-Down Hierarchy
 >Download the example file that accompanies this exercise (Right click and "Save Link As..."): [Top-Down-Hierarchy.dyn](datasets/6-3/Top-Down-Hierarchy.dyn). A full list of example files can be found in the Appendix.
 
-![top-down](images/6-3/top-down.png)
+![top-down](images/6-3/top-down.jpg)
 >1. With *code block*, we've defined two ranges:```
 0..2;
 0..3;
@@ -42,7 +42,7 @@ Flatten removes all tiers of data from a data structure. This is helpful when th
 #### Exercise - Flatten
 >Download the example file that accompanies this exercise (Right click and "Save Link As..."): [Flatten.dyn](datasets/6-3/Flatten.dyn). A full list of example files can be found in the Appendix.
 
-![Exercise](images/6-3/Exercise/Flatten-31.png)
+![Exercise](images/6-3/Exercise/Flatten-31.jpg)
 > 1. Insert one line of code to define a range in *code block*:```
 -250..-150..#4;
 ```
@@ -50,7 +50,7 @@ Flatten removes all tiers of data from a data structure. This is helpful when th
 3. The *Watch* node shows that we have a list of lists.
 4. A *PolyCurve.ByPoints* node will reference each list and create a respective polycurve.  Notice in the Dynamo preview that we have four polycurve representing each row in the grid.
 
-![Exercise](images/6-3/Exercise/Flatten-30.png)
+![Exercise](images/6-3/Exercise/Flatten-30.jpg)
 >1. By inserting a *flatten* before the polycurve node, we've created one single list for all of the points.  The polycurve node references a list to create one curve, and since all of the points are on one list, we get one zig-zag polycurve which runs throughout the entire list of points.
 
 There are also options for flattening isolated tiers of data.  Using the List.Flatten node, you can define a set number of data tiers to flatten from the top of the hierarchy.  This is a really helpful tool if you're struggling with complex data structures which are not necessarily relevant to your workflow.  And another option is to use the flatten node as a function in List.Map.  We'll discuss [List.Map](#listmap-and-listcombine) more below.
@@ -66,7 +66,7 @@ When parametric modeling, there are also times where you'll want to add more dat
 
 The chop command divides lists based on a given list length. In some ways, chop is the opposite of flatten: rather than removing data structure, it adds new tiers to it.  This is a helpful tool for geometric operations like the example below.
 
-![Exercise](images/6-3/Exercise/Chop-00.png)
+![Exercise](images/6-3/Exercise/Chop-00.jpg)
 
 ###List.Map and List.Combine
 A List.Map/Combine applies a set function to an input list, but one step down in the hierarchy. Combinations are the same as Maps, except combinations can have multiple inputs corresponding to the input of a given function.
@@ -78,10 +78,10 @@ A List.Map/Combine applies a set function to an input list, but one step down in
 
 As a quick introduction, let's review the List.Count node from a previous section.
 
-![Exercise](images/6-2/count.png)
+![Exercise](images/6-2/count.jpg)
 > The *List.Count* node counts all of the items in a list. We'll use this to demonstrate how *List.Map* works.
  
-![Exercise](images/6-3/Exercise/A/05.png)
+![Exercise](images/6-3/Exercise/A/05.jpg)
 > 1. Insert two lines of code into the *code block*:
 ```
 -50..50..#Nx;
@@ -92,7 +92,7 @@ After typing in this code, the code block will create two inputs for Nx and Ny.
 3. Connect each line of the code block into the respective *X* and *Y* inputs of a *Point.ByCoordinates* node.  Right click the node, select "Lacing", and choose *"Cross Product"*.  This creates a grid of points.  Because we defined the range from -50 to 50, we are spanning the default Dynamo grid.
 4. A *Watch* node reveals the points created.  Notice the data structure.  We've created a list of lists.  Each list represents a row of points of the grid.
 
-![Exercise](images/6-3/Exercise/A/04.png)
+![Exercise](images/6-3/Exercise/A/04.jpg)
 > 1. Attach a *List.Count* node to the output of the watch node from the previous step.
 2. Connect a *Watch* node to the List.Count output.
 
@@ -101,7 +101,7 @@ Notice that the List.Count node gives a value of 5.  This is equal to the "Nx" v
 * First, the Point.ByCoordinates node uses the "x" input as the primary input for creating lists.  When Nx is 5 and Ny is 3, we get a list of 5 lists, each with 3 items.
 * Since Dynamo treats lists as objects in and of themselves, a List.Count node is applied to the main list in the hierarchy.  The result is a value of 5, or, the number of lists in the main list.
 
-![Exercise](images/6-3/Exercise/A/03.png)
+![Exercise](images/6-3/Exercise/A/03.jpg)
 > 1. By using a *List.Map* node, we take a step down in the hierarchy and perform a *"function"* at this level.
 2. Notice that the *List.Count* node has no input. It is being used as a function, so the *List.Count* node will be applied to every individual list one step down in the hierarchy.  The blank input of *List.Count* corresponds to the list input of *List.Map*.
 3. The results of *List.Count* now gives a list of 5 items, each with a value of 3.  This represents the length of each sublist.
@@ -113,7 +113,7 @@ Notice that the List.Count node gives a value of 5.  This is equal to the "Nx" v
 
 In this exercise, we'll use a similar logic to List.Map, but with multiple elements.  In this case, we want to divide a list of curves by a unique number of points.
 
-![Exercise](images/6-3/Exercise/Combine-33.png)
+![Exercise](images/6-3/Exercise/Combine-33.jpg)
 > 1. Using the *code block*, define a range using the syntax: ```..20..#4;
 ``` and a value of ```20;
 ``` below that line.
@@ -121,7 +121,7 @@ In this exercise, we'll use a similar logic to List.Map, but with multiple eleme
 3. Create a *Line.ByStartPointEndPoint* from the *Point.ByCoordinates* nodes.
 4. The *Watch* node shows four lines.
 
-![Exercise](images/6-3/Exercise/Combine-32.png)
+![Exercise](images/6-3/Exercise/Combine-32.jpg)
 > 1. Below the graph for line creation, we want to use *code block *to create four distinct ranges to divide the lines uniquely. We do this with the following lines of code:
 ```
 0..1..#3;
@@ -132,10 +132,10 @@ In this exercise, we'll use a similar logic to List.Map, but with multiple eleme
 2. With a *List.Create* node, we merge the four lines from the *code block* into one list.
 3. The *Watch* node reveals a list of lists.
 
-![Exercise](images/6-3/Exercise/Combine-31.png)
+![Exercise](images/6-3/Exercise/Combine-31.jpg)
 > 1. *Curve.PointAtParameter* will not work by connecting the lines directly into the *parameter* values.  We need to step one level down on the hierarchy. For this, we'll use *List.Combine*.
 
-![Exercise](images/6-3/Exercise/Combine-30.png)
+![Exercise](images/6-3/Exercise/Combine-30.jpg)
 > By using *List.Combine*, we can successfully divide each line by the given ranges.  This gets a little tricky, so we'll break it down in-depth.
 1. First, add a *Curve.PointAtParameter* node to the canvas.  This will be the *"function" *or *"combinator"* that we apply to *List.Combine* node. More on that in a second.
 2. Add a *List.Combine* node to the canvas.  Hit the *"+"* or *"-"* to add or subtract inputs. In this case, we'll use the default two inputs on the node.
@@ -153,20 +153,20 @@ In this exercise, we will use the List@Level feature to isolate a specific level
 
 > Download the example file that accompanies this exercise \(Right click and "Save Link As..."\): [List@Level](datasets/6-3/Listatlevel.dyn). A full list of example files can be found in the [Appendix](../Appendix/A_appendix.md).
 
-![List@Level](images/6-3/Exercise/ListAtLevel-01.png)
+![List@Level](images/6-3/Exercise/ListAtLevel-01.jpg)
 >1. We will start with a simple 3D grid of points.
 2. Since the grid is constructed with a Range for X, Y and Z, we know that the data is structured with 3 tiers: an X List, Y List and Z List.
 3. These tiers exist at different **Levels**. The Levels are indicated at the bottom of the Preview Bubble. The list Levels columns correspond to the list data above to help identify which level to work within.
 4. The List Levels are organized in reverse order so that the lowest level data is always in “L1”. This will help ensure that your graphs will work as planned, even if anything is changed upstream.
 
-![List@Level](images/6-3/Exercise/ListAtLevel-02.png)
+![List@Level](images/6-3/Exercise/ListAtLevel-02.jpg)
 >1. To use the List@Level function, click '>'. Inside this menu, you will see two checkboxes.
 2. **Use Levels** - This enables the List@Level functionality. After clicking on this option, you will be able to click through and select the input list levels you want the node to use. With this menu, you can quickly try out different level options by clicking up or down.
 3. **Keep list structure** – If enabled, you will have the option to keep that input’s level structure. Sometimes, you may have purposefully organized your data into sublists. By checking this option, you can keep your list organization intact and not lose any information.
 
 With our simple 3D grid, we can access and visualize the list structure by toggling through the List Levels. Each List Level and index combination will return a different set of points from our original 3D set.
 
-![List@Level](images/6-3/Exercise/ListAtLevel-03.png)
+![List@Level](images/6-3/Exercise/ListAtLevel-03.jpg)
 >1. “@L2” in DesignScript allows us to select only the List at Level 2.
 2. The List at Level 2 with the index 0 includes only the first set of Y points, returning only the XZ grid.
 3. If we change the Level filter to “L1”, we will be able to see everything in the first List Level. The List at Level 1 with the index 0 includes all of our 3D points in a flat list.
@@ -175,7 +175,7 @@ With our simple 3D grid, we can access and visualize the list structure by toggl
 
 Although this particular example can also be created with List.Map, List@Level greatly simplifies the interaction, making it easy to access the node data. Take a look below at a comparison between a List.Map and List@Level methods:
 
-![List@Level-vs-ListMap](images/6-3/Exercise/listAtLevel_comparison.png)
+![List@Level-vs-ListMap](images/6-3/Exercise/listAtLevel_comparison.jpg)
 >1. Although both methods will give us access to the same points, the List@Level method allows us to easily toggle between layers of data within a single node.
 2. To access a point grid with List.Map, we will need a List.GetItemAtIndex node alongside the List.Map. For every list level that we are stepping down, we will need to use an additional List.Map node. Depending on the complexity of your lists, this could require you to add a significant amount of List.Map Nodes to your graph to access the right level of information.
 3. In this example, a List.GetItemAtIndex node with a List.Map node reurns the same set of points with the same list structure as the List.GetItemAtIndex with '@L3' selected.
@@ -188,17 +188,17 @@ Transpose is a fundamental function when dealing with lists of lists. Just as in
 #### Exercise - List.Transpose
 >Download the example file that accompanies this exercise (Right click and "Save Link As..."): [Transpose.dyn](datasets/6-3/Transpose.dyn). A full list of example files can be found in the Appendix.
 
-![Exercise](images/6-3/Exercise/A/02.png)
+![Exercise](images/6-3/Exercise/A/02.jpg)
 > Let's delete the *List.Count* nodes from the previous exercise and move on to some geometry to see how the data structured.
 1. Connect a *PolyCurve.ByPoints* to the output of the watch node from *Point.ByCoordinates*.
 2. The output shows 5 polycurves, and we can see the curves in our Dynamo preview.  The Dynamo node is looking for a list of points (or a list of lists of points in this case) and creating a single polycurve from them.  Essentially, each list has converted to a curve in the data structure.
 
-![Exercise](images/6-3/Exercise/A/01.png)
+![Exercise](images/6-3/Exercise/A/01.jpg)
 > 1. If we want to isolate one row of curves, we use the *List.GetItemAtIndex* node.
 2. Using a *code block* value of 2, query the 3rd element in the main list.
 3. The *PolyCurve.ByPoints* gives us one curve, since only one list is connected to the node.
 
-![Exercise](images/6-3/Exercise/A/00.png)
+![Exercise](images/6-3/Exercise/A/00.jpg)
 > 1. A *List.Transpose* node will switch all of the items with all of the lists in a list of lists.  This sounds complicated, but it's the same logic as transpose in Microsoft Excel: switching columns with rows in a data structure.
 2. Notice the abstract result: the transpose changed the list structure from a 5 lists with 3 items each to 3 lists with 5 items each.
 3. Notice the geometric result: using *PolyCurve.ByPoints*, we get 3 polycurves in the perpendicular direction to the original curves.
@@ -206,20 +206,20 @@ Transpose is a fundamental function when dealing with lists of lists. Just as in
 ###Code Block Creation
 Code block shorthand uses "{}" to define a list.  This is a much faster and more fluid way to create list than the List.Create node. Code block is discussed in more detail in Chapter 7.  Reference the image below to note how a list with multiple expressions can be defined with code block.
 
-![CB](images/6-3/cbCreation.png)
+![CB](images/6-3/cbCreation.jpg)
 
 
 ###Code Block Query
 Code block shorthand is uses "[]" as a quick and easy way to select specific items that you want from a complex data structure. Code blocks are discussed in more detail in Chapter 7.  Reference the image below to note how a list with multiple data types can be queried with code block.
 
-![CB](images/6-3/cbQuery.png)
+![CB](images/6-3/cbQuery.jpg)
 
 ###Exercise - Querying and Inserting Data
 >Download the example file that accompanies this exercise (Right click and "Save Link As..."): [ReplaceItems.dyn](datasets/6-3/ReplaceItems.dyn). A full list of example files can be found in the Appendix.
 
 This exercise uses some of the logic established in the previous one to edit a surface. Our goal here is intuitive, but the data structure navigation will be more involved.  We want to articulate a surface by moving a control point.
 
-![Exercise](images/6-3/Exercise/B/06.png)
+![Exercise](images/6-3/Exercise/B/06.jpg)
 > 1. Begin with the string of nodes above. We are creating a basic surface which spans the default Dynamo grid.
 2. Using *code block*, insert these two lines of code and connect to the *u* and *v* inputs of *Surface.PointAtParameter*, respectively:
 ```
@@ -229,33 +229,33 @@ This exercise uses some of the logic established in the previous one to edit a s
 3. Be sure to set the Lacing of *Surface.PointAtParameter* to *"Cross Product"*.
 4. The *Watch* node show that we have a list of 3 lists, each with 5 items.
 
-![Exercise](images/6-3/Exercise/B/05.png)
+![Exercise](images/6-3/Exercise/B/05.jpg)
 > In this step,  we want to query the central point in the grid we've created.  To do this we'll select the middle point in the middle list.  Makes sense, right?
 1. To confirm that this is the correct point, we can also click through the watch node items to confirm that we're targeting the correct one.
 2. Using *code block*, we'll write a basic line of code for querying a list of lists:
 ```points[1][2];```
 3. Using *Geometry.Translate*, we'll move the selected point up in the *Z* direction by *20* units.
 
-![Exercise](images/6-3/Exercise/B/04.png)
+![Exercise](images/6-3/Exercise/B/04.jpg)
 > 1. Let's also select the middle row of points with a *List.GetItemAtIndex* node.  Note: Similar to a previous step, we can also query the list with *code block*, using a line of ```points[1];```
 
-![Exercise](images/6-3/Exercise/B/03.png)
+![Exercise](images/6-3/Exercise/B/03.jpg)
 > So far we've successfully queried the center point and moved it upward.  Now we want need to insert this moved point back into the original data structure.
 1. First, we want to replace the item of the list we isolated in a previous step.
 2. Using *List.ReplaceItemAtIndex*, we'll replace the middle item by using and index of *"2"*, with the replacement item connected to the moved point (*Geometry.Translate*).
 3. The output shows that we've input the moved point into the middle item of the list.
 
-![Exercise](images/6-3/Exercise/B/02.png)
+![Exercise](images/6-3/Exercise/B/02.jpg)
 > Now that we've modified the list, we need to insert this list back into the original data structure: the list of lists.
 1. Following the same logic, use *List.ReplaceItemAtIndex* to replace the middle list with the our modified list.
 2. Notice that the *code blocks* defining the index for these two nodes are 1 and 2, which matches the original query from the *code block* (*points[1][2]*).
 3. By selecting the list at *index 1*, we see the data structure highlighted in the Dynamo preview.  We successfully merged the moved point into the original data structure.
 
-![Exercise](images/6-3/Exercise/B/01.png)
+![Exercise](images/6-3/Exercise/B/01.jpg)
 > There are many ways to make a surface from this set of points.  In this case, we're going to create a surface by lofting curves together.
 1. Create a *NurbsCurve.ByPoints* node and connect the new data structure to create three nurbs curves.
 
-![Exercise](images/6-3/Exercise/B/00.png)
+![Exercise](images/6-3/Exercise/B/00.jpg)
 > 1. Connect a *Surface.ByLoft* to the output from *NurbsCurve.ByPoints*.  We now have a modified surface.  We can change the original *Z* value of Geometry. Translate and watch the geometry update!
 
 
