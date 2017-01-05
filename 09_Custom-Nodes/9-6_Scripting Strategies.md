@@ -4,132 +4,6 @@
 
 ### When to Script
 ![](/09_Custom-Nodes/images/9-6/sculptingvsprogramming.jpg)
- 
-**A | Sculpting vs. Programming**
-* Parametric
- * Functions
- * Variables
-
-**B | Noding vs. Coding**
-* UI/UX
-* Iteration and recursion
-
-### Which Libraries to Use
-![](/09_Custom-Nodes/images/9-6/coding.jpg)
-
-**C | Standard Libraries vs. Dynamo Libraries**
-* Flow Structures, Data Structures
-* Objects
-
-**D | Dynamo Libraries**
-* ProtoGeometry
- * Functionality
-   - Arc, Bounding Box, Circle, Cone, Coordinate System, Cuboid, Curve, Cylinder, Edge, Ellipse, Ellipse Arc ,Face, Geometry, Helix, Index Group, Line, Mesh, Nurbs Curve, Nurbs Surface, Plane, Point, Polygon, Rectangle, Solid, Sphere, Surface, Topology, TSpline, UV, Vector, Vertex.
- * How to import: `import Autodesk.DesignScript.Geometry`
-* DSCoreNodes
- * Functionality
-   - Color, Color Range 2D, Date Time, Time Span, IO, Formula, Logic, List, Math, Quadtree, String, Thread.
- * How to import: `import DSCore`
-* Tessellation
- * Functionality
-   - Convex Hull, Delaunay, Voronoi.
- * How to import: `import Tessellation`
-* DSOffice
- * Functionality
-   - Excel.
- * How to import: `import DSOffice`
-
-### 02 | Best Practices for Scripting
-
-This part of the guide is organized in the spirit of a journal of “best practices”. It sheds light on several strategies that we have learned, through experience and research, to be most conducive to quality parametric workflows. As designers and programmers, our metric for quality is primarily concerned with the maintainability, dependability, usability, and efficiency of our tools.
-
-### Label Carefully
-
-While scripting, we are constantly using identifiers to denote things like variables, types, functions, and other entities. Through this system of symbolic notation, while building algorithms we can conveniently refer to information by way of labels --usually made up of a sequence of characters. Naming things well plays a significant role in writing code that can be easily read and understood by others as well as your future self! Here are some tips to keep in mind while naming things in your script:
-
-**It´s OK to use abbreviations, but explain the abbreviation with a comment:**
-```
-### BAD
-csfX = 1.6
-csfY= 1.3
-csfZ = 1.0
-```
-```
-### GOOD
-# column scale factor (csf)
-csfX = 1.6
-csfY= 1.3
-csfZ = 1.0
-```
-
-**Avoid redundant labeling:**
-```
-### BAD
-import car
-seat = car.CarSeat()
-tire = car.CarTire()
-```
-```
-### GOOD
-import car
-seat = car.Seat()
-tire = car.Tire()
-```
-
-**Use positive logic for your variable names instead of negative logic:**
-
-```
-### BAD
-if 'mystring' not in text:
-    print 'not found'
-else:
-    print 'found'
-    print 'processing'
-```
-```
-### GOOD
-if 'mystring' in text:
-    print 'found'
-    print 'processing'
-else:
-    print 'not found'
-```
-
-**Prefer “reverse notation”:** 
-```
-### BAD
-agents = …
-active_agents = …
-dead_agents ...
-```
-```
-### GOOD
-agents = …
-agents_active = …
-agents_dead = ...
-```
-> It’s more sensible, in structural terms.
-
-**Aliases should be used to shorten overly long and often repeated chains:**
-```
-### BAD
-CODE EXAMPLE
-```
-```
-### GOOD
-CODE EXAMPLE
-```
-
-**Only use necessary words:**
-```
-### BAD
-CODE EXAMPLE
-```
-```
-### GOOD
-CODE EXAMPLE
-```
-> “Everything should be made as simple as possible, but not simpler.” – Albert Einstein
 
 ### Style Consistently
 Generally speaking there is more than one way to program just about anything, therefore your “personal style” of scripting is the result of the countless small decisions you choose to make (or not make) along the way. That said, the readability and maintainability of your code is a direct result of its internal consistency as well as its adherence to general stylistic conventions. As a rule of thumb, code that looks the same in two places should work the same, too. Here are a few tips for writing clear and consistent code.
@@ -152,15 +26,15 @@ Generally speaking there is more than one way to program just about anything, th
 `ALL_CAPS_WITH_UNDERSCORES`
 
 > Tip: Avoid one-letter variables (esp. l, O, I) except in very short blocks, when the meaning is clearly visible from the immediate context.
- 
+
 **Use of blank lines:**
 
 * Surround top-level function and class definitions with two blank lines.
- 
+
  * Method definitions inside a class are surrounded by a single blank line.
- 
+
  * Extra blank lines may be used (sparingly) to separate groups of related functions.
- 
+
 **Avoid extraneous whitespace:**
 
 * Immediately inside parentheses, brackets or braces:
@@ -173,7 +47,7 @@ Generally speaking there is more than one way to program just about anything, th
     ### GOOD:
     function(apples[1], {oranges: 2})
     ```
- 
+
 * Immediately before a comma, semicolon, or colon:
 
     ```
@@ -184,7 +58,7 @@ Generally speaking there is more than one way to program just about anything, th
     ### GOOD
     if x == 2: print x, y; x, y = y, x
     ```
- 
+
 * Immediately before the open parenthesis that starts the argument list of a function call:
 
     ```
@@ -195,7 +69,7 @@ Generally speaking there is more than one way to program just about anything, th
     ### GOOD
     function(1)
     ```
- 
+
 * Immediately before the open parenthesis that starts an indexing or slicing:
 
     ```
@@ -206,7 +80,7 @@ Generally speaking there is more than one way to program just about anything, th
     ### GOOD
     dict['key'] = list[index]
     ```
- 
+
 * Always surround these binary operators with a single space on either side:
 
     ```
@@ -230,7 +104,7 @@ Generally speaking there is more than one way to program just about anything, th
 
 **Avoid obvious and redundant comments:**
 
-* Sometimes fewer comments makes for more readable code. Especially if it forces you to use meaningful symbol names instead. 
+* Sometimes fewer comments makes for more readable code. Especially if it forces you to use meaningful symbol names instead.
 
 * Adopting good coding habits reduces dependence on comments:
 
@@ -238,7 +112,7 @@ Generally speaking there is more than one way to program just about anything, th
     ### BAD
     # get the country code
     country_code = get_country_code(address)
-    
+
     # if country code is US
     if (country_code == 'US'):
      # display the form input for state
@@ -251,7 +125,7 @@ Generally speaking there is more than one way to program just about anything, th
     if (country_code == 'US'):
     print form_input_state()
     ```
-    
+
 > Tip: Comments tell you why, Code tells you how.
 
 **Check out open source code:**
@@ -264,14 +138,14 @@ Generally speaking there is more than one way to program just about anything, th
 
  * Is functionality/efficiency being compromised?
 
-### Structure Modularly 
+### Structure Modularly
 
 As your code gets longer and more complex the “big idea”, or overarching algorithm becomes increasingly illegible. It also becomes more difficult to keep track of what (and where) specific things happen, find bugs when things go wrong, integrate other code, and assign development tasks. To avoid these headaches it’s wise to embrace the utility of modularization, an organizational concept that breaks up code based on the task it executes. Here are some tips for making your scripts more manageable by way of modularization.
 
 **Spotting code re-use:**
 
 * If you find that your code does the same (or very similar) thing in more than once place, find ways to cluster it into a function that can be called.
- 
+
 **Concentration on one specific task per module:**
 
  * Functions that each perform a single well-defined function:
@@ -290,7 +164,7 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 **Separability/Replaceability:**
 
 * Modules don’t know or care about each other.
- 
+
 **General forms:**
 
 * Code Grouping:
@@ -301,7 +175,7 @@ As your code gets longer and more complex the “big idea”, or overarching alg
     import clr
     clr.AddReference('ProtoGeometry')
     from Autodesk.DesignScript.Geometry import *
-    
+
     # DEFINE PARAMETER INPUTS
     surfIn = IN[0]
     maxSteps = IN[1]
@@ -314,7 +188,7 @@ As your code gets longer and more complex the “big idea”, or overarching alg
         area = surfIn.Area
         stepSize = math.sqrt(area)/100
         return stepSize
-    
+
     stepSize = get_step_size()
     ```
 
@@ -326,7 +200,7 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 
         def f(self):
             return 'hello world'
-    
+
     numbers = MyClass.i
     greeting = MyClass.f
     ```
@@ -338,13 +212,13 @@ When faced with a design problem, you can promptly find a static solution via Di
 **Identify the variables at play:**
 
 * Try to determine the given parameters in your design problem so that you can construct a model that directly builds off that data.
- 
+
 * Before programming, try to identify:
 
  * The variables that will be inputted.
- 
+
  * The variables that will be outputted.
- 
+
  * The variables that will remain constant.
 
 **Design through relationships:**
@@ -362,7 +236,7 @@ When faced with a design problem, you can promptly find a static solution via Di
 **Don't repeat yourself (DRY):**
 
 * When you have multiple ways to express the same thing in your script, at some point the duplicate representations will fall out of sync which can lead to maintenance nightmares, poor factoring, and internal contradictions.
- 
+
 * The DRY principle is stated as "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system":
 
  * When this principle is successfully applied, all the related elements in your script change predictably and uniformly and all the unrelated elements do not have logical consequences on each other.
@@ -376,27 +250,27 @@ While developing scripts in Dynamo, it is wise to constantly make sure that what
 **Test as you go:**
 
 * Whenever you complete a cluster of functionality:
- 
+
  * Step back and inspect your code.
- 
+
  * Be critical. Could a collaborator understand what this is doing? Do I need to do this? Can this function be done more efficiently? Am I creating unnecessary duplicates or dependencies?
- 
+
  * Quickly test to make sure it is returning data that “makes sense”.
- 
+
 * Assign the most recent data you are working with in your script to the OUT identifier so that the node is always outputting relevant data when the script updates:
- 
+
  * Keep an eye on geometry using the Watch3D node.
-   
+
  * Keep an eye on string messages using the Watch Node.
 
 **Anticipate “edge cases”:**
 
 * While scripting, crank your input parameters to the minimum and maximum values of their allotted domain to check if the program still functions under extreme conditions.
- 
+
 * Sometimes bugs and errors that reveal some underlying problem with your script will only surface during these edge cases.
- 
+
  * Understand what is causing the error and then decide if it needs to be fixed internally or if a parameter domain needs to be redefined to avoid the problem.
-   
+
 >Tip: Always assume the that the user will use every combination of every input value that has been exposed to him/her. This will help eliminate unwanted surprises.
 
 ### Debug Efficiently
@@ -416,12 +290,12 @@ OUT = cubes
 * When a program must be modified, modular programming simplifies the job:
 
  * You can link new or debugged modules to an existing program with the confidence that the rest of the program will not change.
- 
+
 ### 03 | Dynamo and Python Example
 
 ### Steepest Path Overview
 
-This script will derive the path a ball would take if released at a given point on a surface. It will construct the paths by stitching together small and discrete steps taken by walking agents. 
+This script will derive the path a ball would take if released at a given point on a surface. It will construct the paths by stitching together small and discrete steps taken by walking agents.
 
 ![](/09_Custom-Nodes/images/9-6/gd01.JPG)
 

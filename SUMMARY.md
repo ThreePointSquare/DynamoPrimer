@@ -55,6 +55,7 @@
     * [Python Nodes](09_Custom-Nodes/9-4_Python.md)
     * [Python and Revit](09_Custom-Nodes/9-5_Python-Revit.md)
     * [Scripting Strategies](09_Custom-Nodes/9-6_Scripting Strategies.md)
+    * [Scripting Reference](09_Custom-Nodes/9-7_Scripting-Reference.md)
 * [Packages](10_Packages/10-Packages.md)
     * [Package Introduction](10_Packages/10-1_Introduction.md)
     * [Package Case Study - Mesh Toolkit](10_Packages/10-2_Mesh-Toolkit.md)
