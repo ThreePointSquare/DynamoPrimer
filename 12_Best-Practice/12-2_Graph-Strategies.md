@@ -1,1 +1,3 @@
 ## Graph Strategies
+
+Now that we have our awesome drainage simulator, let's use the tool in our project. We have a new task ahead of us: designing a parametric roof. In this section we'll walk through best practices for defining our roof surface. We'll also discuss how to properly implement the drainage simulator into the workflow. Below you will find several best practices to keep in mind while developing the program, then we’ll jump into developing the roof.
