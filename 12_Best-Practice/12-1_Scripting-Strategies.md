@@ -1,12 +1,10 @@
 ## Scripting Strategies
 
-### 01 \| Deciding When to Script and Which Libraries to Use
-
-### When to Script
+Say we want to simulate how rainfall will drain off of a surface in Dynamo. How will we set this up? What parameters will we use to drive the inputs? How will we define the shape of the surface? When will we use a visual program and when will we script using Python?
+Ultimately, we'll want to simulate rainfall across the roof of our building using Dynamo. But first, let's setup a tool to simulate rainfall of a generic surface. That way we can reuse the tool on another design iteration or even a completely different project.
+This simulation requires looping, which is a prime candidate for scripting with Python. This first section will walk through best practices for setting up our drainage simulation tool.
 
 ![](/12_Best-Practice/images/12-1/sculptingvsprogramming.jpg)
-
-###
 
 ### Structure Modularly
 
