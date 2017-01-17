@@ -81,7 +81,7 @@ In addition to making your program as simple and efficient as possible, strive f
 
 **Monitor data with Watch:**
 
-* As you build the program to verify that a module of functionality is returning what you expected, “The Watch Nodes are essential to managing the data that is flowing through your Visual Program.” 3.3 DP
+* As you build the program to verify that a module of functionality is returning what you expected
 
 > For how to use Watch, refer to Library.
 
@@ -90,7 +90,7 @@ In addition to making your program as simple and efficient as possible, strive f
 **Embed input values with Presets:**
 
 * If there are particular forms or conditions that you want embedded in the file
-* To avoid adjusting the sliders in a program with intense calculations
+* To avoid adjusting the sliders in a program with long run times
 
 **Contain groups with Custom Nodes:**
 
@@ -104,8 +104,22 @@ _screenshot_
 
 ### Script Strategically
 
+Python scripting is a powerful tool to use in your program as shown in Python Nodes and Scripting Strategies. Where the capability of visual programming ends, scripting brings an entire host of tools to analyze, simulate, automate, and more. Knowing when to introduce scripting will ensure that you are taking full advantage of its capabilities.
+
+**Implement Looping:**
+
+* If you need to implement looping
+
+**Access external libraries:**
+
+* If the Dynamo Library is lacking a certain functionality
+
+**Implement Recursion:**
+
+* If you need to implement subdivision
+
 ### Exercise - Architectural Roof
-Now that we have established several best practices, let’s apply them to the architectural roof program that was put together rather quickly. Though it is functioning quite well, the state of the graph is a "mind-map" of the author. We will walk through our best practices to organize and describe the program so other users can understand how to use it.
+Now that we have established several best practices, let’s apply them to the architectural roof program that was put together rather quickly. Though the program generates the roof quite well, the state of the graph is a "mind-map" of the author. We will walk through our best practices to organize and describe the program so other users can understand how to use it.
 
 ![](/assets/00.jpg)
 
@@ -147,5 +161,14 @@ Now that we have established several best practices, let’s apply them to the a
 
 **5. Presets:**
 
+![](/assets/presets.jpg)
+
+> 1. Preset 1
+> 2. Preset 2
+
 **6. Integrate Scripting:**
 
+![](/assets/presets-script.jpg)
+
+> 1. Preset 1
+> 2. Preset 2
