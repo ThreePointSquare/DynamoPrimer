@@ -122,7 +122,7 @@ Python scripting is a powerful tool to use in your program as shown in Python No
 
 > Download the example file that accompanies this exercise \(Right click and "Save Link As..."\). A full list of example files can be found in the Appendix.
 
-Now that we have established several best practices, let’s apply them to a program that was put together quickly. Though the program succeeds in generating the roof, the state of the graph is a "mind-map" of the author. We will walk through our best practices to organize, describe, and analyze the program so other users can understand how to use it.
+Now that we have established several best practices, let’s apply them to a program that was put together quickly. Though the program succeeds in generating the roof, the state of the graph is a "mind-map" of the author. It lacks any organization or description of its use. We will walk through our best practices to organize, describe, and analyze the program so other users can understand how to use it.
 
 ![](/assets/00.jpg)
 
@@ -146,31 +146,27 @@ Now that we have established several best practices, let’s apply them to a pro
 
 > Aligning the graph gives it visual continuity, allowing us to see implicit relationships in the groups.
 
-> 1. Vertical alignment
-> 2. Horizontal alignment
-
 **Rename Sliders and add Notes:**
 
 ![](/assets/2-2.jpg)
 
-> These graphic improvements tell the user more about what the program is doing.
+> These graphic improvements tell the user more about what the program is doing. The different group colors help to distinguish inputs from functions.
 
 > 1. Notes
-> 2. Number sliders with descriptive names
-> 3. Multi-color Groups
+> 2. Inputs with descriptive names
 
 **Integrate Scripting:**
 
-![](/assets/scripting.jpg)
+![](/assets/3.jpg)
 
 > We've chosen to integrate scripting at this point in the program so the drainage simulation can be run on the original, single roof surface. That specific surface is hidden, but it saves us from having to choose the top surface of the chamfered Polysurface.
 >
-> 1. Source node for script input
+> 1. Source geometry for script input
 > 2. Python node
 > 3. Input sliders
 > 4. On/off "switch"
 
-**Node to Code and Custom Node: **
+**Node to Code and Custom Node:**
 
 ![](/assets/3-2.jpg)
 
@@ -188,5 +184,7 @@ Now that we have established several best practices, let’s apply them to a pro
 > 1. Preset 1
 > 2. Preset 2
 
+**Our Program:**
 
+![](/assets/3-3.jpg)
 
