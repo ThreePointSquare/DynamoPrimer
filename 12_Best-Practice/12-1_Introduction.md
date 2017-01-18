@@ -1,8 +1,3 @@
-##Dynamo Web Experience
+## Best Practices
 
-You can now experience Dynamo on the web beginning with the 'Send to Web' feature available in Dynamo Studio. The 'Send to Web' feature allows others to interact with your scripts via a pared down interface, the Customizer view, consisting of allowable inputs such as sliders, numbers, and booleans. This makes your scripts accessible to a wider group of users who may not be familiar with Dynamo or Visual Programming.
-
-![](images/Web_01.jpg)
-> Dynamo on the Web
-
-
+This part of the guide is organized in the spirit of a journal of “best practices”. It sheds light on several strategies that we have learned, through experience and research, to be most conducive to quality parametric workflows. As designers and programmers, our metric for quality is primarily concerned with the maintainability, dependability, usability, and efficiency of our tools.
