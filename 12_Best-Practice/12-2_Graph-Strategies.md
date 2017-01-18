@@ -13,7 +13,7 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 * Colors can be used to differentiate what groups are doing \(inputs vs functions\)
 * To streamline Custom Node creation
 
-![](/assets/groups.JPG)
+![groups](/12_Best-Practice/images/12-2/groups.JPG)
 
 > For how to use Groups, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
@@ -23,7 +23,7 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 * If you have created a large collection of simple nodes they can be written in a single block \(Node to Code\)
 * If you want to define a function
 
-![](/assets/codeblock.JPG)
+![codeblock](/12_Best-Practice/images/12-2/codeblock.JPG)
 
 > For how to use Code Block, refer to [What's a Code Block](http://dynamoprimer.com/en/07_Code-Block/7-1_what-is-a-code-block.html).
 
@@ -41,7 +41,7 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
   * More difficult to understand for other users
   * No easy way to return to the visual programming version
 
-![](/assets/nodetocode.JPG)
+![nodetocode](/12_Best-Practice/images/12-2/nodetocode.JPG)
 
 > For how to use Node to Code, refer to [Design Script Syntax](http://dynamoprimer.com/en/07_Code-Block/7-2_Design-Script-syntax.html).
 
@@ -56,7 +56,7 @@ In addition to making your program as simple and efficient as possible, strive f
 * Cleanup Node Layout will automatically align your graph, though less precisely than doing it yourself
 * Implies logical grouping.
 
-![](/assets/alignment.JPG)
+![align](/12_Best-Practice/images/12-2/alignment.JPG)
 
 > For how to use Node Alignment, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
@@ -66,14 +66,14 @@ In addition to making your program as simple and efficient as possible, strive f
 * Be wary of renaming nodes other than an inputs
   * An alternative to this is creating a custom node from a node cluster and renaming that; it will be understood that it contains something else
 
-![](/assets/renaming.JPG)
+![renaming](/12_Best-Practice/images/12-2/renaming.JPG)
 
 **Explain with Notes:**
 
 * If something in the program requires a plain language explanation
 * If a node group is large and can’t be easily understood right away
 
-![](/assets/notes.JPG)
+![notes](/12_Best-Practice/images/12-2/notes.JPG)
 
 > For how to add a Note, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
@@ -100,7 +100,7 @@ In addition to making your program as simple and efficient as possible, strive f
 * If a portion of a program will be reused often in other programs
 * If you want to share a portion of a program with the Dynamo Community
 
-![](/assets/customnode.JPG)
+![customnode](/12_Best-Practice/images/12-2/customnode.JPG)
 
 > For how to use Custom Nodes, refer to [Custom Node Introduction](http://dynamoprimer.com/en/09_Custom-Nodes/9-1_Introduction.html).
 
@@ -126,13 +126,13 @@ Python scripting is a powerful tool to use in your program as shown in Python No
 
 Now that we have established several best practices, let’s apply them to a program that was put together quickly. Though the program succeeds in generating the roof, the state of the graph is a "mind-map" of the author. It lacks any organization or description of its use. We will walk through our best practices to organize, describe, and analyze the program so other users can understand how to use it.
 
-!["mind-map"](/12_Best-Practice/images/00.jpg)
+![mindmap](/12_Best-Practice/images/12-2/00.jpg)
 
 > The program is functioning, but the graph is disorganized.
 
 **Groups:**
 
-![](/assets/1-2.jpg)
+![groups](/12_Best-Practice/images/12-2/1-2.jpg)
 
 > Now we can start to see the structure of the program by identifying what each part does and grouping it together.
 >
@@ -144,13 +144,13 @@ Now that we have established several best practices, let’s apply them to a pro
 
 **Alignment:**
 
-![](/assets/2.jpg)
+![alignment](/12_Best-Practice/images/12-2/2.jpg)
 
 > Aligning the graph gives it visual continuity, allowing us to see implicit relationships in the groups.
 
 **Rename Sliders and add Notes:**
 
-![](/assets/2-2.jpg)
+![notes-rename](/12_Best-Practice/images/12-2/2-2.jpg)
 
 > These graphic improvements tell the user more about what the program is doing. The different group colors help to distinguish inputs from functions.
 
@@ -159,7 +159,7 @@ Now that we have established several best practices, let’s apply them to a pro
 
 **Integrate Scripting:**
 
-![](/assets/3.jpg)
+![integratescripting](/12_Best-Practice/images/12-2/3.jpg)
 
 > We've chosen to integrate scripting at this point in the program so the drainage simulation can be run on the original, single roof surface. That specific surface is not being previewed, but it saves us from having to choose the top surface of the chamfered Polysurface.
 >
@@ -170,7 +170,7 @@ Now that we have established several best practices, let’s apply them to a pro
 
 **Node to Code and Custom Node:**
 
-![](/assets/3-2.jpg)
+![customnode-notetocode](/12_Best-Practice/images/12-2/3-2.jpg)
 
 > Condensing our program with Node to Code and Custom Node has greatly reduced the size of the graph. The groups that create the roof surface and walls have been converted to code since they are very specific to this program. The point translation group is contained in a Custom Node as it could be used in another program. In the example file, create your own custom node from the translate points group.
 
@@ -179,7 +179,7 @@ Now that we have established several best practices, let’s apply them to a pro
 
 **Set Presets:**
 
-![](/assets/presets.jpg)
+![presets](/12_Best-Practice/images/12-2/presets.jpg)
 
 > We've saved two presets so other users can see the potential range of roof forms that the program can create. 
 
@@ -188,5 +188,5 @@ Now that we have established several best practices, let’s apply them to a pro
 
 **Our Program:**
 
-![](/assets/3-3.jpg)
+![ourprogram](/12_Best-Practice/images/12-2/3-3.jpg)
 
