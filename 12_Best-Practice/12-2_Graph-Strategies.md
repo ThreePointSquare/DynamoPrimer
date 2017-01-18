@@ -15,7 +15,7 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 
 ![](/assets/groups.JPG)
 
-> For how to use Groups, refer to Managing Your Program.
+> For how to use Groups, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
 **Develop efficiently with Code Block:**
 
@@ -25,7 +25,7 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 
 ![](/assets/codeblock.JPG)
 
-> For how to use Code Block, refer to What's a Code Block.
+> For how to use Code Block, refer to [What's a Code Block](http://dynamoprimer.com/en/07_Code-Block/7-1_what-is-a-code-block.html).
 
 **Condense with Node to Code:**
 
@@ -43,7 +43,7 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 
 ![](/assets/nodetocode.JPG)
 
-> For how to use Node to Code, refer to Design Script Syntax.
+> For how to use Node to Code, refer to [Design Script Syntax](http://dynamoprimer.com/en/07_Code-Block/7-2_Design-Script-syntax.html).
 
 ### Maintain Readability
 
@@ -58,7 +58,7 @@ In addition to making your program as simple and efficient as possible, strive f
 
 ![](/assets/alignment.JPG)
 
-> For how to use Node Alignment, refer to Managing Your Program.
+> For how to use Node Alignment, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
 **Descriptive labeling by renaming:**
 
@@ -75,7 +75,7 @@ In addition to making your program as simple and efficient as possible, strive f
 
 ![](/assets/notes.JPG)
 
-> For how to add a Note, refer to Managing Your Program.
+> For how to add a Note, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
 ### Flex Continuously
 
@@ -92,19 +92,21 @@ In addition to making your program as simple and efficient as possible, strive f
 * If there are particular forms or conditions that you want embedded in the file
 * To avoid adjusting the sliders in a program with long run times
 
+> For how to use Presets, refer to [Managing Your Data with Presets](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-5_presets.html).
+
 **Contain groups with Custom Nodes:**
 
 * If a portion of your program can be collected into a single container
 * If a portion of a program will be reused often in other programs
 * If you want to share a portion of a program with the Dynamo Community
 
-_screenshot_
+![](/assets/customnode.JPG)
 
-> For how to use Custom Nodes, refer to Custom Node Introduction.
+> For how to use Custom Nodes, refer to [Custom Node Introduction](http://dynamoprimer.com/en/09_Custom-Nodes/9-1_Introduction.html).
 
 ### Script Strategically
 
-Python scripting is a powerful tool to use in your program as shown in Python Nodes and Scripting Strategies. Where the capability of visual programming ends, scripting brings an entire host of tools to analyze, simulate, automate, and more. Knowing when to introduce scripting will ensure that you are taking full advantage of its capabilities.
+Python scripting is a powerful tool to use in your program as shown in Python Nodes and Scripting Strategies. Where the capability of visual programming ends, scripting brings a host of tools to analyze, simulate, automate, and more. Knowing when to introduce scripting will ensure that you are taking full advantage of its capabilities.
 
 **Implement Looping:**
 
@@ -159,7 +161,7 @@ Now that we have established several best practices, let’s apply them to a pro
 
 ![](/assets/3.jpg)
 
-> We've chosen to integrate scripting at this point in the program so the drainage simulation can be run on the original, single roof surface. That specific surface is hidden, but it saves us from having to choose the top surface of the chamfered Polysurface.
+> We've chosen to integrate scripting at this point in the program so the drainage simulation can be run on the original, single roof surface. That specific surface is not being previewed, but it saves us from having to choose the top surface of the chamfered Polysurface.
 >
 > 1. Source geometry for script input
 > 2. Python node
