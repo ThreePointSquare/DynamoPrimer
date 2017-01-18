@@ -13,7 +13,7 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 * Colors can be used to differentiate what groups are doing \(inputs vs functions\)
 * To streamline Custom Node creation
 
-![groups](/12_Best-Practice/images/12-2/groups.JPG)
+![](/assets/groups.png)
 
 > For how to use Groups, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
@@ -23,7 +23,9 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 * If you have created a large collection of simple nodes they can be written in a single block \(Node to Code\)
 * If you want to define a function
 
-![codeblock](/12_Best-Practice/images/12-2/codeblock.JPG)
+![](/assets/codeblock-example.png)
+
+> It was much faster to write a few lines of code than it was to search for and add each node individually. The code block is also far more concise.
 
 > For how to use Code Block, refer to [What's a Code Block](http://dynamoprimer.com/en/07_Code-Block/7-1_what-is-a-code-block.html).
 
@@ -41,7 +43,7 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
   * More difficult to understand for other users
   * No easy way to return to the visual programming version
 
-![nodetocode](/12_Best-Practice/images/12-2/nodetocode.JPG)
+![](/assets/nodetocode-example.png)
 
 > For how to use Node to Code, refer to [Design Script Syntax](http://dynamoprimer.com/en/07_Code-Block/7-2_Design-Script-syntax.html).
 
@@ -56,7 +58,7 @@ In addition to making your program as simple and efficient as possible, strive f
 * Cleanup Node Layout will automatically align your graph, though less precisely than doing it yourself
 * Implies logical grouping.
 
-![align](/12_Best-Practice/images/12-2/alignment.JPG)
+![](/assets/alignment-example.png)
 
 > For how to use Node Alignment, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
@@ -66,14 +68,14 @@ In addition to making your program as simple and efficient as possible, strive f
 * Be wary of renaming nodes other than an inputs
   * An alternative to this is creating a custom node from a node cluster and renaming that; it will be understood that it contains something else
 
-![renaming](/12_Best-Practice/images/12-2/renaming.JPG)
+![](/assets/inputs.png)
 
 **Explain with Notes:**
 
 * If something in the program requires a plain language explanation
 * If a node group is large and can’t be easily understood right away
 
-![notes](/12_Best-Practice/images/12-2/notes.JPG)
+![](/assets/notes.png)
 
 > For how to add a Note, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
@@ -83,7 +85,11 @@ In addition to making your program as simple and efficient as possible, strive f
 
 * As you build the program to verify that a module of functionality is returning what you expected
 
-> For how to use Watch, refer to Library.
+![](/assets/watch.png)
+
+> The Watch nodes are being used to compare the raw translation distances with the values passed through the Sine equation.
+
+> For how to use Watch, refer to [Library](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-2_dynamo_libraries.html).
 
 ### Portability
 
@@ -100,7 +106,9 @@ In addition to making your program as simple and efficient as possible, strive f
 * If a portion of a program will be reused often in other programs
 * If you want to share a portion of a program with the Dynamo Community
 
-![customnode](/12_Best-Practice/images/12-2/customnode.JPG)
+![](/assets/customnode.png)
+
+> Condensing the point translation program into a Custom Node makes a robust, unique program portable and far easier to understand. Well named input ports will help other users understand how to use the node.
 
 > For how to use Custom Nodes, refer to [Custom Node Introduction](http://dynamoprimer.com/en/09_Custom-Nodes/9-1_Introduction.html).
 
@@ -119,6 +127,8 @@ Python scripting is a powerful tool to use in your program as shown in Python No
 **Implement Recursion:**
 
 * If you need to implement subdivision
+
+> For how to implement Python scripting, refer to [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
 
 ### Exercise - Architectural Roof
 
