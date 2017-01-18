@@ -119,56 +119,74 @@ Python scripting is a powerful tool to use in your program as shown in Python No
 * If you need to implement subdivision
 
 ### Exercise - Architectural Roof
-Now that we have established several best practices, let’s apply them to the architectural roof program that was put together rather quickly. Though the program generates the roof quite well, the state of the graph is a "mind-map" of the author. We will walk through our best practices to organize and describe the program so other users can understand how to use it.
+
+> Download the example file that accompanies this exercise \(Right click and "Save Link As..."\). A full list of example files can be found in the Appendix.
+
+Now that we have established several best practices, let’s apply them to a program that was put together quickly. Though the program succeeds in generating the roof, the state of the graph is a "mind-map" of the author. We will walk through our best practices to organize, describe, and analyze the program so other users can understand how to use it.
 
 ![](/assets/00.jpg)
 
+> The program is functioning, but the graph is disorganized.
 
-> Download the example file that accompanies this exercise \(Right click and "Save Link As..."\). A full list of example files can be found in the Appendix.  
+**Groups:**
 
-**1. Groups:**  
+![](/assets/1-2.jpg)
 
-![](/assets/01ws.png)
-
+> Now we can start to see the structure of the program by identifying what each part does and grouping it together.
+>
 > 1. Import 3D site model
 > 2. Translate point grid based on Sine equation
 > 3. Sample portion of point grid
 > 4. Create architectural roof surface
 > 5. Create glass curtain wall
-> 6. Apply Python drainage simulator
 
-**2. Alignment:**
+**Alignment:**
 
-![](/assets/02ws.png)
+![](/assets/2.jpg)
+
+> Aligning the graph gives it visual continuity, allowing us to see implicit relationships in the groups.
 
 > 1. Vertical alignment
 > 2. Horizontal alignment
 
-**3. Rename Sliders and add Notes:**
+**Rename Sliders and add Notes:**
 
-![](/assets/03ws.png)
+![](/assets/2-2.jpg)
+
+> These graphic improvements tell the user more about what the program is doing.
 
 > 1. Notes
 > 2. Number sliders with descriptive names
 > 3. Multi-color Groups
 
-**4. Node to Code and Custom Node: **
+**Integrate Scripting:**
 
-![](/assets/04ws.png)
+![](/assets/scripting.jpg)
+
+> We've chosen to integrate scripting at this point in the program so the drainage simulation can be run on the original, single roof surface. That specific surface is hidden, but it saves us from having to choose the top surface of the chamfered Polysurface.
+>
+> 1. Source node for script input
+> 2. Python node
+> 3. Input sliders
+> 4. On/off "switch"
+
+**Node to Code and Custom Node: **
+
+![](/assets/3-2.jpg)
+
+> Condensing our program with Node to Code and Custom Node has greatly reduced the size of the graph. The groups that create the roof surface and walls have been converted to code since they are very specific to this program. The point translation group is contained in a Custom Node as it could be used in another program. In the example file, create your own custom node from the translate points group.
 
 > 1. Custom Node
 > 2. Node to Code
 
-**5. Presets:**
+**Set Presets:**
 
 ![](/assets/presets.jpg)
 
-> 1. Preset 1
-> 2. Preset 2
-
-**6. Integrate Scripting:**
-
-![](/assets/presets-script.jpg)
+> We've saved two presets so other users can see the potential range of roof forms that the program can create. 
 
 > 1. Preset 1
 > 2. Preset 2
+
+
+
