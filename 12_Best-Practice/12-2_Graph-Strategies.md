@@ -147,7 +147,7 @@ Python scripting is a powerful tool to use in your program as shown in Python No
 
 ### Exercise - Architectural Roof
 
-> Download the example file that accompanies this exercise \(Right click and "Save Link As..."\). A full list of example files can be found in the Appendix.
+> Download the example file that accompanies this exercise \(Right click and "Save Link As..."\). A full list of example files can be found in the Appendix. [RoofDrainageSim.zip](12_Best-Practice/datasets/12-2/RoofDrainageSim.zip)
 
 Now that we have established several best practices, let’s apply them to a program that was put together quickly. Though the program succeeds in generating the roof, the state of the graph is a "mind-map" of the author. It lacks any organization or description of its use. We will walk through our best practices to organize, describe, and analyze the program so other users can understand how to use it.
 
