@@ -13,7 +13,7 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 * Colors can be used to differentiate what groups are doing \(inputs vs functions\)
 * To streamline Custom Node creation
 
-![](/assets/groups.png)
+![groups](/12_Best-Practice/images/12-2/groups.png)
 
 > For how to use Groups, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
@@ -23,7 +23,7 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 * If you have created a large collection of simple nodes they can be written in a single block \(Node to Code\)
 * If you want to define a function
 
-![](/assets/codeblock-example.png)
+![codeblock](/12_Best-Practice/images/12-2/codeblock.png)
 
 > It was much faster to write a few lines of code than it was to search for and add each node individually. The code block is also far more concise.
 
@@ -43,39 +43,40 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
   * More difficult to understand for other users
   * No easy way to return to the visual programming version
 
-![](/assets/nodetocode-example.png)
+![nodetocode](/12_Best-Practice/images/12-2/nodetocode.png)
 
 > For how to use Node to Code, refer to [Design Script Syntax](http://dynamoprimer.com/en/07_Code-Block/7-2_Design-Script-syntax.html).
 
 ### Maintain Readability
 
-In addition to making your program as simple and efficient as possible, strive for graphic clarity. Despite your best efforts to make your program intuitive with logical groupings, relationships and functions might not be readily apparent. A simple Note inside of a group or renaming a slider can save you \(or another user\) from unnecessary confusion or panning across the graph.
+In addition to making your program as simple and efficient as possible, strive for graphic clarity. Despite your best efforts to make your program intuitive with logical groupings, relationships might not be readily apparent. A simple Note inside of a group or renaming a slider can save you \(or another user\) from unnecessary confusion or panning across the graph.
 
 **Visual continuity with Node Alignment:**
 
 * Often and while building your program
 * Prior to shipping the program to another user
 * Cleanup Node Layout will automatically align your graph, though less precisely than doing it yourself
-* Implies logical grouping.
+* Implies logical grouping
 
-![](/assets/alignment-example.png)
+![alignment](/12_Best-Practice/images/12-2/alignment.png)
 
 > For how to use Node Alignment, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
 **Descriptive labeling by renaming:**
 
 * Useful on inputs, especially if what they plug into will be off the screen
-* Be wary of renaming nodes other than an inputs
-  * An alternative to this is creating a custom node from a node cluster and renaming that; it will be understood that it contains something else
+* Be wary of renaming nodes other than an inputs. An alternative to this is creating a custom node from a node cluster and renaming that; it will be understood that it contains something else
 
-![](/assets/inputs.png)
+![inputs](/12_Best-Practice/images/12-2/inputs.png)
+
+> To rename a node, right click on its name and choose "Rename Node...".
 
 **Explain with Notes:**
 
 * If something in the program requires a plain language explanation
 * If a node group is large and can’t be easily understood right away
 
-![](/assets/notes.png)
+![notes](/12_Best-Practice/images/12-2/notes.png)
 
 > For how to add a Note, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
@@ -85,7 +86,7 @@ In addition to making your program as simple and efficient as possible, strive f
 
 * As you build the program to verify that a module of functionality is returning what you expected
 
-![](/assets/watch.png)
+![watch](/12_Best-Practice/images/12-2/watch.png)
 
 > The Watch nodes are being used to compare the raw translation distances with the values passed through the Sine equation.
 
@@ -106,7 +107,7 @@ In addition to making your program as simple and efficient as possible, strive f
 * If a portion of a program will be reused often in other programs
 * If you want to share a portion of a program with the Dynamo Community
 
-![](/assets/customnode.png)
+![customnode](/12_Best-Practice/images/12-2/customnode.png)
 
 > Condensing the point translation program into a Custom Node makes a robust, unique program portable and far easier to understand. Well named input ports will help other users understand how to use the node.
 
@@ -140,11 +141,11 @@ Now that we have established several best practices, let’s apply them to a pro
 
 > The program is functioning, but the graph is disorganized.
 
-**Groups:**
+Let's start by establishing some hierarchy in the graph with Groups.
 
 ![groups](/12_Best-Practice/images/12-2/1-2.jpg)
 
-> Now we can start to see the structure of the program by identifying what each part does and grouping it together.
+> Now we can start to see the structure of the program by identifying what each part does.
 >
 > 1. Import 3D site model
 > 2. Translate point grid based on Sine equation
@@ -152,13 +153,13 @@ Now that we have established several best practices, let’s apply them to a pro
 > 4. Create architectural roof surface
 > 5. Create glass curtain wall
 
-**Alignment:**
+With logical groupings established, align the nodes to create visual continuity across the graph.
 
 ![alignment](/12_Best-Practice/images/12-2/2.jpg)
 
-> Aligning the graph gives it visual continuity, allowing us to see implicit relationships in the groups.
+> Visual continuity allows the user to see implicit relationships between nodes.
 
-**Rename Sliders and add Notes:**
+Make the program more accessible by adding another layer of graphic improvements. Add notes to describe how the program works, give inputs descriptive names, and assign colors to different types of groups. 
 
 ![notes-rename](/12_Best-Practice/images/12-2/2-2.jpg)
 
@@ -167,7 +168,7 @@ Now that we have established several best practices, let’s apply them to a pro
 > 1. Notes
 > 2. Inputs with descriptive names
 
-**Integrate Scripting:**
+Before we start to condense the program, let's find a strategic location to introduce the Python script drainage simulator. Plug the output of the first scaled roof surface into the respective scripting input.
 
 ![integratescripting](/12_Best-Practice/images/12-2/3.jpg)
 
@@ -178,7 +179,7 @@ Now that we have established several best practices, let’s apply them to a pro
 > 3. Input sliders
 > 4. On/off "switch"
 
-**Node to Code and Custom Node:**
+Let's simplify the graph now that everything is in place.
 
 ![customnode-notetocode](/12_Best-Practice/images/12-2/3-2.jpg)
 
@@ -187,11 +188,11 @@ Now that we have established several best practices, let’s apply them to a pro
 > 1. Custom Node
 > 2. Node to Code
 
-**Set Presets:**
+As a final step, create presets for exemplary roof forms.
 
 ![presets](/12_Best-Practice/images/12-2/presets.jpg)
 
-> We've saved two presets so other users can see the potential range of roof forms that the program can create. 
+> These presets will help users see the potential of the program. 
 
 > 1. Preset 1
 > 2. Preset 2
