@@ -13,7 +13,7 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 * Colors can be used to differentiate what groups are doing \(inputs vs functions\)
 * To streamline Custom Node creation
 
-![groups](/12_Best-Practice/images/12-2/groups.png)
+![groups](images/12-2/groups.png)
 
 > For how to use Groups, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
@@ -23,7 +23,7 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 * If you have created a large collection of simple nodes they can be written in a single block \(Node to Code\)
 * If you want to define a function
 
-![codeblock](/12_Best-Practice/images/12-2/codeblock.png)
+![codeblock](images/12-2/codeblock.png)
 
 > It was much faster to write a few lines of code than it was to search for and add each node individually. The code block is also far more concise.
 
@@ -43,7 +43,7 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
   * More difficult to understand for other users
   * No easy way to return to the visual programming version
 
-![nodetocode](/12_Best-Practice/images/12-2/nodetocode.png)
+![nodetocode](images/12-2/nodetocode.png)
 
 > For how to use Node to Code, refer to [Design Script Syntax](http://dynamoprimer.com/en/07_Code-Block/7-2_Design-Script-syntax.html).
 
@@ -58,7 +58,7 @@ In addition to making your program as simple and efficient as possible, strive f
 * Cleanup Node Layout will automatically align your graph, though less precisely than doing it yourself
 * Implies logical grouping
 
-![alignment](/12_Best-Practice/images/12-2/alignment.png)
+![alignment](images/12-2/alignment.png)
 
 > For how to use Node Alignment, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
@@ -67,7 +67,7 @@ In addition to making your program as simple and efficient as possible, strive f
 * Useful on inputs, especially if what they plug into will be off the screen
 * Be wary of renaming nodes other than an inputs. An alternative to this is creating a custom node from a node cluster and renaming that; it will be understood that it contains something else
 
-![inputs](/12_Best-Practice/images/12-2/inputs.png)
+![inputs](images/12-2/inputs.png)
 
 > To rename a node, right click on its name and choose "Rename Node...".
 
@@ -76,7 +76,7 @@ In addition to making your program as simple and efficient as possible, strive f
 * If something in the program requires a plain language explanation
 * If a node group is large and can’t be easily understood right away
 
-![notes](/12_Best-Practice/images/12-2/notes.png)
+![notes](images/12-2/notes.png)
 
 > For how to add a Note, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
@@ -93,7 +93,7 @@ In addition to making your program as simple and efficient as possible, strive f
 
 * As you build the program to verify that a module of functionality is returning what you expected
 
-![watch](/12_Best-Practice/images/12-2/watch.png)
+![watch](images/12-2/watch.png)
 
 > The Watch nodes are being used to compare the raw translation distances with the values passed through the Sine equation.
 
@@ -121,7 +121,7 @@ It is highly likely that someone else will be opening your program at some point
 * If a portion of a program will be reused often in other programs
 * If you want to share a portion of a program with the Dynamo Community
 
-![customnode](/12_Best-Practice/images/12-2/customnode.png)
+![customnode](images/12-2/customnode.png)
 
 > Condensing the point translation program into a Custom Node makes a robust, unique program portable and far easier to understand. Well named input ports will help other users understand how to use the node.
 
@@ -147,17 +147,17 @@ Python scripting is a powerful tool to use in your program as shown in Python No
 
 ### Exercise - Architectural Roof
 
-> Download the example file that accompanies this exercise \(Right click and "Save Link As..."\). A full list of example files can be found in the Appendix. [RoofDrainageSim.zip](12_Best-Practice/datasets/12-2/RoofDrainageSim.zip)
+> Download the example file that accompanies this exercise \(Right click and "Save Link As..."\). A full list of example files can be found in the Appendix. [RoofDrainageSim.zip](datasets/12-2/RoofDrainageSim.zip)
 
 Now that we have established several best practices, let’s apply them to a program that was put together quickly. Though the program succeeds in generating the roof, the state of the graph is a "mind-map" of the author. It lacks any organization or description of its use. We will walk through our best practices to organize, describe, and analyze the program so other users can understand how to use it.
 
-![mindmap](/12_Best-Practice/images/12-2/00.jpg)
+![mindmap](images/12-2/00.jpg)
 
 > The program is functioning, but the graph is disorganized.
 
 Let's start by establishing some hierarchy in the graph with Groups.
 
-![groups](/12_Best-Practice/images/12-2/1-2.jpg)
+![groups](images/12-2/1-2.jpg)
 
 > Now we can start to see the structure of the program by identifying what each part does.
 >
@@ -169,13 +169,13 @@ Let's start by establishing some hierarchy in the graph with Groups.
 
 With logical groupings established, align the nodes to create visual continuity across the graph.
 
-![alignment](/12_Best-Practice/images/12-2/2.jpg)
+![alignment](images/12-2/2.jpg)
 
 > Visual continuity allows the user to see implicit relationships between nodes.
 
 Make the program more accessible by adding another layer of graphic improvements. Add notes to describe how the program works, give inputs descriptive names, and assign colors to different types of groups. 
 
-![notes-rename](/12_Best-Practice/images/12-2/2-2.jpg)
+![notes-rename](images/12-2/2-2.jpg)
 
 > These graphic improvements tell the user more about what the program is doing. The different group colors help to distinguish inputs from functions.
 
@@ -184,7 +184,7 @@ Make the program more accessible by adding another layer of graphic improvements
 
 Before we start to condense the program, let's find a strategic location to introduce the Python script drainage simulator. Plug the output of the first scaled roof surface into the respective scripting input.
 
-![integratescripting](/12_Best-Practice/images/12-2/3.jpg)
+![integratescripting](images/12-2/3.jpg)
 
 > We've chosen to integrate scripting at this point in the program so the drainage simulation can be run on the original, single roof surface. That specific surface is not being previewed, but it saves us from having to choose the top surface of the chamfered Polysurface.
 >
@@ -195,7 +195,7 @@ Before we start to condense the program, let's find a strategic location to intr
 
 Let's simplify the graph now that everything is in place.
 
-![customnode-notetocode](/12_Best-Practice/images/12-2/3-2.jpg)
+![customnode-notetocode](images/12-2/3-2.jpg)
 
 > Condensing our program with Node to Code and Custom Node has greatly reduced the size of the graph. The groups that create the roof surface and walls have been converted to code since they are very specific to this program. The point translation group is contained in a Custom Node as it could be used in another program. In the example file, create your own custom node from the translate points group.
 
@@ -204,7 +204,7 @@ Let's simplify the graph now that everything is in place.
 
 As a final step, create presets for exemplary roof forms.
 
-![presets](/12_Best-Practice/images/12-2/presets.jpg)
+![presets](images/12-2/presets.jpg)
 
 > These presets will help users see the potential of the program. 
 
@@ -213,5 +213,5 @@ As a final step, create presets for exemplary roof forms.
 
 **Our Program:**
 
-![ourprogram](/12_Best-Practice/images/12-2/3-3.jpg)
+![ourprogram](images/12-2/3-3.jpg)
 
