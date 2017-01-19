@@ -47,6 +47,15 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 
 > For how to use Node to Code, refer to [Design Script Syntax](http://dynamoprimer.com/en/07_Code-Block/7-2_Design-Script-syntax.html).
 
+**Access data flexibly with List@Level:**
+
+* If you need to access data at any level in a list of lists
+* Instead of the List.Map and List.Combine nodes
+
+![listatlevel](images/12-2/listatlevel.png)
+
+> For how to use List@Level, refer to [Lists of Lists](http://dynamoprimer.com/en/06_Designing-with-Lists/6-3_lists-of-lists.html#list@level).
+
 ### Maintain Readability
 
 In addition to making your program as simple and efficient as possible, strive for graphic clarity. Despite your best efforts to make your program intuitive with logical groupings, relationships might not be readily apparent. A simple Note inside of a group or renaming a slider can save you \(or another user\) from unnecessary confusion or panning across the graph.
@@ -80,13 +89,6 @@ In addition to making your program as simple and efficient as possible, strive f
 
 > For how to add a Note, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
-**Access data efficiently:**
-
-* If you need to access data at any level in a list of lists
-* Instead of the List.Map and List.Combine nodes
-
-> For how to use List@Level, refer to [Lists of Lists](http://dynamoprimer.com/en/06_Designing-with-Lists/6-3_lists-of-lists.html#list@level).
-
 ### Flex Continuously
 
 **Monitor data with Watch:**
@@ -105,7 +107,7 @@ It is highly likely that someone else will be opening your program at some point
 **Manage the I/O:**
 
 * Minimize inputs and outputs as much as possible
-* Determine which inputs and outputs go into scripts
+* Determine which inputs and outputs will go into scripts
 * Keep inputs generic
 
 **Embed input values with Presets:**
