@@ -80,6 +80,13 @@ In addition to making your program as simple and efficient as possible, strive f
 
 > For how to add a Note, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
+**Access data efficiently:**
+
+* If you need to access data at any level in a list of lists
+* Instead of the List.Map and List.Combine nodes
+
+> For how to use List@Level, refer to [Lists of Lists](http://dynamoprimer.com/en/06_Designing-with-Lists/6-3_lists-of-lists.html#list@level).
+
 ### Flex Continuously
 
 **Monitor data with Watch:**
@@ -92,7 +99,14 @@ In addition to making your program as simple and efficient as possible, strive f
 
 > For how to use Watch, refer to [Library](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-2_dynamo_libraries.html).
 
-### Portability
+### Ensure Reusability
+It is highly likely that someone else will be opening your program at some point, even if you are working independently. They should be able to quickly understand what the program needs and produces from its inputs and outputs. This is especially important when developing a Custom Node to be shared with the Dynamo community and used in someone else’s program. These practices lead to robust programs and nodes that are reusable at a later time.
+
+**Manage the I/O:**
+
+* Minimize inputs and outputs as much as possible
+* Determine which inputs and outputs go into scripts
+* Keep inputs generic
 
 **Embed input values with Presets:**
 
