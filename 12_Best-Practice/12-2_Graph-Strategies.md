@@ -54,6 +54,8 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 
 ![listatlevel](images/12-2/listatlevel.png)
 
+> We can verify how many True values BoundingBox.Contains is returning and in which lists by activating List@Level for CountTrue's "list" input. List@Level allows the user to determine at which level the input will take data from. Using List@Level is flexible, efficient, and highly encouraged over other methods involving List.Map and List.Combine.
+
 > For how to use List@Level, refer to [Lists of Lists](http://dynamoprimer.com/en/06_Designing-with-Lists/6-3_lists-of-lists.html#list@level).
 
 ### Maintain Readability
@@ -102,6 +104,7 @@ In addition to making your program as simple and efficient as possible, strive f
 > For how to use Watch, refer to [Library](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-2_dynamo_libraries.html).
 
 ### Ensure Reusability
+
 It is highly likely that someone else will be opening your program at some point, even if you are working independently. They should be able to quickly understand what the program needs and produces from its inputs and outputs. This is especially important when developing a Custom Node to be shared with the Dynamo community and used in someone else’s program. These practices lead to robust programs and nodes that are reusable at a later time.
 
 **Manage the I/O:**
@@ -157,11 +160,20 @@ Now that we have established several best practices, let’s apply them to a pro
 
 > The program is functioning, but the graph is disorganized.
 
-Let's start by establishing some hierarchy in the graph with Groups.
+Let's start by determining the data and geometry returned by the program.
+
+![data](images/12-2/1-1.jpg)
+
+> Understanding when major changes to the data occur is crucial to establishing logical divisions, or modularity.
+
+> 1. List@Level
+> 2. Watch
+
+Now that we understand the elemental parts of the program, let's put them in Groups.
 
 ![groups](images/12-2/1-2.jpg)
 
-> Now we can start to see the structure of the program by identifying what each part does.
+> Groups allow the user to visually differentiate the parts of the program.
 >
 > 1. Import 3D site model
 > 2. Translate point grid based on Sine equation
@@ -169,13 +181,13 @@ Let's start by establishing some hierarchy in the graph with Groups.
 > 4. Create architectural roof surface
 > 5. Create glass curtain wall
 
-With logical groupings established, align the nodes to create visual continuity across the graph.
+With Groups established, align the nodes to create visual continuity across the graph.
 
 ![alignment](images/12-2/2.jpg)
 
 > Visual continuity allows the user to see implicit relationships between nodes.
 
-Make the program more accessible by adding another layer of graphic improvements. Add notes to describe how the program works, give inputs descriptive names, and assign colors to different types of groups. 
+Make the program more accessible by adding another layer of graphic improvements. Add notes to describe how specific areas of the program works, give inputs custom names, and assign colors to different types of groups. 
 
 ![notes-rename](images/12-2/2-2.jpg)
 
