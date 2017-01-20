@@ -4,11 +4,11 @@ Now that we have our awesome drainage simulator, let's use the tool in our proje
 
 ### Reduce Complexity
 
-As you develop your Dynamo program and test ideas, it can quickly grow in size and complexity. While it is important that you create a functioning program, it is equally important to do it as efficiently as possible. Not only will your program run faster and more predictably, you along with other users will understand its logic later on.
+As you develop your Dynamo program and test ideas, it can quickly grow in size and complexity. While it is important that you create a functioning program, it is equally important to do it as simply as possible. Not only will your program run faster and more predictably, you along with other users will understand its logic later on.
 
 **Modularize with Groups:**
 
-* To create functionally distinct modules as you build a program
+* To create functionally distinct parts as you build a program
 * If you need to move large parts of the program around while maintaining modularity and alignment
 * Colors can be used to differentiate what groups are doing \(inputs vs functions\)
 * To streamline Custom Node creation
@@ -67,7 +67,7 @@ In addition to making your program as simple and efficient as possible, strive f
 * Often and while building your program
 * Prior to shipping the program to another user
 * Cleanup Node Layout will automatically align your graph, though less precisely than doing it yourself
-* Implies logical grouping
+* Implies a flow
 
 ![alignment](images/12-2/alignment.png)
 
@@ -95,7 +95,7 @@ In addition to making your program as simple and efficient as possible, strive f
 
 **Monitor data with Watch:**
 
-* As you build the program to verify that a module of functionality is returning what you expected
+* As you build the program to verify that key outputs are returning what you expected
 
 ![watch](images/12-2/watch.png)
 
@@ -105,7 +105,7 @@ In addition to making your program as simple and efficient as possible, strive f
 
 ### Ensure Reusability
 
-It is highly likely that someone else will be opening your program at some point, even if you are working independently. They should be able to quickly understand what the program needs and produces from its inputs and outputs. This is especially important when developing a Custom Node to be shared with the Dynamo community and used in someone else’s program. These practices lead to robust programs and nodes that are reusable at a later time.
+It is highly likely that someone else will be opening your program at some point, even if you are working independently. They should be able to quickly understand what the program needs and produces from its inputs and outputs. This is especially important when developing a Custom Node to be shared with the Dynamo community and used in someone else’s program. These practices lead to robust, reusable programs and nodes.
 
 **Manage the I/O:**
 
@@ -113,7 +113,7 @@ It is highly likely that someone else will be opening your program at some point
 * Determine which inputs and outputs will go into scripts
 * Keep inputs generic
 
-**Embed input values with Presets:**
+**Use Presets to embed input values:**
 
 * If there are particular forms or conditions that you want embedded in the file
 * To avoid adjusting the sliders in a program with long run times
@@ -128,7 +128,7 @@ It is highly likely that someone else will be opening your program at some point
 
 ![customnode](images/12-2/customnode.png)
 
-> Condensing the point translation program into a Custom Node makes a robust, unique program portable and far easier to understand. Well named input ports will help other users understand how to use the node.
+> Condensing the point translation program into a Custom Node makes a robust, unique program portable and far easier to understand. Well named input ports will help other users understand how to use the node. Remember to add descriptions and required data types for each input.
 
 > For how to use Custom Nodes, refer to [Custom Node Introduction](http://dynamoprimer.com/en/09_Custom-Nodes/9-1_Introduction.html).
 
@@ -162,14 +162,14 @@ Now that we have established several best practices, let’s apply them to a pro
 
 Let's start by determining the data and geometry returned by the program.
 
-![data](images/12-2/1-1.jpg)
+![data](images/12-2/1-1.JPG)
 
-> Understanding when major changes to the data occur is crucial to establishing logical divisions, or modularity.
+> Understanding when major changes to the data occur is crucial to establishing logical divisions, or modularity. Try inspecting the rest of the program with Watch nodes to see if you can determine groups before moving on to the next step.
 
-> 1. List@Level
-> 2. Watch
+> 1. This Code Block with a math equation looks like a crucial piece of the program. A Watch node displays that it is returning lists of translation distances.
+> 2. The purpose of this area isn't readily obvious. The arrangement of True values at list level L2 from BoundingBox.Contains and the presence of List.FilterByBoolMask suggests we are sampling a portion of the point grid.
 
-Now that we understand the elemental parts of the program, let's put them in Groups.
+Once we understand the elemental parts of the program, let's put them in Groups.
 
 ![groups](images/12-2/1-2.jpg)
 
@@ -185,7 +185,7 @@ With Groups established, align the nodes to create visual continuity across the 
 
 ![alignment](images/12-2/2.jpg)
 
-> Visual continuity allows the user to see implicit relationships between nodes.
+> Visual continuity helps the user to see the program flow and implicit relationships between nodes.
 
 Make the program more accessible by adding another layer of graphic improvements. Add notes to describe how specific areas of the program works, give inputs custom names, and assign colors to different types of groups. 
 
@@ -225,7 +225,7 @@ As a final step, create presets for exemplary roof forms.
 > 1. Preset 1
 > 2. Preset 2
 
-**Our Program:**
+Our program with views of several presets.
 
 ![ourprogram](images/12-2/3-3.jpg)
 
