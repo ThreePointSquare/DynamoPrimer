@@ -218,14 +218,16 @@ Let's simplify the graph now that everything is in place.
 
 As a final step, create presets for exemplary roof forms.
 
-![presets](images/12-2/presets.jpg)
+![presets](images/12-2/3-3.jpg)
 
-> These presets will help users see the potential of the program. 
+> These inputs are the primary drivers of the roof form. Presets will help users see the potential of the program. 
 
 > 1. Preset 1
 > 2. Preset 2
+> 3. Preset 3
 
 Our program with views of several presets.
 
-![ourprogram](images/12-2/3-3.jpg)
+![presets](images/12-2/3-4.jpg)
 
+![presets](images/12-2/3-5.jpg)
