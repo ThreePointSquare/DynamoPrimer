@@ -220,14 +220,14 @@ As a final step, create presets for exemplary roof forms.
 
 ![presets](images/12-2/3-3.jpg)
 
-> These inputs are the primary drivers of the roof form. Presets will help users see the potential of the program. 
+> These inputs are the primary drivers of the roof form. Presets will help users see the potential of the program. They are numbered according to their respective presets.
 
-> 1. Preset 1
-> 2. Preset 2
-> 3. Preset 3
-
-Our program with views of several presets.
+Our program with views of two presets.
 
 ![presets](images/12-2/3-4.jpg)
 
+> Open this image in a new tab to zoom in.
+
 ![presets](images/12-2/3-5.jpg)
+
+> The roof drainage patterns give the user an analytical view of the respective presets.
