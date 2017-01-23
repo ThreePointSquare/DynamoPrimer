@@ -156,7 +156,7 @@ Python scripting is a powerful tool to use in your program as shown in Python No
 
 Now that we have established several best practices, let’s apply them to a program that was put together quickly. Though the program succeeds in generating the roof, the state of the graph is a "mind-map" of the author. It lacks any organization or description of its use. We will walk through our best practices to organize, describe, and analyze the program so other users can understand how to use it.
 
-![mindmap](images/12-2/00.jpg)
+![mindmap](images/12-2/1.jpg)
 
 > The program is functioning, but the graph is disorganized.
 
