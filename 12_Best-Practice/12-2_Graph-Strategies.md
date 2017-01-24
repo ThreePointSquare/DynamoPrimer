@@ -29,7 +29,7 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 
 ![codeblock](images/12-2/codeblock.png)
 
-> It was much faster to write a few lines of code than it was to search for and add each node individually. The code block is also far more concise.
+> Both 1 and 2 perform the same function. It was much faster to write a few lines of code than it was to search for and add each node individually. The code block is also far more concise.
 
 > 1. Design Script written in Code Block
 > 2. Equivalent program in nodes
@@ -161,24 +161,6 @@ It is highly likely that someone else will be opening your program at some point
 
 > For how to use Custom Nodes, refer to [Custom Node Introduction](http://dynamoprimer.com/en/09_Custom-Nodes/9-1_Introduction.html).
 
-### Script Strategically
-
-Python scripting is a powerful tool to use in your program. Where the capability of visual programming ends, scripting brings a host of tools to analyze, simulate, automate, and more. Knowing when to introduce scripting will ensure that you are taking full advantage of its capabilities.
-
-**Implement Looping:**
-
-* If you need to implement looping
-
-**Access external libraries:**
-
-* If the Dynamo Library is lacking a certain functionality
-
-**Implement Recursion:**
-
-* If you need to implement subdivision
-
-> For how to implement Python scripting, refer to [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
-
 ### Exercise - Architectural Roof
 
 > Download the example file that accompanies this exercise \(Right click and "Save Link As..."\). A full list of example files can be found in the Appendix. [RoofDrainageSim.zip](datasets/12-2/RoofDrainageSim.zip)
@@ -254,8 +236,6 @@ As a final step, create presets for exemplary roof forms.
 Our program with views of two presets.
 
 ![presets](images/12-2/3-4.jpg)
-
-> Open this image in a new tab to zoom in.
 
 ![presets](images/12-2/3-5.jpg)
 

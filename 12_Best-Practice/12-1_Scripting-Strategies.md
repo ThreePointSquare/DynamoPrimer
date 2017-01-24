@@ -1,10 +1,27 @@
 ## Scripting Strategies
 
-Say we want to simulate how rainfall will drain off of a surface in Dynamo. How will we set this up? What parameters will we use to drive the inputs? How will we define the shape of the surface? When will we use a visual program and when will we script using Python? Ultimately, we'll want to simulate rainfall across the roof of our building using Dynamo. But first, let's setup a tool to simulate rainfall on a generic surface. That way we can reuse the tool on another design iteration or even a completely different project. This first section will walk through basic best practices for setting up our drainage simulation tool. Refer to [Scripting Reference](http://dynamoprimer.com/en/12_Best-Practice/12-3_Scripting-Reference.html) for best practices on using libraries, labeling, and styling in your code.
+Say we want to simulate how rainfall will drain off of a surface in Dynamo. How will we set this up? What parameters will we use to drive the inputs? How will we define the shape of the surface? When will we use a visual program and when will we script using Python? Ultimately, we'll want to simulate rainfall across the roof of our building using Dynamo. But first, let's setup a tool to simulate rainfall on a generic surface. That way we can reuse the tool on another design iteration or even a completely different project. This first section will walk through basic best practices for setting up our drainage simulation tool. Best practices for libraries, labeling, and styling can be found under [Scripting Reference](http://dynamoprimer.com/en/12_Best-Practice/12-3_Scripting-Reference.html).
 
 ![](/12_Best-Practice/images/12-1/sculptingvsprogramming.jpg)
 
-> This simulation requires looping, which is a prime candidate for scripting with Python.
+> This simulation requires looping, which is a prime candidate for scripting.
+
+> For how to implement Python scripting, refer to [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
+
+### Understand Capabilities
+Python scripting is a powerful tool to use in your program. Where the capability of visual programming ends, scripting brings a host of tools to analyze, simulate, automate, and more. Understanding where Python's capabilities go beyond visual programming will give you major clues to when it should be used.
+
+**Use certain operations:**
+
+* Looping
+
+* Recursion
+
+**Access external libraries:**
+
+* If the Dynamo libraries are lacking a certain functionality
+
+> Refer to [Scripting Reference](http://dynamoprimer.com/en/12_Best-Practice/12-3_Scripting-Reference.html) for a list of what each Dynamo library gives you access to.
 
 ### Structure Modularly
 
