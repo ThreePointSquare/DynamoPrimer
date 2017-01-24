@@ -164,17 +164,15 @@ OUT = cubes
 
   * You can link new or debugged modules to an existing program with the confidence that the rest of the program will not change.
 
-### 03 \| Dynamo and Python Example
+### Exercise - Constructing the Algorithm
 
-### Steepest Path Overview
+> Download the example file that accompanies this exercise \(Right click and "Save Link As..."\). A full list of example files can be found in the Appendix. [GradientDescent.dyn](datasets/12-1/GradientDescent.dyn)
 
 This script will derive the path a ball would take if released at a given point on a surface. It will construct the paths by stitching together small and discrete steps taken by walking agents.
 
 ![](/12_Best-Practice/images/12-1/gd01.JPG)
 
-### Constructing the Algorithm
-
-Let’s talk through how we want it to work.
+Let’s walk through how we want it to work.
 
 **1. Import Libraries:**
 
