@@ -104,3 +104,9 @@ table{box-shadow: 2px 2px 2px #BBBBBB}
 |Package Case Study - Mesh Toolkit|[MeshToolkit.zip](../10_Packages/datasets/10-2/MeshToolkit.zip)
 |Publishing a Package|[MapToSurface.zip](../10_Packages/datasets/10-4/MapToSurface.zip)
 |Zero-Touch Importing|[ZeroTouchImages.zip](../10_Packages/datasets/10-5/ZeroTouchImages.zip)
+
+####Best Practices####
+|Section|Download File|
+|--|--|
+|Scripting Strategies|[SteepestPath.dyn](../12_Best-Practice/datasets/12-1/SteepestPath.dyn)
+|Graph Strategies|[RoofDrainageSim.zip](../12_Best-Practice/datasets/12-2/RoofDrainageSim.zip)
