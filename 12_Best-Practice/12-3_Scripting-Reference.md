@@ -13,7 +13,7 @@
 
 ### Which Libraries to Use
 
-![](/12_Best-Practise/images/12-1/coding.jpg)
+![](/12_Best-Practice/images/12-1/coding.jpg)
 
 **C \| Standard Libraries vs. Dynamo Libraries**
 
