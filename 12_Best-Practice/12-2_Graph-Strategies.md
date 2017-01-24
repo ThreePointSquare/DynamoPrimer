@@ -52,6 +52,9 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 
 ![nodetocode](images/12-2/nodetocode.png)
 
+> 1. Existing program
+> 2. Code Block created from Node to Code
+
 > For how to use Node to Code, refer to [Design Script Syntax](http://dynamoprimer.com/en/07_Code-Block/7-2_Design-Script-syntax.html).
 
 **Access data flexibly with List@Level:**
@@ -151,7 +154,10 @@ It is highly likely that someone else will be opening your program at some point
 
 ![customnode](images/12-2/customnode.png)
 
-> Condensing the point translation program into a Custom Node makes a robust, unique program portable and far easier to understand. Well named input ports will help other users understand how to use the node. Remember to add descriptions and required data types for each input.
+> Collecting the point translation program into a Custom Node makes a robust, unique program portable and far easier to understand. Well named input ports will help other users understand how to use the node. Remember to add descriptions and required data types for each input.
+
+> 1. Existing attractor program
+> 2. Custom Node that collects this program, PointGrid
 
 > For how to use Custom Nodes, refer to [Custom Node Introduction](http://dynamoprimer.com/en/09_Custom-Nodes/9-1_Introduction.html).
 
