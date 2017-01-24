@@ -178,13 +178,13 @@ Let’s talk through how we want it to work.
 
 **1. Import Libraries:**
 
-![](/12_Best-Practise/images/12-1/gd02.jpg)
+![](/12_Best-Practice/images/12-1/gd02.jpg)
 
 > We will need to import all the libraries that we intend on using.
 
 **2. Define Parameter Inputs:**
 
-![](/12_Best-Practise/images/12-1/gd03.jpg)
+![](/12_Best-Practice/images/12-1/gd03.jpg)
 
 > We will need to provide some key parameters:
 >
@@ -194,7 +194,7 @@ Let’s talk through how we want it to work.
 
 **3. Define Agent Class:**
 
-![](/12_Best-Practise/images/12-1/gd04.jpg)
+![](/12_Best-Practice/images/12-1/gd04.jpg)
 
 > We will need to define a class, or blueprint, for an agent with the intention of walking down a surface by choosing to travel in the steepest possible direction each time it takes a step:
 >
@@ -206,7 +206,7 @@ Let’s talk through how we want it to work.
 
 **4. Initialize Agents:**
 
-![](/12_Best-Practise/images/12-1/gd05.jpg)
+![](/12_Best-Practice/images/12-1/gd05.jpg)
 
 > We will need to instantiate all the agents we want to observe walk down the surface and define their initial attributes:
 >
@@ -215,16 +215,16 @@ Let’s talk through how we want it to work.
 
 **5. Update Agents:**
 
-![](/12_Best-Practise/images/12-1/gd06.jpg)
+![](/12_Best-Practice/images/12-1/gd06.jpg)
 
 > We will then need to enter a nested loop where for each agent and for each step, we update and record their position into their trail list. At each step we will also make sure the agent hasn’t reached a point on the surface where it cannot take another step which will allow it to descend. If that condition is met, we will end that agent's trip.
 
 **6. Draw Trails and Output Trails:**
 
-![](/12_Best-Practise/images/12-1/gd07.jpg)
+![](/12_Best-Practice/images/12-1/gd07.jpg)
 
 > After all the agents have either reached their limit of descent or their maximum number of steps we will create a polycurve through the points in their trail list and output the polycurve trails.
 
 **Our Script:**
 
-![](/12_Best-Practise/images/12-1/gd08.jpg)
+![](/12_Best-Practice/images/12-1/gd08.jpg)
