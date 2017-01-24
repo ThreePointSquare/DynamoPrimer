@@ -1,10 +1,10 @@
 ## Scripting Strategies
 
-Say we want to simulate how rainfall will drain off of a surface in Dynamo. How will we set this up? What parameters will we use to drive the inputs? How will we define the shape of the surface? When will we use a visual program and when will we script using Python?
-Ultimately, we'll want to simulate rainfall across the roof of our building using Dynamo. But first, let's setup a tool to simulate rainfall of a generic surface. That way we can reuse the tool on another design iteration or even a completely different project.
-This simulation requires looping, which is a prime candidate for scripting with Python. This first section will walk through best practices for setting up our drainage simulation tool.
+Say we want to simulate how rainfall will drain off of a surface in Dynamo. How will we set this up? What parameters will we use to drive the inputs? How will we define the shape of the surface? When will we use a visual program and when will we script using Python? Ultimately, we'll want to simulate rainfall across the roof of our building using Dynamo. But first, let's setup a tool to simulate rainfall on a generic surface. That way we can reuse the tool on another design iteration or even a completely different project. This first section will walk through basic best practices for setting up our drainage simulation tool. Refer to [Scripting Reference](http://dynamoprimer.com/en/12_Best-Practice/12-3_Scripting-Reference.html) for best practices on using libraries, labeling, and styling in your code.
 
 ![](/12_Best-Practice/images/12-1/sculptingvsprogramming.jpg)
+
+> This simulation requires looping, which is a prime candidate for scripting with Python.
 
 ### Structure Modularly
 
@@ -188,7 +188,7 @@ Next we will define the script's inputs, which will display as input ports on th
 > 2. The number of agents we want to walk.
 > 3. The maximum number of steps the agents are allowed to take.
 
-Now let's create the body of our script, the agent Class.
+Now let's create the body of our script, the agent class.
 
 ![](/12_Best-Practice/images/12-1/gd04.jpg)
 

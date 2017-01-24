@@ -1,6 +1,6 @@
 ## Graph Strategies
 
-Now that we have our awesome drainage simulator, let's use the tool in our project. We have a new task ahead of us: designing a parametric roof. In this section we'll walk through best practices for defining our roof surface. We'll also discuss how to properly implement the drainage simulator into the workflow. First we will cover several guidelines on when to implement the practices before we begin developing our roof.
+Now that we have our awesome drainage simulator, let's use the tool in our project. We have a new task ahead of us: designing a parametric roof. In this section we'll walk through best practices for defining our roof surface. We'll also discuss how to properly implement the script for the drainage simulator into the workflow. First we will cover several guidelines on when to implement the "noding" practices before we begin developing our roof.
 
 ### Reduce Complexity
 
@@ -163,7 +163,7 @@ It is highly likely that someone else will be opening your program at some point
 
 ### Script Strategically
 
-Python scripting is a powerful tool to use in your program as shown in Python Nodes and Scripting Strategies. Where the capability of visual programming ends, scripting brings a host of tools to analyze, simulate, automate, and more. Knowing when to introduce scripting will ensure that you are taking full advantage of its capabilities.
+Python scripting is a powerful tool to use in your program. Where the capability of visual programming ends, scripting brings a host of tools to analyze, simulate, automate, and more. Knowing when to introduce scripting will ensure that you are taking full advantage of its capabilities.
 
 **Implement Looping:**
 

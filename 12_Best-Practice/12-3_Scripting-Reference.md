@@ -1,42 +1,28 @@
 ## Scripting Reference
-
-**A \| Sculpting vs. Programming**
-
-* Parametric
-  * Functions
-  * Variables
-
-**B \| Noding vs. Coding**
-
-* UI/UX
-* Iteration and recursion
+This reference page extends the best practices covered in Scripting Strategies with greater detail on code libraries, labeling, and styling.
 
 ### Which Libraries to Use
 
 ![](/12_Best-Practice/images/12-1/coding.jpg)
 
-**C \| Standard Libraries vs. Dynamo Libraries**
+> **C \| Standard Libraries vs. Dynamo Libraries**
 
-* Flow Structures, Data Structures
+> * Flow Structures, Data Structures
 * Objects
 
-**D \| Dynamo Libraries**
+> **D \| Dynamo Libraries**
 
-* ProtoGeometry
-  * Functionality
-    * Arc, Bounding Box, Circle, Cone, Coordinate System, Cuboid, Curve, Cylinder, Edge, Ellipse, Ellipse Arc ,Face, Geometry, Helix, Index Group, Line, Mesh, Nurbs Curve, Nurbs Surface, Plane, Point, Polygon, Rectangle, Solid, Sphere, Surface, Topology, TSpline, UV, Vector, Vertex.
+> * ProtoGeometry
+  * Functionality: Arc, Bounding Box, Circle, Cone, Coordinate System, Cuboid, Curve, Cylinder, Edge, Ellipse, Ellipse Arc ,Face, Geometry, Helix, Index Group, Line, Mesh, Nurbs Curve, Nurbs Surface, Plane, Point, Polygon, Rectangle, Solid, Sphere, Surface, Topology, TSpline, UV, Vector, Vertex.
   * How to import: `import Autodesk.DesignScript.Geometry`
 * DSCoreNodes
-  * Functionality
-    * Color, Color Range 2D, Date Time, Time Span, IO, Formula, Logic, List, Math, Quadtree, String, Thread.
+  * Functionality: Color, Color Range 2D, Date Time, Time Span, IO, Formula, Logic, List, Math, Quadtree, String, Thread.
   * How to import: `import DSCore`
 * Tessellation
-  * Functionality
-    * Convex Hull, Delaunay, Voronoi.
+  * Functionality: Convex Hull, Delaunay, Voronoi.
   * How to import: `import Tessellation`
 * DSOffice
-  * Functionality
-    * Excel.
+  * Functionality: Excel.
   * How to import: `import DSOffice`
 
 ### Label Carefully
