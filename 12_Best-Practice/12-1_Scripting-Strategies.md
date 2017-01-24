@@ -164,23 +164,21 @@ OUT = cubes
 
   * You can link new or debugged modules to an existing program with the confidence that the rest of the program will not change.
 
-### Exercise - Constructing the Algorithm
+### Exercise - Steepest Path
 
-> Download the example file that accompanies this exercise \(Right click and "Save Link As..."\). A full list of example files can be found in the Appendix. [GradientDescent.dyn](datasets/12-1/GradientDescent.dyn)
+> Download the example file that accompanies this exercise \(Right click and "Save Link As..."\). A full list of example files can be found in the Appendix. [SteepestPath.dyn](datasets/12-1/SteepestPath.dyn)
 
 This script will derive the path a ball would take if released at a given point on a surface. It will construct the paths by stitching together small and discrete steps taken by walking agents.
 
 ![](/12_Best-Practice/images/12-1/gd01.JPG)
 
-Let’s walk through how we want it to work.
-
-**1. Import Libraries:**
+Let’s walk through how we want it to work. The first thing we need to do is import libraries.
 
 ![](/12_Best-Practice/images/12-1/gd02.jpg)
 
 > We will need to import all the libraries that we intend on using.
 
-**2. Define Parameter Inputs:**
+Next we will define the script's inputs, which will display as input ports on the node.
 
 ![](/12_Best-Practice/images/12-1/gd03.jpg)
 
@@ -190,7 +188,7 @@ Let’s walk through how we want it to work.
 > 2. The number of agents we want to walk.
 > 3. The maximum number of steps the agents are allowed to take.
 
-**3. Define Agent Class:**
+Now let's create the body of our script, the agent Class.
 
 ![](/12_Best-Practice/images/12-1/gd04.jpg)
 
@@ -202,7 +200,7 @@ Let’s walk through how we want it to work.
 > 4. A function for taking a step.
 > 5. A function for cataloging the position of each step to a trail list.
 
-**4. Initialize Agents:**
+Initialize the agents by defining their start locations.
 
 ![](/12_Best-Practice/images/12-1/gd05.jpg)
 
@@ -211,18 +209,18 @@ Let’s walk through how we want it to work.
 > 1. Where they will start their journey on the surface.
 > 2. A new empty trail list.
 
-**5. Update Agents:**
+Update each agent at each step.
 
 ![](/12_Best-Practice/images/12-1/gd06.jpg)
 
 > We will then need to enter a nested loop where for each agent and for each step, we update and record their position into their trail list. At each step we will also make sure the agent hasn’t reached a point on the surface where it cannot take another step which will allow it to descend. If that condition is met, we will end that agent's trip.
 
-**6. Draw Trails and Output Trails:**
+Now that our agents have completed their paths, let's graphically represent them as lines.
 
 ![](/12_Best-Practice/images/12-1/gd07.jpg)
 
 > After all the agents have either reached their limit of descent or their maximum number of steps we will create a polycurve through the points in their trail list and output the polycurve trails.
 
-**Our Script:**
+Our script for finding the steepest paths.
 
 ![](/12_Best-Practice/images/12-1/gd08.jpg)
