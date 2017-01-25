@@ -1,26 +1,100 @@
 ## Scripting Strategies
 
-Say we want to simulate how rainfall will drain off of a surface in Dynamo. How will we set this up? What parameters will we use to drive the inputs? How will we define the shape of the surface? When will we use a visual program and when will we script using Python?
-Ultimately, we'll want to simulate rainfall across the roof of our building using Dynamo. But first, let's setup a tool to simulate rainfall of a generic surface. That way we can reuse the tool on another design iteration or even a completely different project.
-This simulation requires looping, which is a prime candidate for scripting with Python. This first section will walk through best practices for setting up our drainage simulation tool.
+Say we want to simulate how rainfall will drain off of a surface in Dynamo. How will we set this up? What parameters will we use to drive the inputs? How will we define the shape of the surface? When will we use a visual program and when will we script using Python? Ultimately, we'll want to simulate rainfall across the roof of our building using Dynamo. But first, let's setup a tool to simulate rainfall on a generic surface. That way we can reuse the tool on another design iteration or even a completely different project. This first section will walk through basic best practices for setting up our drainage simulation tool. Best practices for libraries, labeling, and styling can be found under [Scripting Reference](http://dynamoprimer.com/en/12_Best-Practice/12-3_Scripting-Reference.html).
 
 ![](/12_Best-Practice/images/12-1/sculptingvsprogramming.jpg)
 
+> This simulation requires looping, which is a prime candidate for scripting.
+
+> For how to implement Python scripting, refer to [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
+
+### Know When to Script
+Python scripting is a powerful tool to use in your program. Where the capability of visual programming ends, textual scripting brings a host of tools to analyze, simulate, automate, and more. Understanding where Python's capabilities go beyond visual programming will give you major clues to when it should be used.
+
+**Use certain operations:**
+
+* Looping
+
+* Recursion
+
+**Access external libraries:**
+
+* If the Dynamo libraries are lacking a certain functionality
+
+> Refer to [Scripting Reference](http://dynamoprimer.com/en/12_Best-Practice/12-3_Scripting-Reference.html) for a list of what each Dynamo library gives you access to.
+
+### Think Parametrically
+
+When scripting in Dynamo, an inevitably parametric environment, it is wise to structure your code relative to the framework it will be living in. Here are some tips for better integrating code into a visual program.
+
+**Identify the variables at play:**
+
+* Try to determine the given parameters in your design problem so that you can construct a model that directly builds off that data.
+
+* Before writing code, try to identify which variables are:
+
+  * Inputs
+
+  * Outputs
+
+  * Constants
+
+**Design through relationships:**
+
+* Parametricism allows for certain parameters or variables to be edited in order to manipulate or alter the end result of an equation or system.
+
+* Whenever entities in your script are logically related, aim to define them as functions of each other. This way when one is modified, the other can update proportionally.
+
+* Minimize number of inputs by only exposing key parameters:
+
+  * If a set of parameters can be derived from more parent parameters, only expose the parent parameters as script inputs. This increases the usability of your script by reducing the complexity of its interface.
+
+> Tip: Place as much emphasis on the process as you do on the solution.
+
+**Don't repeat yourself \(DRY\):**
+
+* When you have multiple ways to express the same thing in your script, at some point the duplicate representations will fall out of sync which can lead to maintenance nightmares, poor factoring, and internal contradictions.
+
+* The DRY principle is stated as "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system":
+
+  * When this principle is successfully applied, all the related elements in your script change predictably and uniformly and all the unrelated elements do not have logical consequences on each other.
+
+```
+### BAD
+for i in range(4):
+  for j in range(4):
+    for k in range(4):
+      point = Point.ByCoordinates(3*i, 3*j, 3*k)
+      points.append(point)
+```
+
+```
+### GOOD
+count = IN[0]
+pDist = IN[1]
+
+for i in range(count):
+  for j in range(count):
+    for k in range(count):
+      point = Point.ByCoordinates(pDist*i, pDist*j, pDist*k)
+      points.append(point)
+```
+
+> Tip: Before duplicating entities in your script, ask yourself if you can link to the source instead.
+
 ### Structure Modularly
 
-As your code gets longer and more complex the “big idea”, or overarching algorithm becomes increasingly illegible. It also becomes more difficult to keep track of what \(and where\) specific things happen, find bugs when things go wrong, integrate other code, and assign development tasks. To avoid these headaches it’s wise to embrace the utility of modularization, an organizational concept that breaks up code based on the task it executes. Here are some tips for making your scripts more manageable by way of modularization.
+As your code gets longer and more complex the “big idea”, or overarching algorithm becomes increasingly illegible. It also becomes more difficult to keep track of what \(and where\) specific things happen, find bugs when things go wrong, integrate other code, and assign development tasks. To avoid these headaches it’s wise write code in modules, an organizational strategy that breaks up code based on the task it executes. Here are some tips for making your scripts more manageable by way of modularization.
+
+**Write code in modules:**
+
+* A "module" is a group of code that performs a specific task.
+
+* This can be anything that should be visually separated from adjacent code (a function, a class, a group of inputs, or the libraries you are importing).
 
 **Spotting code re-use:**
 
 * If you find that your code does the same \(or very similar\) thing in more than once place, find ways to cluster it into a function that can be called.
-
-**Concentration on one specific task per module:**
-
-* Functions that each perform a single well-defined function:
-
-  ```
-  CODE EXAMPLE
-  ```
 
 * "Manager" functions control program flow and primarily contain calls to "Worker" functions that handle low-level details, like moving data between structures.
 
@@ -34,7 +108,7 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 
 * Modules don’t know or care about each other.
 
-**General forms:**
+**General forms of modularization:**
 
 * Code Grouping:
 
@@ -77,47 +151,9 @@ As your code gets longer and more complex the “big idea”, or overarching alg
     greeting = MyClass.f
   ```
 
-### Think Parametrically
-
-When faced with a design problem, you can promptly find a static solution via Direct Modeling or you can construct a system that can generate dynamic solutions via Parametric Modeling. Out of context, both of these methods are equally valid and come with their own respective pros and cons. However if you’ve already decided to use Dynamo--an inevitably parametric environment--it is wise to structure your nested scripts in accordance with the framework they will be living in. Here are some tips for better integrating your scripts into a larger parametric framework:
-
-**Identify the variables at play:**
-
-* Try to determine the given parameters in your design problem so that you can construct a model that directly builds off that data.
-
-* Before programming, try to identify:
-
-  * The variables that will be inputted.
-
-  * The variables that will be outputted.
-
-  * The variables that will remain constant.
-
-**Design through relationships:**
-
-* Parametricism allows for certain parameters or variables to be edited in order to manipulate or alter the end result of an equation or system.
-
-* Whenever entities in your script are logically related, aim to define them as functions of each other. This way when one is modified, the other can update proportionally.
-
-* Minimize number of inputs by only exposing key parameters:
-
-  * If a set of parameters can be derived from more parent parameters, only expose the parent parameters as script inputs. This increases the usability of your script by reducing the complexity of its interface.
-
-> Tip: Place as much emphasis on the process as you do on the solution.
-
-**Don't repeat yourself \(DRY\):**
-
-* When you have multiple ways to express the same thing in your script, at some point the duplicate representations will fall out of sync which can lead to maintenance nightmares, poor factoring, and internal contradictions.
-
-* The DRY principle is stated as "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system":
-
-  * When this principle is successfully applied, all the related elements in your script change predictably and uniformly and all the unrelated elements do not have logical consequences on each other.
-
-> Tip: Before duplicating entities in your script, ask yourself if you can link to the source instead.
-
 ### Flex Continuously
 
-While developing scripts in Dynamo, it is wise to constantly make sure that what is actually being created is in line with what you are expecting. This will ensure that unforeseen events-- syntax errors, logical discrepancies, value inaccuracies, anomalous outputs etc.-- are quickly discovered and dealt with as they surface rather than all at once at the end. Because Dynamo scripts live inside nodes on the canvas, they are already integrated into the dataflow of your visual program. This makes the successive monitoring of your script as simple as assigning data to be outputted, running the program, and evaluating what flows out of the Script Node using a Watch Node. Here are some tips for continuously inspecting your scripts as you construct them.
+While developing Python scripts in Dynamo, it is wise to constantly make sure that what is actually being created is in line with what you are expecting. This will ensure that unforeseen events-- syntax errors, logical discrepancies, value inaccuracies, anomalous outputs etc.-- are quickly discovered and dealt with as they surface rather than all at once at the end. Because Python scripts live inside nodes on the canvas, they are already integrated into the data flow of your visual program. This makes the successive monitoring of your script as simple as assigning data to be outputted, running the program, and evaluating what flows out of the Python Node using a Watch Node. Here are some tips for continuously inspecting your scripts as you construct them.
 
 **Test as you go:**
 
@@ -138,6 +174,8 @@ While developing scripts in Dynamo, it is wise to constantly make sure that what
 **Anticipate “edge cases”:**
 
 * While scripting, crank your input parameters to the minimum and maximum values of their allotted domain to check if the program still functions under extreme conditions.
+
+  * Even if the program is functioning, check if it is returning unintended null/empty/zero values. 
 
 * Sometimes bugs and errors that reveal some underlying problem with your script will only surface during these edge cases.
 
@@ -164,27 +202,23 @@ OUT = cubes
 
   * You can link new or debugged modules to an existing program with the confidence that the rest of the program will not change.
 
-### 03 \| Dynamo and Python Example
+### Exercise - Steepest Path
 
-### Steepest Path Overview
+> Download the example file that accompanies this exercise \(Right click and "Save Link As..."\). A full list of example files can be found in the Appendix. [SteepestPath.dyn](datasets/12-1/SteepestPath.dyn)
 
 This script will derive the path a ball would take if released at a given point on a surface. It will construct the paths by stitching together small and discrete steps taken by walking agents.
 
 ![](/12_Best-Practice/images/12-1/gd01.JPG)
 
-### Constructing the Algorithm
+Let’s walk through how we want it to work. The first thing we need to do is import libraries.
 
-Let’s talk through how we want it to work.
-
-**1. Import Libraries:**
-
-![](/12_Best-Practise/images/12-1/gd02.jpg)
+![](/12_Best-Practice/images/12-1/gd02.jpg)
 
 > We will need to import all the libraries that we intend on using.
 
-**2. Define Parameter Inputs:**
+Next we will define the script's inputs, which will display as input ports on the node.
 
-![](/12_Best-Practise/images/12-1/gd03.jpg)
+![](/12_Best-Practice/images/12-1/gd03.jpg)
 
 > We will need to provide some key parameters:
 >
@@ -192,9 +226,9 @@ Let’s talk through how we want it to work.
 > 2. The number of agents we want to walk.
 > 3. The maximum number of steps the agents are allowed to take.
 
-**3. Define Agent Class:**
+Now let's create the body of our script, the agent class.
 
-![](/12_Best-Practise/images/12-1/gd04.jpg)
+![](/12_Best-Practice/images/12-1/gd04.jpg)
 
 > We will need to define a class, or blueprint, for an agent with the intention of walking down a surface by choosing to travel in the steepest possible direction each time it takes a step:
 >
@@ -204,27 +238,27 @@ Let’s talk through how we want it to work.
 > 4. A function for taking a step.
 > 5. A function for cataloging the position of each step to a trail list.
 
-**4. Initialize Agents:**
+Initialize the agents by defining their start locations.
 
-![](/12_Best-Practise/images/12-1/gd05.jpg)
+![](/12_Best-Practice/images/12-1/gd05.jpg)
 
 > We will need to instantiate all the agents we want to observe walk down the surface and define their initial attributes:
 >
 > 1. Where they will start their journey on the surface.
 > 2. A new empty trail list.
 
-**5. Update Agents:**
+Update each agent at each step.
 
-![](/12_Best-Practise/images/12-1/gd06.jpg)
+![](/12_Best-Practice/images/12-1/gd06.jpg)
 
 > We will then need to enter a nested loop where for each agent and for each step, we update and record their position into their trail list. At each step we will also make sure the agent hasn’t reached a point on the surface where it cannot take another step which will allow it to descend. If that condition is met, we will end that agent's trip.
 
-**6. Draw Trails and Output Trails:**
+Now that our agents have completed their paths, let's graphically represent them as lines.
 
-![](/12_Best-Practise/images/12-1/gd07.jpg)
+![](/12_Best-Practice/images/12-1/gd07.jpg)
 
 > After all the agents have either reached their limit of descent or their maximum number of steps we will create a polycurve through the points in their trail list and output the polycurve trails.
 
-**Our Script:**
+Our script for finding the steepest paths.
 
-![](/12_Best-Practise/images/12-1/gd08.jpg)
+![](/12_Best-Practice/images/12-1/gd08.jpg)
