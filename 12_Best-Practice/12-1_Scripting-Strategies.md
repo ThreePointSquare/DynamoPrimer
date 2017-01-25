@@ -175,6 +175,8 @@ While developing Python scripts in Dynamo, it is wise to constantly make sure th
 
 * While scripting, crank your input parameters to the minimum and maximum values of their allotted domain to check if the program still functions under extreme conditions.
 
+  * Even if the program is functioning, check if it is returning unintended null/empty/zero values. 
+
 * Sometimes bugs and errors that reveal some underlying problem with your script will only surface during these edge cases.
 
   * Understand what is causing the error and then decide if it needs to be fixed internally or if a parameter domain needs to be redefined to avoid the problem.
