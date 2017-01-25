@@ -63,9 +63,8 @@ When scripting in Dynamo, an inevitably parametric environment, it is wise to st
 ### BAD
 for i in range(4):
   for j in range(4):
-    for k in range(4):
-      point = Point.ByCoordinates(3*i, 3*j, 3*k)
-      points.append(point)
+    point = Point.ByCoordinates(3*i, 3*j, 0)
+    points.append(point)
 ```
 
 ```
@@ -75,22 +74,48 @@ pDist = IN[1]
 
 for i in range(count):
   for j in range(count):
-    for k in range(count):
-      point = Point.ByCoordinates(pDist*i, pDist*j, pDist*k)
-      points.append(point)
+    point = Point.ByCoordinates(pDist*i, pDist*j, 0)
+    points.append(point)
 ```
 
 > Tip: Before duplicating entities in your script, ask yourself if you can link to the source instead.
 
 ### Structure Modularly
 
-As your code gets longer and more complex the “big idea”, or overarching algorithm becomes increasingly illegible. It also becomes more difficult to keep track of what \(and where\) specific things happen, find bugs when things go wrong, integrate other code, and assign development tasks. To avoid these headaches it’s wise write code in modules, an organizational strategy that breaks up code based on the task it executes. Here are some tips for making your scripts more manageable by way of modularization.
+As your code gets longer and more complex the “big idea”, or overarching algorithm becomes increasingly illegible. It also becomes more difficult to keep track of what (and where) specific things happen, find bugs when things go wrong, integrate other code, and assign development tasks. To avoid these headaches it’s wise to write code in modules, an organizational strategy that breaks up code based on the task it executes. Here are some tips for making your scripts more manageable by way of modularization:
 
 **Write code in modules:**
 
-* A "module" is a group of code that performs a specific task.
+```python
+# First Module
+## Loop through X and Y to create points, then measure distance from the attractor point
+for i in range(xCount):
+  for j in range(yCount):
+    point = Point.ByCoordinates(pDist*i,pDist*j,0)
+    points.append(point)
+    dist = Geometry.DistanceTo(aPt,point)
+    dists.append(dist)
+
+# Second Module
+## Minimum and maximum distances from attractor
+min = min(dists)
+max = max(dists)
+
+# Third Module
+## Translate points based on distance from attractor
+for point in points:
+  dist = Geometry.DistanceTo(aPt,point)
+  vec = Vector.ByTwoPoints(aPt,point)
+  tDist = math.sin((((dist+0.001)-min)/(max-min)))/a
+  tPoint = point.Translate(vec,tDist)
+  tPoints.append(tPoint)
+```
+
+* A "module" is a group of code that performs a specific task, similar to a Dynamo Node in the workspace.
 
 * This can be anything that should be visually separated from adjacent code (a function, a class, a group of inputs, or the libraries you are importing).
+
+* Developing code in modules harnesses the visual, intuitive quality of Nodes as well as the complex relationships that only textual code can achieve.
 
 **Spotting code re-use:**
 
@@ -187,6 +212,8 @@ While developing Python scripts in Dynamo, it is wise to constantly make sure th
 
 **Use watch bubble:**
 
+* The same practice of assigning different data to the output as you complete modules can be used in debugging. 
+
 **Meaningful commenting:**
 
 ```
@@ -196,9 +223,11 @@ OUT = cubes
 
 **Leverage modular framework:**
 
+* Finding the source of an issue in well organized, modular code is far easier than code with no logical divisions.
+
 * Once the faulty module has been identified, fixing the problem is considerably simpler.
 
-* When a program must be modified, modular programming simplifies the job:
+* When a program must be modified, code that has been developed in modules will be much easier to change:
 
   * You can link new or debugged modules to an existing program with the confidence that the rest of the program will not change.
 
