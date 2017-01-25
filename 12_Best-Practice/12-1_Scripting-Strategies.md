@@ -8,7 +8,7 @@ Say we want to simulate how rainfall will drain off of a surface in Dynamo. How 
 
 > For how to implement Python scripting, refer to [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
 
-### Understand Capabilities
+### Know When to Script
 Python scripting is a powerful tool to use in your program. Where the capability of visual programming ends, scripting brings a host of tools to analyze, simulate, automate, and more. Understanding where Python's capabilities go beyond visual programming will give you major clues to when it should be used.
 
 **Use certain operations:**
