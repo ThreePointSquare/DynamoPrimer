@@ -9,7 +9,7 @@ Say we want to simulate how rainfall will drain off of a surface in Dynamo. How 
 > For how to implement Python scripting, refer to [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
 
 ### Know When to Script
-Python scripting is a powerful tool to use in your program. Where the capability of visual programming ends, scripting brings a host of tools to analyze, simulate, automate, and more. Understanding where Python's capabilities go beyond visual programming will give you major clues to when it should be used.
+Python scripting is a powerful tool to use in your program. Where the capability of visual programming ends, textual scripting brings a host of tools to analyze, simulate, automate, and more. Understanding where Python's capabilities go beyond visual programming will give you major clues to when it should be used.
 
 **Use certain operations:**
 
@@ -22,6 +22,65 @@ Python scripting is a powerful tool to use in your program. Where the capability
 * If the Dynamo libraries are lacking a certain functionality
 
 > Refer to [Scripting Reference](http://dynamoprimer.com/en/12_Best-Practice/12-3_Scripting-Reference.html) for a list of what each Dynamo library gives you access to.
+
+### Think Parametrically
+
+When scripting in Dynamo, an inevitably parametric environment, it is wise to structure your code relative to the framework it will be living in. Here are some tips for better integrating code into a visual program.
+
+**Identify the variables at play:**
+
+* Try to determine the given parameters in your design problem so that you can construct a model that directly builds off that data.
+
+* Before writing code, try to identify which variables are:
+
+  * Inputs
+
+  * Outputs
+
+  * Constants
+
+**Design through relationships:**
+
+* Parametricism allows for certain parameters or variables to be edited in order to manipulate or alter the end result of an equation or system.
+
+* Whenever entities in your script are logically related, aim to define them as functions of each other. This way when one is modified, the other can update proportionally.
+
+* Minimize number of inputs by only exposing key parameters:
+
+  * If a set of parameters can be derived from more parent parameters, only expose the parent parameters as script inputs. This increases the usability of your script by reducing the complexity of its interface.
+
+> Tip: Place as much emphasis on the process as you do on the solution.
+
+**Don't repeat yourself \(DRY\):**
+
+* When you have multiple ways to express the same thing in your script, at some point the duplicate representations will fall out of sync which can lead to maintenance nightmares, poor factoring, and internal contradictions.
+
+```
+### BAD
+for i in range(4):
+  for j in range(4):
+    for k in range(4):
+      point = Point.ByCoordinates(3*i, 3*j, 3*k)
+      points.append(point)
+```
+
+```
+### GOOD
+count = IN[0]
+pDist = IN[1]
+
+for i in range(count):
+  for j in range(count):
+    for k in range(count):
+      point = Point.ByCoordinates(pDist*i, pDist*j, pDist*k)
+      points.append(point)
+```
+
+* The DRY principle is stated as "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system":
+
+  * When this principle is successfully applied, all the related elements in your script change predictably and uniformly and all the unrelated elements do not have logical consequences on each other.
+
+> Tip: Before duplicating entities in your script, ask yourself if you can link to the source instead.
 
 ### Structure Modularly
 
@@ -93,44 +152,6 @@ As your code gets longer and more complex the “big idea”, or overarching alg
     numbers = MyClass.i
     greeting = MyClass.f
   ```
-
-### Think Parametrically
-
-When faced with a design problem, you can promptly find a static solution via Direct Modeling or you can construct a system that can generate dynamic solutions via Parametric Modeling. Out of context, both of these methods are equally valid and come with their own respective pros and cons. However if you’ve already decided to use Dynamo--an inevitably parametric environment--it is wise to structure your nested scripts in accordance with the framework they will be living in. Here are some tips for better integrating your scripts into a larger parametric framework:
-
-**Identify the variables at play:**
-
-* Try to determine the given parameters in your design problem so that you can construct a model that directly builds off that data.
-
-* Before programming, try to identify:
-
-  * The variables that will be inputted.
-
-  * The variables that will be outputted.
-
-  * The variables that will remain constant.
-
-**Design through relationships:**
-
-* Parametricism allows for certain parameters or variables to be edited in order to manipulate or alter the end result of an equation or system.
-
-* Whenever entities in your script are logically related, aim to define them as functions of each other. This way when one is modified, the other can update proportionally.
-
-* Minimize number of inputs by only exposing key parameters:
-
-  * If a set of parameters can be derived from more parent parameters, only expose the parent parameters as script inputs. This increases the usability of your script by reducing the complexity of its interface.
-
-> Tip: Place as much emphasis on the process as you do on the solution.
-
-**Don't repeat yourself \(DRY\):**
-
-* When you have multiple ways to express the same thing in your script, at some point the duplicate representations will fall out of sync which can lead to maintenance nightmares, poor factoring, and internal contradictions.
-
-* The DRY principle is stated as "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system":
-
-  * When this principle is successfully applied, all the related elements in your script change predictably and uniformly and all the unrelated elements do not have logical consequences on each other.
-
-> Tip: Before duplicating entities in your script, ask yourself if you can link to the source instead.
 
 ### Flex Continuously
 

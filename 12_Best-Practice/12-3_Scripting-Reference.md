@@ -163,19 +163,19 @@ Generally speaking there is more than one way to program just about anything, th
 
   ```
   ### BAD
-    function( apples[ 1 ], { oranges: 2 } )
+  function( apples[ 1 ], { oranges: 2 } )
   ```
 
   ```
   ### GOOD:
-    function(apples[1], {oranges: 2})
+  function(apples[1], {oranges: 2})
   ```
 
 * Immediately before a comma, semicolon, or colon:
 
   ```
   ### BAD
-     if x == 2 : print x , y ; x , y = y , x
+   if x == 2 : print x , y ; x , y = y , x
   ```
 
   ```
@@ -187,33 +187,32 @@ Generally speaking there is more than one way to program just about anything, th
 
   ```
   ### BAD
-    function (1)
+  function (1)
   ```
 
   ```
   ### GOOD
-    function(1)
+  function(1)
   ```
 
 * Immediately before the open parenthesis that starts an indexing or slicing:
 
   ```
   ### BAD
-    dict ['key'] = list [index]
+  dict ['key'] = list [index]
   ```
 
   ```
   ### GOOD
-    dict['key'] = list[index]
+  dict['key'] = list[index]
   ```
 
 * Always surround these binary operators with a single space on either side:
-
   ```
   assignment ( = )
-    augmented assignment ( += , -= etc.)
-    comparisons ( == , < , > , != , <> , <= , >= , in , not in , is , is not )
-    Booleans ( and , or , not )
+  augmented assignment ( += , -= etc.)
+  comparisons ( == , < , > , != , <> , <= , >= , in , not in , is , is not )
+  Booleans ( and , or , not )
   ```
 
 **Watch line length:**
@@ -241,8 +240,8 @@ Generally speaking there is more than one way to program just about anything, th
 
     # if country code is US
     if (country_code == 'US'):
-     # display the form input for state
-    print form_input_state()
+      # display the form input for state
+      print form_input_state()
   ```
 
   ```
@@ -250,7 +249,7 @@ Generally speaking there is more than one way to program just about anything, th
     # display state selection for US users
     country_code = get_country_code(address)
     if (country_code == 'US'):
-    print form_input_state()
+      print form_input_state()
   ```
 
 > Tip: Comments tell you why, Code tells you how.
