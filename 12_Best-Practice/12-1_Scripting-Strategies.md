@@ -82,7 +82,7 @@ for i in range(count):
 
 ### Structure Modularly
 
-As your code gets longer and more complex the “big idea”, or overarching algorithm becomes increasingly illegible. It also becomes more difficult to keep track of what (and where) specific things happen, find bugs when things go wrong, integrate other code, and assign development tasks. To avoid these headaches it’s wise to write code in modules, an organizational strategy that breaks up code based on the task it executes. Here are some tips for making your scripts more manageable by way of modularization:
+As your code gets longer and more complex the “big idea”, or overarching algorithm becomes increasingly illegible. It also becomes more difficult to keep track of what (and where) specific things happen, find bugs when things go wrong, integrate other code, and assign development tasks. To avoid these headaches it’s wise to write code in modules, an organizational strategy that breaks up code based on the task it executes. Here are some tips for making your scripts more manageable by way of modularization.
 
 **Write code in modules:**
 
@@ -212,18 +212,20 @@ While developing Python scripts in Dynamo, it is wise to constantly make sure th
 
 **Use watch bubble:**
 
-* The same practice of assigning different data to the output as you complete modules can be used in debugging. 
+* Check the data returned at different places in the code by assigning it to the OUT variable.
 
-**Meaningful commenting:**
+**Write meaningful comments:**
+
+* Properly describing the purpose of code modules will help you understand their intended purpose.
 
 ```
 # Assign your output to the OUT variable.
 OUT = cubes
 ```
 
-**Leverage modular framework:**
+**Leverage the code's modularity:**
 
-* Finding the source of an issue in well organized, modular code is far easier than code with no logical divisions.
+* The source of an issue can be isolated if the code is modular.
 
 * Once the faulty module has been identified, fixing the problem is considerably simpler.
 
