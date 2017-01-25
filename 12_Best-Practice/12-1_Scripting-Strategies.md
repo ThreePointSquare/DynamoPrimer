@@ -1,6 +1,6 @@
 ## Scripting Strategies
 
-Say we want to simulate how rainfall will drain off of a surface in Dynamo. How will we set this up? What parameters will we use to drive the inputs? How will we define the shape of the surface? When will we use a visual program and when will we script using Python? Ultimately, we'll want to simulate rainfall across the roof of our building using Dynamo. But first, let's setup a tool to simulate rainfall on a generic surface. That way we can reuse the tool on another design iteration or even a completely different project. This first section will walk through basic best practices for setting up our drainage simulation tool. Best practices for libraries, labeling, and styling can be found under [Scripting Reference](http://dynamoprimer.com/en/12_Best-Practice/12-3_Scripting-Reference.html).
+Say we want to simulate how rainfall will drain off of a surface in Dynamo. How will we set this up? What parameters will we use to drive the inputs? How will we define the shape of the surface? When will we use a visual program and when will we script using Python? Ultimately, we'll want to simulate rainfall across the roof of our building using Dynamo. But first, let's setup a tool to simulate rainfall on a generic surface. That way we can reuse the tool on another design iteration or even a completely different project. This first section will walk through basic best practices for setting up our drainage simulation tool. Other best practices for libraries, labeling, and styling can be found in [Scripting Reference](http://dynamoprimer.com/en/12_Best-Practice/12-3_Scripting-Reference.html).
 
 ![](/12_Best-Practice/images/12-1/sculptingvsprogramming.jpg)
 
@@ -9,7 +9,7 @@ Say we want to simulate how rainfall will drain off of a surface in Dynamo. How 
 > For how to implement Python scripting, refer to [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
 
 ### Know When to Script
-Python scripting is a powerful tool to use in your program. Where the capability of visual programming ends, textual scripting brings a host of tools to analyze, simulate, automate, and more. Understanding where Python's capabilities go beyond visual programming will give you major clues to when it should be used.
+Python scripting is a powerful tool capable of achieving much more complex relationships than visual programming, yet their capabilities also overlap significantly. This makes sense in a way because nodes are effectively pre-packaged code, and we could probably write an entire Dynamo program in Python. However, we use visual programming because the interface of nodes and wires creates an intuitive flow of graphic information. Knowing where Python's capabilities go beyond visual programming will give you major clues to when it should be used without foregoing the intuitive nature of nodes.
 
 **Use certain operations:**
 
@@ -38,6 +38,8 @@ When scripting in Dynamo, an inevitably parametric environment, it is wise to st
   * Outputs
 
   * Constants
+
+![groups](images/12-1/variables.png)
 
 **Design through relationships:**
 
@@ -216,7 +218,7 @@ While developing Python scripts in Dynamo, it is wise to constantly make sure th
 
 **Write meaningful comments:**
 
-* Properly describing the purpose of code modules will help you understand their intended purpose.
+* A module of code will be much easier to debug if its intended outcome is clearly described.
 
 ```
 # Assign your output to the OUT variable.
