@@ -55,6 +55,10 @@ When scripting in Dynamo, an inevitably parametric environment, it is wise to st
 
 * When you have multiple ways to express the same thing in your script, at some point the duplicate representations will fall out of sync which can lead to maintenance nightmares, poor factoring, and internal contradictions.
 
+* The DRY principle is stated as "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system":
+
+  * When this principle is successfully applied, all the related elements in your script change predictably and uniformly and all the unrelated elements do not have logical consequences on each other.
+
 ```
 ### BAD
 for i in range(4):
@@ -75,10 +79,6 @@ for i in range(count):
       point = Point.ByCoordinates(pDist*i, pDist*j, pDist*k)
       points.append(point)
 ```
-
-* The DRY principle is stated as "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system":
-
-  * When this principle is successfully applied, all the related elements in your script change predictably and uniformly and all the unrelated elements do not have logical consequences on each other.
 
 > Tip: Before duplicating entities in your script, ask yourself if you can link to the source instead.
 
@@ -153,7 +153,7 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 
 ### Flex Continuously
 
-While developing scripts in Dynamo, it is wise to constantly make sure that what is actually being created is in line with what you are expecting. This will ensure that unforeseen events-- syntax errors, logical discrepancies, value inaccuracies, anomalous outputs etc.-- are quickly discovered and dealt with as they surface rather than all at once at the end. Because Dynamo scripts live inside nodes on the canvas, they are already integrated into the dataflow of your visual program. This makes the successive monitoring of your script as simple as assigning data to be outputted, running the program, and evaluating what flows out of the Script Node using a Watch Node. Here are some tips for continuously inspecting your scripts as you construct them.
+While developing Python scripts in Dynamo, it is wise to constantly make sure that what is actually being created is in line with what you are expecting. This will ensure that unforeseen events-- syntax errors, logical discrepancies, value inaccuracies, anomalous outputs etc.-- are quickly discovered and dealt with as they surface rather than all at once at the end. Because Python scripts live inside nodes on the canvas, they are already integrated into the data flow of your visual program. This makes the successive monitoring of your script as simple as assigning data to be outputted, running the program, and evaluating what flows out of the Python Node using a Watch Node. Here are some tips for continuously inspecting your scripts as you construct them.
 
 **Test as you go:**
 
