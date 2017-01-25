@@ -84,19 +84,17 @@ for i in range(count):
 
 ### Structure Modularly
 
-As your code gets longer and more complex the “big idea”, or overarching algorithm becomes increasingly illegible. It also becomes more difficult to keep track of what \(and where\) specific things happen, find bugs when things go wrong, integrate other code, and assign development tasks. To avoid these headaches it’s wise to embrace the utility of modularization, an organizational concept that breaks up code based on the task it executes. Here are some tips for making your scripts more manageable by way of modularization.
+As your code gets longer and more complex the “big idea”, or overarching algorithm becomes increasingly illegible. It also becomes more difficult to keep track of what \(and where\) specific things happen, find bugs when things go wrong, integrate other code, and assign development tasks. To avoid these headaches it’s wise write code in modules, an organizational strategy that breaks up code based on the task it executes. Here are some tips for making your scripts more manageable by way of modularization.
+
+**Write code in modules:**
+
+* A "module" is a group of code that performs a specific task.
+
+* This can be anything that should be visually separated from adjacent code (a function, a class, a group of inputs, or the libraries you are importing).
 
 **Spotting code re-use:**
 
 * If you find that your code does the same \(or very similar\) thing in more than once place, find ways to cluster it into a function that can be called.
-
-**Concentration on one specific task per module:**
-
-* Functions that each perform a single well-defined function:
-
-  ```
-  CODE EXAMPLE
-  ```
 
 * "Manager" functions control program flow and primarily contain calls to "Worker" functions that handle low-level details, like moving data between structures.
 
@@ -110,7 +108,7 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 
 * Modules don’t know or care about each other.
 
-**General forms:**
+**General forms of modularization:**
 
 * Code Grouping:
 
