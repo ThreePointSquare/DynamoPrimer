@@ -41,14 +41,16 @@ When scripting in Dynamo, an inevitably parametric environment, it is wise to st
 
   * Constants
 
-![groups](images/12-1/variables.png)
+![groups](images/12-1/variables.jpg)
 
-> Several parameters established for the Python script.
+> Several parameters have been established prior to writing code.
 
 > 1. The surface we will simulate rainfall on.
 > 2. The number of rain drops (agents) we want.
 > 3. How far we want the rain drops to travel.
 > 4. Toggle between descending the steepest path versus traversing the surface.
+> 5. Python Node with the respective number of inputs.
+> 6. A Code Block to make the returned curves blue.
 
 **Design through relationships:**
 
@@ -97,6 +99,12 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 
 **Write code in modules:**
 
+* A "module" is a group of code that performs a specific task, similar to a Dynamo Node in the workspace.
+
+* This can be anything that should be visually separated from adjacent code (a function, a class, a group of inputs, or the libraries you are importing).
+
+* Developing code in modules harnesses the visual, intuitive quality of Nodes as well as the complex relationships that only textual code can achieve.
+
 ```python
 # First Module
 ## Loop through X and Y to create points, then measure distance from the attractor point
@@ -122,12 +130,6 @@ for point in points:
   tPoints.append(tPoint)
 ```
 
-* A "module" is a group of code that performs a specific task, similar to a Dynamo Node in the workspace.
-
-* This can be anything that should be visually separated from adjacent code (a function, a class, a group of inputs, or the libraries you are importing).
-
-* Developing code in modules harnesses the visual, intuitive quality of Nodes as well as the complex relationships that only textual code can achieve.
-
 **Spotting code re-use:**
 
 * If you find that your code does the same \(or very similar\) thing in more than once place, find ways to cluster it into a function that can be called.
@@ -150,41 +152,41 @@ for point in points:
 
   ```python
   # IMPORT LIBRARIES
-    import random
-    import math
-    import clr
-    clr.AddReference('ProtoGeometry')
-    from Autodesk.DesignScript.Geometry import *
+  import random
+  import math
+  import clr
+  clr.AddReference('ProtoGeometry')
+  from Autodesk.DesignScript.Geometry import *
 
-    # DEFINE PARAMETER INPUTS
-    surfIn = IN[0]
-    maxSteps = IN[1]
+  # DEFINE PARAMETER INPUTS
+  surfIn = IN[0]
+  maxSteps = IN[1]
   ```
 
 * Functions:
 
   ```python
   # EXAMPLE FUNCTION
-    def get_step_size():
-        area = surfIn.Area
-        stepSize = math.sqrt(area)/100
-        return stepSize
+  def get_step_size():
+    area = surfIn.Area
+    stepSize = math.sqrt(area)/100
+    return stepSize
 
-    stepSize = get_step_size()
+  stepSize = get_step_size()
   ```
 
 * Classes:
 
   ```python
   # EXAMPLE CLASS
-    class MyClass:
-        i = 12345
+  class MyClass:
+    i = 12345
 
-        def f(self):
-            return 'hello world'
+    def f(self):
+      return 'hello world'
 
-    numbers = MyClass.i
-    greeting = MyClass.f
+  numbers = MyClass.i
+  greeting = MyClass.f
   ```
 
 ### Flex Continuously
