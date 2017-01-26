@@ -42,7 +42,7 @@ When scripting in Dynamo, an inevitably parametric environment, it is wise to st
 
   * Constants
 
-![groups](images/12-1/variables.jpg)
+![variables](images/12-1/variables.jpg)
 
 > Several parameters have been established prior to writing code.
 >
@@ -62,6 +62,12 @@ When scripting in Dynamo, an inevitably parametric environment, it is wise to st
 * Minimize number of inputs by only exposing key parameters:
 
   * If a set of parameters can be derived from more parent parameters, only expose the parent parameters as script inputs. This increases the usability of your script by reducing the complexity of its interface.
+
+![groups](images/12-1/parameters.JPG)
+
+> 1. Inputs.
+> 2. Variables internal to the script.
+> 3. A loop that uses these inputs and variables to perform its function.
 
 > Tip: Place as much emphasis on the process as you do on the solution.
 
@@ -92,7 +98,7 @@ for i in range(count):
     points.append(point)
 ```
 
-> Tip: Before duplicating entities in your script, ask yourself if you can link to the source instead.
+> Tip: Before duplicating entities in your script (such as an integer), ask yourself if you can link to the source instead.
 
 ### Structure Modularly
 
