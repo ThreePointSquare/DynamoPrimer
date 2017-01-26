@@ -28,7 +28,7 @@ Python scripting is a powerful tool capable of achieving much more complex relat
 
 When scripting in Dynamo, an inevitably parametric environment, it is wise to structure your code relative to the framework of nodes and wires it will be living in. Consider your Python Node as though it is any other node in the program with a few specific inputs, a function, and an expected output. This immediately gives your code inside the node a small set of variables from which to work, the key to a clean parametric system. Here are some guidelines for better integrating code into a visual program.
 
-**Identify the external variables at play:**
+**Identify the external variables:**
 
 * Try to determine the given parameters in your design problem so that you can construct a model that directly builds off that data.
 
@@ -140,7 +140,7 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 
 * Code Grouping:
 
-  ```python
+  ```
   # IMPORT LIBRARIES
   import random
   import math
@@ -155,8 +155,7 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 
 * Functions:
 
-  ```python
-  # EXAMPLE FUNCTION
+  ```
   def get_step_size():
     area = surfIn.Area
     stepSize = math.sqrt(area)/100
@@ -167,8 +166,7 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 
 * Classes:
 
-  ```python
-  # EXAMPLE CLASS
+  ```
   class MyClass:
     i = 12345
 
@@ -221,10 +219,21 @@ While developing Python scripts in Dynamo, it is wise to constantly make sure th
 
 * A module of code will be much easier to debug if its intended outcome is clearly described.
 
+```py
+# Loop through X and Y
+for i in range(xCount):
+  for j in range(yCount):
+    
+    # Rotate and translate the coordinate system
+    toCoord = fromCoord.Rotate(solid.ContextCoordinateSystem.Origin,Vector.ByCoordinates(0,0,1),(90*(i+j%seed)))
+    vec = Vector.ByCoordinates((xDist*i),(yDist*j),0)
+    toCoord = toCoord.Translate(vec)
+    
+    # Transform the solid from the source coord system to the target coord system and append to the list
+    solids.append(solid.Transform(fromCoord,toCoord))
 ```
-# Assign your output to the OUT variable.
-OUT = cubes
-```
+
+> Normally this would be an excessive amount of commenting and blank lines, but when debugging it can be useful to break things down into manageable pieces.
 
 **Leverage the code's modularity:**
 
