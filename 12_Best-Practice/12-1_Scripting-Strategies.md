@@ -7,6 +7,7 @@ Say we want to simulate how rainfall will drain off of a surface in Dynamo. How 
 > For how to implement Python scripting, refer to [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
 
 ### Know When to Script
+
 Python scripting is a powerful tool capable of achieving much more complex relationships than visual programming, yet their capabilities also overlap significantly. This makes sense because nodes are effectively pre-packaged code, and we could probably write an entire Dynamo program in Python. However, we use visual programming because the interface of nodes and wires creates an intuitive flow of graphic information. Knowing where Python's capabilities go beyond visual programming will give you major clues to when it should be used without foregoing the intuitive nature of nodes and wires.
 
 ![](images/12-1/sculptingvsprogramming.jpg)
@@ -44,9 +45,9 @@ When scripting in Dynamo, an inevitably parametric environment, it is wise to st
 ![groups](images/12-1/variables.jpg)
 
 > Several parameters have been established prior to writing code.
-
+>
 > 1. The surface we will simulate rainfall on.
-> 2. The number of rain drops (agents) we want.
+> 2. The number of rain drops \(agents\) we want.
 > 3. How far we want the rain drops to travel.
 > 4. Toggle between descending the steepest path versus traversing the surface.
 > 5. Python Node with the respective number of inputs.
@@ -95,17 +96,17 @@ for i in range(count):
 
 ### Structure Modularly
 
-As your code gets longer and more complex the “big idea”, or overarching algorithm becomes increasingly illegible. It also becomes more difficult to keep track of what (and where) specific things happen, find bugs when things go wrong, integrate other code, and assign development tasks. To avoid these headaches it’s wise to write code in modules, an organizational strategy that breaks up code based on the task it executes. Here are some tips for making your scripts more manageable by way of modularization.
+As your code gets longer and more complex the “big idea”, or overarching algorithm becomes increasingly illegible. It also becomes more difficult to keep track of what \(and where\) specific things happen, find bugs when things go wrong, integrate other code, and assign development tasks. To avoid these headaches it’s wise to write code in modules, an organizational strategy that breaks up code based on the task it executes. Here are some tips for making your scripts more manageable by way of modularization.
 
 **Write code in modules:**
 
 * A "module" is a group of code that performs a specific task, similar to a Dynamo Node in the workspace.
 
-* This can be anything that should be visually separated from adjacent code (a function, a class, a group of inputs, or the libraries you are importing).
+* This can be anything that should be visually separated from adjacent code \(a function, a class, a group of inputs, or the libraries you are importing\).
 
 * Developing code in modules harnesses the visual, intuitive quality of Nodes as well as the complex relationships that only textual code can achieve.
 
-```python
+```py
 # First Module
 ## Loop through X and Y to create points, then measure distance from the attractor point
 for i in range(xCount):
@@ -211,7 +212,7 @@ While developing Python scripts in Dynamo, it is wise to constantly make sure th
 
 **Anticipate “edge cases”:**
 
-* While scripting, crank your input parameters to the minimum and maximum values of their allotted domain to check if the program still functions under extreme conditions. 
+* While scripting, crank your input parameters to the minimum and maximum values of their allotted domain to check if the program still functions under extreme conditions.
 
 * Even if the program is functioning at its extremes, check if it is returning unintended null/empty/zero values.
 
@@ -306,3 +307,4 @@ Now that our agents have completed their paths, let's graphically represent them
 Our script for finding the steepest paths.
 
 ![](/12_Best-Practice/images/12-1/gd08.jpg)
+
