@@ -30,7 +30,7 @@ Python scripting is a powerful tool capable of achieving much more complex relat
 
 When scripting in Dynamo, an inevitably parametric environment, it is wise to structure your code relative to the framework of nodes and wires it will be living in. Consider your Python Node as though it is any other node in the program with a few specific inputs, a function, and an expected output. This immediately gives your code inside the node a small set of variables from which to work, the key to a clean parametric system. Here are some guidelines for better integrating code into a visual program.
 
-**Identify the variables at play:**
+**Identify the external variables at play:**
 
 * Try to determine the given parameters in your design problem so that you can construct a model that directly builds off that data.
 
@@ -53,7 +53,7 @@ When scripting in Dynamo, an inevitably parametric environment, it is wise to st
 > 5. Python Node with the respective number of inputs.
 > 6. A Code Block to make the returned curves blue.
 
-**Design through relationships:**
+**Design the internal relationships:**
 
 * Parametricism allows for certain parameters or variables to be edited in order to manipulate or alter the end result of an equation or system.
 
@@ -63,7 +63,9 @@ When scripting in Dynamo, an inevitably parametric environment, it is wise to st
 
   * If a set of parameters can be derived from more parent parameters, only expose the parent parameters as script inputs. This increases the usability of your script by reducing the complexity of its interface.
 
-![groups](images/12-1/parameters.JPG)
+![parameters](images/12-1/parameters.JPG)
+
+> This code is from the example in [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
 
 > 1. Inputs.
 > 2. Variables internal to the script.
@@ -71,7 +73,7 @@ When scripting in Dynamo, an inevitably parametric environment, it is wise to st
 
 > Tip: Place as much emphasis on the process as you do on the solution.
 
-**Don't repeat yourself \(DRY\):**
+**Don't repeat yourself \(the DRY principle\):**
 
 * When you have multiple ways to express the same thing in your script, at some point the duplicate representations will fall out of sync which can lead to maintenance nightmares, poor factoring, and internal contradictions.
 
@@ -98,7 +100,7 @@ for i in range(count):
     points.append(point)
 ```
 
-> Tip: Before duplicating entities in your script (such as an integer), ask yourself if you can link to the source instead.
+> Tip: Before duplicating entities in your script (such as constant in the example above), ask yourself if you can link to the source instead.
 
 ### Structure Modularly
 
@@ -112,30 +114,13 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 
 * Developing code in modules harnesses the visual, intuitive quality of Nodes as well as the complex relationships that only textual code can achieve.
 
-```python
-# First Module
-## Loop through X and Y to create points, then measure distance from the attractor point
-for i in range(xCount):
-  for j in range(yCount):
-    point = Point.ByCoordinates(pDist*i,pDist*j,0)
-    points.append(point)
-    dist = Geometry.DistanceTo(aPt,point)
-    dists.append(dist)
+![modules](images/12-1/modules.JPG)
 
-# Second Module
-## Minimum and maximum distances from attractor
-min = min(dists)
-max = max(dists)
+> These loops call a class named "agent" that we will develop in the exercise.
 
-# Third Module
-## Translate points based on distance from attractor
-for point in points:
-  dist = Geometry.DistanceTo(aPt,point)
-  vec = Vector.ByTwoPoints(aPt,point)
-  tDist = math.sin((((dist+0.001)-min)/(max-min)))/a
-  tPoint = point.Translate(vec,tDist)
-  tPoints.append(tPoint)
-```
+> 1. A code module that defines the start point of each agent.
+> 2. A code module that updates the agent.
+> 3. A code module that draws a trail for the agent's path.
 
 **Spotting code re-use:**
 
