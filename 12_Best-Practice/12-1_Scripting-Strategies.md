@@ -2,20 +2,22 @@
 
 Say we want to simulate how rainfall will drain off of a surface in Dynamo. How will we set this up? What parameters will we use to drive the inputs? How will we define the shape of the surface? When will we use a visual program and when will we script using Python? Ultimately, we'll want to simulate rainfall across the roof of our building using Dynamo. But first, let's setup a tool to simulate rainfall on a generic surface. That way we can reuse the tool on another design iteration or even a completely different project. This first section will walk through basic best practices for setting up our drainage simulation tool. Other best practices for libraries, labeling, and styling can be found in [Scripting Reference](http://dynamoprimer.com/en/12_Best-Practice/12-3_Scripting-Reference.html).
 
-![](/12_Best-Practice/images/12-1/sculptingvsprogramming.jpg)
-
-> A rainfall simulation would require looping, which is a prime candidate for Python scripting.
+![](images/12-1/scripting-window.JPG)
 
 > For how to implement Python scripting, refer to [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
 
 ### Know When to Script
 Python scripting is a powerful tool capable of achieving much more complex relationships than visual programming, yet their capabilities also overlap significantly. This makes sense because nodes are effectively pre-packaged code, and we could probably write an entire Dynamo program in Python. However, we use visual programming because the interface of nodes and wires creates an intuitive flow of graphic information. Knowing where Python's capabilities go beyond visual programming will give you major clues to when it should be used without foregoing the intuitive nature of nodes and wires.
 
+![](images/12-1/sculptingvsprogramming.jpg)
+
 **Use certain operations:**
 
 * Looping
 
 * Recursion
+
+> The rainfall simulation will require looping.
 
 **Access external libraries:**
 
@@ -41,7 +43,7 @@ When scripting in Dynamo, an inevitably parametric environment, it is wise to st
 
 ![groups](images/12-1/variables.png)
 
-> Some parameters that have been established prior to writing the Python script.
+> Several parameters established for the Python script.
 
 > 1. The surface we will simulate rainfall on.
 > 2. The number of rain drops (agents) we want.
