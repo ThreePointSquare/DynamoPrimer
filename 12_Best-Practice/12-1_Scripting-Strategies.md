@@ -25,21 +25,28 @@ Python scripting is a powerful tool capable of achieving much more complex relat
 
 ### Think Parametrically
 
-When scripting in Dynamo, an inevitably parametric environment, it is wise to structure your code relative to the framework of nodes and wire it will be living in. Consider your Python Node as though it is any other node in the program with a few specific inputs, a function, and an expected output. This immediately gives your code inside the node a small set of variables from which to work, the key to a clean parametric system. Here are some guidelines for better integrating code into a visual program.
+When scripting in Dynamo, an inevitably parametric environment, it is wise to structure your code relative to the framework of nodes and wires it will be living in. Consider your Python Node as though it is any other node in the program with a few specific inputs, a function, and an expected output. This immediately gives your code inside the node a small set of variables from which to work, the key to a clean parametric system. Here are some guidelines for better integrating code into a visual program.
 
 **Identify the variables at play:**
 
 * Try to determine the given parameters in your design problem so that you can construct a model that directly builds off that data.
 
-* Before writing code, try to identify which variables are:
+* Before writing code, identify the variables:
 
-  * Inputs
+  * A minimal set of inputs
 
-  * Outputs
+  * The intended output
 
   * Constants
 
 ![groups](images/12-1/variables.png)
+
+> Some parameters that have been established prior to writing the Python script.
+
+> 1. The surface we will simulate rainfall on.
+> 2. The number of rain drops (agents) we want.
+> 3. How far we want the rain drops to travel.
+> 4. Toggle between descending the steepest path versus traversing the surface.
 
 **Design through relationships:**
 
