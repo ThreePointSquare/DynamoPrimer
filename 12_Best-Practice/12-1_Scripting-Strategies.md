@@ -10,7 +10,7 @@ Say we want to simulate how rainfall will drain off of a surface in Dynamo. How 
 
 Python scripting is a powerful tool capable of achieving much more complex relationships than visual programming, yet their capabilities also overlap significantly. This makes sense because nodes are effectively pre-packaged code, and we could probably write an entire Dynamo program in Python. However, we use visual programming because the interface of nodes and wires creates an intuitive flow of graphic information. Knowing where Python's capabilities go beyond visual programming will give you major clues to when it should be used without foregoing the intuitive nature of nodes and wires.
 
-![](images/12-1/sculptingvsprogramming.jpg)
+![](images/12-1/coding.jpg)
 
 **Use certain operations:**
 
@@ -106,7 +106,7 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 
 * Developing code in modules harnesses the visual, intuitive quality of Nodes as well as the complex relationships that only textual code can achieve.
 
-```py
+```python
 # First Module
 ## Loop through X and Y to create points, then measure distance from the attractor point
 for i in range(xCount):

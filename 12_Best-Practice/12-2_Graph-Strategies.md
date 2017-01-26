@@ -2,6 +2,8 @@
 
 Now that we have our awesome drainage simulator, let's use the tool in our project. We have a new task ahead of us: designing a parametric roof. In this section we'll walk through best practices for defining our roof surface. We'll also discuss how to properly implement the script for the drainage simulator into the workflow. First we will cover several guidelines on when to implement the "noding" practices before we begin developing our roof.
 
+![groups](images/12-2/noding.jpg)
+
 ### Reduce Complexity
 
 As you develop your Dynamo program and test ideas, it can quickly grow in size and complexity. While it is important that you create a functioning program, it is equally important to do it as simply as possible. Not only will your program run faster and more predictably, you along with other users will understand its logic later on.
