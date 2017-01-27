@@ -193,9 +193,7 @@ While developing Python scripts in Dynamo, it is wise to constantly make sure th
 
 * Assign the most recent data you are working with in your script to the OUT identifier so that the node is always outputting relevant data when the script updates:
 
-  * Keep an eye on geometry using the Watch3D node.
-
-  * Keep an eye on string messages using the Watch Node.
+![modules](images/12-1/flex.jpg)
 
 **Anticipate “edge cases”:**
 
