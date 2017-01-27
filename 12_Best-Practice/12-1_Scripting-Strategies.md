@@ -195,6 +195,12 @@ While developing Python scripts in Dynamo, it is wise to constantly make sure th
 
 ![modules](images/12-1/flex.jpg)
 
+> This code is from the example in [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
+
+> 1. Check that all edges of the solid are being returned as curves to create a bounding box around.
+> 2. Check that our Count inputs are successfully being converted to Ranges.
+> 3. Check that coordinate systems have been properly translated and rotated in this loop.
+
 **Anticipate “edge cases”:**
 
 * While scripting, crank your input parameters to the minimum and maximum values of their allotted domain to check if the program still functions under extreme conditions.
@@ -211,7 +217,7 @@ While developing Python scripts in Dynamo, it is wise to constantly make sure th
 
 **Use watch bubble:**
 
-* Check the data returned at different places in the code by assigning it to the OUT variable.
+* Check the data returned at different places in the code by assigning it to the OUT variable, similar to the concept of flexing the program.
 
 **Write meaningful comments:**
 
@@ -235,13 +241,17 @@ for i in range(xCount):
 
 **Leverage the code's modularity:**
 
-* The source of an issue can be isolated if the code is modular.
+* The source of an issue can be isolated to certain modules.
 
 * Once the faulty module has been identified, fixing the problem is considerably simpler.
 
 * When a program must be modified, code that has been developed in modules will be much easier to change:
 
-  * You can link new or debugged modules to an existing program with the confidence that the rest of the program will not change.
+  * You can insert new or debugged modules to an existing program with the confidence that the rest of the program will not change.
+
+![](images/12-1/debug.jpg)
+
+> This code is from the example in [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
 
 ### Exercise - Steepest Path
 
