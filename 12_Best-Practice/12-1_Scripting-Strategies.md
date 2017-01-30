@@ -251,6 +251,10 @@ for i in range(xCount):
 
 ![](images/12-1/debug.jpg)
 
+> 1. The input geometry is returning a bounding box larger that itself, as we can see from assigning xDist and yDist to OUT.
+> 2. The edge curves of the input geometry return an appropriate bounding box with correct distances for xDist and yDist.
+> 3. The code "module" we've inserted to address the xDist and yDist value issue.
+
 > This code is from the example in [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
 
 ### Exercise - Steepest Path
