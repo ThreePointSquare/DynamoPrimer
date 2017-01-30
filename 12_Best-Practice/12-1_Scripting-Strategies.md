@@ -63,7 +63,7 @@ When scripting in Dynamo, an inevitably parametric environment, it is wise to st
 
 ![parameters](images/12-1/parameters.JPG)
 
-> This code is from the example in [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
+> The code "modules" from the example in [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
 
 > 1. Inputs.
 > 2. Variables internal to the script.
@@ -195,7 +195,7 @@ While developing Python scripts in Dynamo, it is wise to constantly make sure th
 
 ![modules](images/12-1/flex.jpg)
 
-> This code is from the example in [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
+> Flexing the example code from [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
 
 > 1. Check that all edges of the solid are being returned as curves to create a bounding box around.
 > 2. Check that our Count inputs are successfully being converted to Ranges.
@@ -247,15 +247,15 @@ for i in range(xCount):
 
 * When a program must be modified, code that has been developed in modules will be much easier to change:
 
-  * You can insert new or debugged modules to an existing program with the confidence that the rest of the program will not change.
+  * You can insert new or debugged modules into an existing program with the confidence that the rest of the program will not change.
 
 ![](images/12-1/debug.jpg)
+
+> Debugging the example file from [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
 
 > 1. The input geometry is returning a bounding box larger that itself, as we can see from assigning xDist and yDist to OUT.
 > 2. The edge curves of the input geometry return an appropriate bounding box with correct distances for xDist and yDist.
 > 3. The code "module" we've inserted to address the xDist and yDist value issue.
-
-> This code is from the example in [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
 
 ### Exercise - Steepest Path
 
