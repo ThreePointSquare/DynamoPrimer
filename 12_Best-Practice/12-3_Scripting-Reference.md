@@ -3,16 +3,16 @@ This reference page extends the best practices covered in Scripting Strategies w
 
 ### Which Libraries to Use
 
-![](/12_Best-Practice/images/12-1/coding.jpg)
+![](/12_Best-Practice/images/12-4/libraries.JPG)
 
-> **C \| Standard Libraries vs. Dynamo Libraries**
+**Standard Libraries vs. Dynamo Libraries**
 
-> * Flow Structures, Data Structures
+* Flow Structures, Data Structures
 * Objects
 
-> **D \| Dynamo Libraries**
+**Dynamo Libraries**
 
-> * ProtoGeometry
+* ProtoGeometry
   * Functionality: Arc, Bounding Box, Circle, Cone, Coordinate System, Cuboid, Curve, Cylinder, Edge, Ellipse, Ellipse Arc ,Face, Geometry, Helix, Index Group, Line, Mesh, Nurbs Curve, Nurbs Surface, Plane, Point, Polygon, Rectangle, Solid, Sphere, Surface, Topology, TSpline, UV, Vector, Vertex.
   * How to import: `import Autodesk.DesignScript.Geometry`
 * DSCoreNodes

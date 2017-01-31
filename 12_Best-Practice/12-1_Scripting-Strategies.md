@@ -1,21 +1,22 @@
 ## Scripting Strategies
 
-Say we want to simulate how rainfall will drain off of a surface in Dynamo. How will we set this up? What parameters will we use to drive the inputs? How will we define the shape of the surface? When will we use a visual program and when will we script using Python? Ultimately, we'll want to simulate rainfall across the roof of our building using Dynamo. But first, let's setup a tool to simulate rainfall on a generic surface. That way we can reuse the tool on another design iteration or even a completely different project. This first section will walk through basic best practices for setting up our drainage simulation tool. Best practices for libraries, labeling, and styling can be found under [Scripting Reference](http://dynamoprimer.com/en/12_Best-Practice/12-3_Scripting-Reference.html).
+Say we want to simulate how rainfall will drain off of a surface in Dynamo. How will we set this up? What parameters will we use to drive the inputs? How will we define the shape of the surface? When will we use a visual program and when will we script using Python? Ultimately, we'll want to simulate rainfall across the roof of our building using Dynamo. But first, let's setup a tool to simulate rainfall on a generic surface. That way we can reuse the tool on another design iteration or even a completely different project. This first section will walk through basic best practices for setting up our drainage simulation tool. Other best practices for libraries, labeling, and styling can be found in [Scripting Reference](http://dynamoprimer.com/en/12_Best-Practice/12-3_Scripting-Reference.html).
 
-![](/12_Best-Practice/images/12-1/sculptingvsprogramming.jpg)
-
-> This simulation requires looping, which is a prime candidate for scripting.
+![](images/12-1/coding.jpg)
 
 > For how to implement Python scripting, refer to [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
 
 ### Know When to Script
-Python scripting is a powerful tool to use in your program. Where the capability of visual programming ends, textual scripting brings a host of tools to analyze, simulate, automate, and more. Understanding where Python's capabilities go beyond visual programming will give you major clues to when it should be used.
+
+Python scripting is a powerful tool capable of achieving much more complex relationships than visual programming, yet their capabilities also overlap significantly. This makes sense because nodes are effectively pre-packaged code, and we could probably write an entire Dynamo program in Python. However, we use visual programming because the interface of nodes and wires creates an intuitive flow of graphic information. Knowing where Python's capabilities go beyond visual programming will give you major clues to when it should be used without foregoing the intuitive nature of nodes and wires.
 
 **Use certain operations:**
 
 * Looping
 
 * Recursion
+
+> The rainfall simulation will require looping.
 
 **Access external libraries:**
 
@@ -25,21 +26,32 @@ Python scripting is a powerful tool to use in your program. Where the capability
 
 ### Think Parametrically
 
-When scripting in Dynamo, an inevitably parametric environment, it is wise to structure your code relative to the framework it will be living in. Here are some tips for better integrating code into a visual program.
+When scripting in Dynamo, an inevitably parametric environment, it is wise to structure your code relative to the framework of nodes and wires it will be living in. Consider your Python Node as though it is any other node in the program with a few specific inputs, a function, and an expected output. This immediately gives your code inside the node a small set of variables from which to work, the key to a clean parametric system. Here are some guidelines for better integrating code into a visual program.
 
-**Identify the variables at play:**
+**Identify the external variables:**
 
 * Try to determine the given parameters in your design problem so that you can construct a model that directly builds off that data.
 
-* Before writing code, try to identify which variables are:
+* Before writing code, identify the variables:
 
-  * Inputs
+  * A minimal set of inputs
 
-  * Outputs
+  * The intended output
 
   * Constants
 
-**Design through relationships:**
+![variables](images/12-1/variables.jpg)
+
+> Several variables have been established prior to writing code.
+>
+> 1. The surface we will simulate rainfall on.
+> 2. The number of rain drops \(agents\) we want.
+> 3. How far we want the rain drops to travel.
+> 4. Toggle between descending the steepest path versus traversing the surface.
+> 5. Python Node with the respective number of inputs.
+> 6. A Code Block to make the returned curves blue.
+
+**Design the internal relationships:**
 
 * Parametricism allows for certain parameters or variables to be edited in order to manipulate or alter the end result of an equation or system.
 
@@ -49,9 +61,17 @@ When scripting in Dynamo, an inevitably parametric environment, it is wise to st
 
   * If a set of parameters can be derived from more parent parameters, only expose the parent parameters as script inputs. This increases the usability of your script by reducing the complexity of its interface.
 
+![parameters](images/12-1/parameters.JPG)
+
+> The code "modules" from the example in [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
+
+> 1. Inputs.
+> 2. Variables internal to the script.
+> 3. A loop that uses these inputs and variables to perform its function.
+
 > Tip: Place as much emphasis on the process as you do on the solution.
 
-**Don't repeat yourself \(DRY\):**
+**Don't repeat yourself \(the DRY principle\):**
 
 * When you have multiple ways to express the same thing in your script, at some point the duplicate representations will fall out of sync which can lead to maintenance nightmares, poor factoring, and internal contradictions.
 
@@ -63,9 +83,8 @@ When scripting in Dynamo, an inevitably parametric environment, it is wise to st
 ### BAD
 for i in range(4):
   for j in range(4):
-    for k in range(4):
-      point = Point.ByCoordinates(3*i, 3*j, 3*k)
-      points.append(point)
+    point = Point.ByCoordinates(3*i, 3*j, 0)
+    points.append(point)
 ```
 
 ```
@@ -75,22 +94,31 @@ pDist = IN[1]
 
 for i in range(count):
   for j in range(count):
-    for k in range(count):
-      point = Point.ByCoordinates(pDist*i, pDist*j, pDist*k)
-      points.append(point)
+    point = Point.ByCoordinates(pDist*i, pDist*j, 0)
+    points.append(point)
 ```
 
-> Tip: Before duplicating entities in your script, ask yourself if you can link to the source instead.
+> Tip: Before duplicating entities in your script (such as constant in the example above), ask yourself if you can link to the source instead.
 
 ### Structure Modularly
 
-As your code gets longer and more complex the “big idea”, or overarching algorithm becomes increasingly illegible. It also becomes more difficult to keep track of what \(and where\) specific things happen, find bugs when things go wrong, integrate other code, and assign development tasks. To avoid these headaches it’s wise write code in modules, an organizational strategy that breaks up code based on the task it executes. Here are some tips for making your scripts more manageable by way of modularization.
+As your code gets longer and more complex the “big idea”, or overarching algorithm becomes increasingly illegible. It also becomes more difficult to keep track of what \(and where\) specific things happen, find bugs when things go wrong, integrate other code, and assign development tasks. To avoid these headaches it’s wise to write code in modules, an organizational strategy that breaks up code based on the task it executes. Here are some tips for making your scripts more manageable by way of modularization.
 
 **Write code in modules:**
 
-* A "module" is a group of code that performs a specific task.
+* A "module" is a group of code that performs a specific task, similar to a Dynamo Node in the workspace.
 
-* This can be anything that should be visually separated from adjacent code (a function, a class, a group of inputs, or the libraries you are importing).
+* This can be anything that should be visually separated from adjacent code \(a function, a class, a group of inputs, or the libraries you are importing\).
+
+* Developing code in modules harnesses the visual, intuitive quality of Nodes as well as the complex relationships that only textual code can achieve.
+
+![modules](images/12-1/modules.JPG)
+
+> These loops call a class named "agent" that we will develop in the exercise.
+
+> 1. A code module that defines the start point of each agent.
+> 2. A code module that updates the agent.
+> 3. A code module that draws a trail for the agent's path.
 
 **Spotting code re-use:**
 
@@ -112,43 +140,41 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 
 * Code Grouping:
 
-  ```python
+  ```
   # IMPORT LIBRARIES
-    import random
-    import math
-    import clr
-    clr.AddReference('ProtoGeometry')
-    from Autodesk.DesignScript.Geometry import *
+  import random
+  import math
+  import clr
+  clr.AddReference('ProtoGeometry')
+  from Autodesk.DesignScript.Geometry import *
 
-    # DEFINE PARAMETER INPUTS
-    surfIn = IN[0]
-    maxSteps = IN[1]
+  # DEFINE PARAMETER INPUTS
+  surfIn = IN[0]
+  maxSteps = IN[1]
   ```
 
 * Functions:
 
-  ```python
-  # EXAMPLE FUNCTION
-    def get_step_size():
-        area = surfIn.Area
-        stepSize = math.sqrt(area)/100
-        return stepSize
+  ```
+  def get_step_size():
+    area = surfIn.Area
+    stepSize = math.sqrt(area)/100
+    return stepSize
 
-    stepSize = get_step_size()
+  stepSize = get_step_size()
   ```
 
 * Classes:
 
-  ```python
-  # EXAMPLE CLASS
-    class MyClass:
-        i = 12345
+  ```
+  class MyClass:
+    i = 12345
 
-        def f(self):
-            return 'hello world'
+    def f(self):
+      return 'hello world'
 
-    numbers = MyClass.i
-    greeting = MyClass.f
+  numbers = MyClass.i
+  greeting = MyClass.f
   ```
 
 ### Flex Continuously
@@ -167,15 +193,19 @@ While developing Python scripts in Dynamo, it is wise to constantly make sure th
 
 * Assign the most recent data you are working with in your script to the OUT identifier so that the node is always outputting relevant data when the script updates:
 
-  * Keep an eye on geometry using the Watch3D node.
+![modules](images/12-1/flex.jpg)
 
-  * Keep an eye on string messages using the Watch Node.
+> Flexing the example code from [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
+
+> 1. Check that all edges of the solid are being returned as curves to create a bounding box around.
+> 2. Check that our Count inputs are successfully being converted to Ranges.
+> 3. Check that coordinate systems have been properly translated and rotated in this loop.
 
 **Anticipate “edge cases”:**
 
 * While scripting, crank your input parameters to the minimum and maximum values of their allotted domain to check if the program still functions under extreme conditions.
 
-  * Even if the program is functioning, check if it is returning unintended null/empty/zero values. 
+* Even if the program is functioning at its extremes, check if it is returning unintended null/empty/zero values.
 
 * Sometimes bugs and errors that reveal some underlying problem with your script will only surface during these edge cases.
 
@@ -187,20 +217,45 @@ While developing Python scripts in Dynamo, it is wise to constantly make sure th
 
 **Use watch bubble:**
 
-**Meaningful commenting:**
+* Check the data returned at different places in the code by assigning it to the OUT variable, similar to the concept of flexing the program.
 
-```
-# Assign your output to the OUT variable.
-OUT = cubes
+**Write meaningful comments:**
+
+* A module of code will be much easier to debug if its intended outcome is clearly described.
+
+```py
+# Loop through X and Y
+for i in range(xCount):
+  for j in range(yCount):
+    
+    # Rotate and translate the coordinate system
+    toCoord = fromCoord.Rotate(solid.ContextCoordinateSystem.Origin,Vector.ByCoordinates(0,0,1),(90*(i+j%seed)))
+    vec = Vector.ByCoordinates((xDist*i),(yDist*j),0)
+    toCoord = toCoord.Translate(vec)
+    
+    # Transform the solid from the source coord system to the target coord system and append to the list
+    solids.append(solid.Transform(fromCoord,toCoord))
 ```
 
-**Leverage modular framework:**
+> Normally this would be an excessive amount of commenting and blank lines, but when debugging it can be useful to break things down into manageable pieces.
+
+**Leverage the code's modularity:**
+
+* The source of an issue can be isolated to certain modules.
 
 * Once the faulty module has been identified, fixing the problem is considerably simpler.
 
-* When a program must be modified, modular programming simplifies the job:
+* When a program must be modified, code that has been developed in modules will be much easier to change:
 
-  * You can link new or debugged modules to an existing program with the confidence that the rest of the program will not change.
+  * You can insert new or debugged modules into an existing program with the confidence that the rest of the program will not change.
+
+![](images/12-1/debug.jpg)
+
+> Debugging the example file from [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
+
+> 1. The input geometry is returning a bounding box larger that itself, as we can see from assigning xDist and yDist to OUT.
+> 2. The edge curves of the input geometry return an appropriate bounding box with correct distances for xDist and yDist.
+> 3. The code "module" we've inserted to address the xDist and yDist value issue.
 
 ### Exercise - Steepest Path
 
@@ -262,3 +317,4 @@ Now that our agents have completed their paths, let's graphically represent them
 Our script for finding the steepest paths.
 
 ![](/12_Best-Practice/images/12-1/gd08.jpg)
+
