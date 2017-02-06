@@ -65,7 +65,7 @@
   * [Send to Web](11_Web_Experience/11-2_Send_to_Web.md)
   * [Customizer View](11_Web_Experience/11-3_Customizer_View.md)
 * [Best Practices](12_Best-Practice/12-1_Introduction.md)
-  * [Graph Strategies](12_Best-Practice/12-2_Graph-Strategies.md)
+  * [Graph Strategies](12_Best-Practice/12-2_Graph-Strategies.md)  
   * [Scripting Strategies](12_Best-Practice/12-1_Scripting-Strategies.md)
   * [Scripting Reference](12_Best-Practice/12-3_Scripting-Reference.md)
 * [Appendix](Appendix/A_appendix.md)
