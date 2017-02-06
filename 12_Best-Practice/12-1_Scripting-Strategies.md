@@ -211,7 +211,9 @@ While developing Python scripts in Dynamo, it is wise to constantly make sure th
 
 ### Debug Efficiently
 
-**Use watch bubble:**
+Debugging is the process of eliminating "bugs" from your script. Bugs can be errors, inefficiencies, inaccuracies, or any unintended results. Addressing a bug can be as simple as correcting a misspelled variable name to more pervasive, structural problems with your script. Ideally, flexing your script as you build it will help to catch these potential issues early, though this is no guarantee of it being bug-free. The following is a review of several best practices from above to help you address bugs systematically.
+
+**Use the watch bubble:**
 
 * Check the data returned at different places in the code by assigning it to the OUT variable, similar to the concept of flexing the program.
 
