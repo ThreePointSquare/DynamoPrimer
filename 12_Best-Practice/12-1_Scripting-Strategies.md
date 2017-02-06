@@ -8,7 +8,7 @@ Say we want to simulate how rainfall will drain off of a surface in Dynamo. How 
 
 ### Know When to Script
 
-Python scripting is a powerful tool capable of achieving much more complex relationships than visual programming, yet their capabilities also overlap significantly. This makes sense because nodes are effectively pre-packaged code, and we could probably write an entire Dynamo program in Python. However, we use visual programming because the interface of nodes and wires creates an intuitive flow of graphic information. Knowing where Python's capabilities go beyond visual programming will give you major clues to when it should be used without foregoing the intuitive nature of nodes and wires.
+Text-scripting is a powerful tool capable of achieving much more complex relationships than visual programming, yet their capabilities also overlap significantly. This makes sense because nodes are effectively pre-packaged code, and we could probably write an entire Dynamo program in DesignScript or Python. However, we use visual programming because the interface of nodes and wires creates an intuitive flow of graphic information. Knowing where text-scripting's capabilities go beyond visual programming will give you major clues to when it should be used without foregoing the intuitive nature of nodes and wires.
 
 **Scripting is useful for:**
 
@@ -106,7 +106,7 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 
 * This can be anything that should be visually separated from adjacent code \(a function, a class, a group of inputs, or the libraries you are importing\).
 
-* Developing code in modules harnesses the visual, intuitive quality of Nodes as well as the complex relationships that only textual code can achieve.
+* Developing code in modules harnesses the visual, intuitive quality of Nodes as well as the complex relationships that only text-scripting can achieve.
 
 ![modules](images/12-1/modules.JPG)
 
@@ -175,7 +175,7 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 
 ### Flex Continuously
 
-While developing Python scripts in Dynamo, it is wise to constantly make sure that what is actually being created is in line with what you are expecting. This will ensure that unforeseen events-- syntax errors, logical discrepancies, value inaccuracies, anomalous outputs etc.-- are quickly discovered and dealt with as they surface rather than all at once at the end. Because Python scripts live inside nodes on the canvas, they are already integrated into the data flow of your visual program. This makes the successive monitoring of your script as simple as assigning data to be outputted, running the program, and evaluating what flows out of the Python Node using a Watch Node. Here are some tips for continuously inspecting your scripts as you construct them.
+While developing text-scripts in Dynamo, it is wise to constantly make sure that what is actually being created is in line with what you are expecting. This will ensure that unforeseen events-- syntax errors, logical discrepancies, value inaccuracies, anomalous outputs etc.-- are quickly discovered and dealt with as they surface rather than all at once at the end. Because text-scripts live inside nodes on the canvas, they are already integrated into the data flow of your visual program. This makes the successive monitoring of your script as simple as assigning data to be outputted, running the program, and evaluating what flows out of the script using a Watch Node. Here are some tips for continuously inspecting your scripts as you construct them.
 
 **Test as you go:**
 
