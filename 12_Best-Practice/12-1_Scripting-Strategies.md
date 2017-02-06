@@ -10,17 +10,13 @@ Say we want to simulate how rainfall will drain off of a surface in Dynamo. How 
 
 Python scripting is a powerful tool capable of achieving much more complex relationships than visual programming, yet their capabilities also overlap significantly. This makes sense because nodes are effectively pre-packaged code, and we could probably write an entire Dynamo program in Python. However, we use visual programming because the interface of nodes and wires creates an intuitive flow of graphic information. Knowing where Python's capabilities go beyond visual programming will give you major clues to when it should be used without foregoing the intuitive nature of nodes and wires.
 
-**Use certain operations:**
+**Scripting is useful for:**
 
 * Looping
 
 * Recursion
 
-> The rainfall simulation will require looping.
-
-**Access external libraries:**
-
-* If the Dynamo libraries are lacking a certain functionality
+* Accessing external libraries
 
 > Refer to [Scripting Reference](http://dynamoprimer.com/en/12_Best-Practice/12-3_Scripting-Reference.html) for a list of what each Dynamo library gives you access to.
 
