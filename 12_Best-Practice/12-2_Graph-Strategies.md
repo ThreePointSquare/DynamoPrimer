@@ -1,6 +1,8 @@
 ## Graph Strategies
 
-Now that we have our awesome drainage simulator, let's use the tool in our project. We have a new task ahead of us: designing a parametric roof. In this section we'll walk through best practices for defining our roof surface. We'll also discuss how to properly implement the script for the drainage simulator into the workflow. First we will cover several guidelines on when to implement the "noding" practices before we begin developing our roof.
+Prior to this chapter, the Primer has covered how to implement the powerful visual-scripting capabilities of Dynamo. A good understanding of these capabilities is a solid foundation and the first step in building robust visual programs. When we implement our visual programs in the field (sharing them with colleagues, achieving a specific result, fixing errors, testing limits) we have different issues to deal with. If someone else will be using your program or you are expecting to open it six months from now, it needs to have an immediate graphic and logical clarity. Let's walk through several best practices to help you create fully-fledged visual programs.
+
+Several basic best practices have been covered in [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html) 
 
 ![groups](images/12-2/noding.jpg)
 
@@ -17,10 +19,10 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 
 ![groups](images/12-2/groups.png)
 
-> 1. Function group (blue)
-> 2. Input group (orange)
-> 3. Script group (green)
-
+> 1. Function group \(blue\)
+> 2. Input group \(orange\)
+> 3. Script group \(green\)
+>
 > For how to use Groups, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
 **Develop efficiently with Code Block:**
@@ -32,10 +34,10 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 ![codeblock](images/12-2/codeblock.png)
 
 > Both 1 and 2 perform the same function. It was much faster to write a few lines of code than it was to search for and add each node individually. The code block is also far more concise.
-
+>
 > 1. Design Script written in Code Block
 > 2. Equivalent program in nodes
-
+>
 > For how to use Code Block, refer to [What's a Code Block](http://dynamoprimer.com/en/07_Code-Block/7-1_what-is-a-code-block.html).
 
 **Condense with Node to Code:**
@@ -56,7 +58,7 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 
 > 1. Existing program
 > 2. Code Block created from Node to Code
-
+>
 > For how to use Node to Code, refer to [Design Script Syntax](http://dynamoprimer.com/en/07_Code-Block/7-2_Design-Script-syntax.html).
 
 **Access data flexibly with List@Level:**
@@ -67,10 +69,10 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 ![listatlevel](images/12-2/listatlevel.png)
 
 > We can verify how many True values BoundingBox.Contains is returning and in which lists by activating List@Level for CountTrue's "list" input. List@Level allows the user to determine at which level the input will take data from. Using List@Level is flexible, efficient, and highly encouraged over other methods involving List.Map and List.Combine.
-
+>
 > 1. Counting true values at List Level 2
 > 2. Counting true values at List Level 3
-
+>
 > For how to use List@Level, refer to [Lists of Lists](http://dynamoprimer.com/en/06_Designing-with-Lists/6-3_lists-of-lists.html#list@level).
 
 ### Maintain Readability
@@ -88,7 +90,7 @@ In addition to making your program as simple and efficient as possible, strive f
 
 > 1. Unorganized graph
 > 2. Aligned graph
-
+>
 > For how to use Node Alignment, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
 **Descriptive labeling by renaming:**
@@ -101,7 +103,7 @@ In addition to making your program as simple and efficient as possible, strive f
 > 1. Inputs for surface manipulation
 > 2. Inputs for architectural parameters
 > 3. Inputs for drainage simulation script
-
+>
 > To rename a node, right click on its name and choose "Rename Node...".
 
 **Explain with Notes:**
@@ -113,7 +115,7 @@ In addition to making your program as simple and efficient as possible, strive f
 
 > 1. A Note describing the portion of the program that returns raw translation distances
 > 2. A Note describing the code that maps those values to a Sine wave
-
+>
 > For how to add a Note, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
 ### Flex Continuously
@@ -125,10 +127,10 @@ In addition to making your program as simple and efficient as possible, strive f
 ![watch](images/12-2/watch.png)
 
 > The Watch nodes are being used to compare:
-
+>
 > 1. The raw translation distances
 > 2. The values passed through the Sine equation
-
+>
 > For how to use Watch, refer to [Library](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-2_dynamo_libraries.html).
 
 ### Ensure Reusability
@@ -157,10 +159,10 @@ It is highly likely that someone else will be opening your program at some point
 ![customnode](images/12-2/customnode.png)
 
 > Collecting the point translation program into a Custom Node makes a robust, unique program portable and far easier to understand. Well named input ports will help other users understand how to use the node. Remember to add descriptions and required data types for each input.
-
+>
 > 1. Existing attractor program
 > 2. Custom Node that collects this program, PointGrid
-
+>
 > For how to use Custom Nodes, refer to [Custom Node Introduction](http://dynamoprimer.com/en/09_Custom-Nodes/9-1_Introduction.html).
 
 ### Exercise - Architectural Roof
@@ -178,7 +180,7 @@ Let's start by determining the data and geometry returned by the program.
 ![data](images/12-2/1-1.JPG)
 
 > Understanding when major changes to the data occur is crucial to establishing logical divisions, or modularity. Try inspecting the rest of the program with Watch nodes to see if you can determine groups before moving on to the next step.
-
+>
 > 1. This Code Block with a math equation looks like a crucial piece of the program. A Watch node displays that it is returning lists of translation distances.
 > 2. The purpose of this area isn't readily obvious. The arrangement of True values at list level L2 from BoundingBox.Contains and the presence of List.FilterByBoolMask suggests we are sampling a portion of the point grid.
 
@@ -200,12 +202,12 @@ With Groups established, align the nodes to create visual continuity across the 
 
 > Visual continuity helps the user to see the program flow and implicit relationships between nodes.
 
-Make the program more accessible by adding another layer of graphic improvements. Add notes to describe how a specific area of the program works, give inputs custom names, and assign colors to different types of groups. 
+Make the program more accessible by adding another layer of graphic improvements. Add notes to describe how a specific area of the program works, give inputs custom names, and assign colors to different types of groups.
 
 ![notes-rename](images/12-2/2-2.jpg)
 
 > These graphic improvements tell the user more about what the program is doing. The different group colors help to distinguish inputs from functions.
-
+>
 > 1. Notes
 > 2. Inputs with descriptive names
 
@@ -225,7 +227,7 @@ Let's simplify the graph now that everything is in place.
 ![customnode-notetocode](images/12-2/3-2.jpg)
 
 > Condensing our program with Node to Code and Custom Node has greatly reduced the size of the graph. The groups that create the roof surface and walls have been converted to code since they are very specific to this program. The point translation group is contained in a Custom Node as it could be used in another program. In the example file, create your own custom node from the translate points group.
-
+>
 > 1. Custom Node to contain the "translate point grid" group
 > 2. Node to Code to condense the "create architectural roof surface and curtain wall" groups
 
@@ -242,3 +244,6 @@ Our program with views of two presets.
 ![presets](images/12-2/3-5.jpg)
 
 > The roof drainage patterns give the user an analytical view of the respective presets.
+
+
+
