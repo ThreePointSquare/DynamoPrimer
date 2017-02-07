@@ -1,12 +1,12 @@
 ## Graph Strategies
 
-Prior to this chapter, the Primer has covered how to implement the powerful visual-scripting capabilities of Dynamo. A good understanding of these capabilities is a solid foundation and the first step in building robust visual programs. When we implement our visual programs in the field by sharing them with colleagues, achieving a specific result, fixing errors, or testing limits we have additional issues to deal with. If someone else will be using your program or you are expecting to open it six months from now, it needs to have an immediate graphic and logical clarity. Let's walk through several best practices to help you create fully-fledged visual programs.
+Prior to this chapter, the Primer has covered how to implement the powerful visual-scripting capabilities of Dynamo. A good understanding of these capabilities is a solid foundation and the first step in building robust visual programs. When we use our visual programs in the field by sharing them with colleagues, achieving a specific result, fixing errors, or testing limits we have additional issues to deal with. If someone else will be using your program or you are expecting to open it six months from now, it needs to have an immediate graphic and logical clarity. Dynamo has many tools to manage the complexity of your program, and this chapter will give guidelines on when to use them.
 
 ![groups](images/12-2/noding.jpg)
 
 ### Reduce Complexity
 
-As you develop your Dynamo program and test ideas, it can quickly grow in size and complexity. While it is important that you create a functioning program, it is equally important to do it as simply as possible. Not only will your program run faster and more predictably, you along with other users will understand its logic later on.
+As you develop your Dynamo program and test ideas, it can quickly grow in size and complexity. While it is important that you create a functioning program, it is equally important to do it as simply as possible. Not only will your program run faster and more predictably, you along with other users will understand its logic later on. The following are several tools that will help you clarify the logic of your program.
 
 **Modularize with Groups:**
 
@@ -75,7 +75,7 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 
 ### Maintain Readability
 
-In addition to making your program as simple and efficient as possible, strive for graphic clarity. Despite your best efforts to make your program intuitive with logical groupings, relationships might not be readily apparent. A simple Note inside of a group or renaming a slider can save you \(or another user\) from unnecessary confusion or panning across the graph.
+In addition to making your program as simple and efficient as possible, strive for graphic clarity. Despite your best efforts to make your program intuitive with logical groupings, relationships might not be readily apparent. A simple Note inside of a Group or renaming a slider can save you or another user from unnecessary confusion or panning across the graph. The following are several tools that will help you keep track of what's happening in your program.
 
 **Visual continuity with Node Alignment:**
 
@@ -118,7 +118,7 @@ In addition to making your program as simple and efficient as possible, strive f
 
 ### Flex Continuously
 
-While building your visual-script, it is important to verify that what is being returned is what you expected. The best practice is to check each node as you add it to the workspace. Not all errors or issues will cause the program to fail immediately, especially null or zero values that could affect something far downstream. This strategy is also discussed in the context of text-scripting in [Scripting Strategies](http://dynamoprimer.com/en/12_Best-Practice/12-2_Scripting-Strategies.html).
+While building your visual-script, it is important to verify that what is being returned is what you expected. Not all errors or issues will cause the program to fail immediately, especially null or zero values that could affect something far downstream. This strategy is also discussed in the context of text-scripting in [Scripting Strategies](http://dynamoprimer.com/en/12_Best-Practice/12-2_Scripting-Strategies.html). The following practice will help you ensure you are getting what you expected.
 
 **Monitor data with Watch:**
 
