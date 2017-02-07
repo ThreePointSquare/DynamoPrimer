@@ -118,6 +118,8 @@ In addition to making your program as simple and efficient as possible, strive f
 
 ### Flex Continuously
 
+While building your visual-script, it is important to verify that what is being returned is what you expected. The best practice is to check each node as you add it to the workspace. Not all errors or issues will cause the program to fail immediately, especially null or zero values that could affect something far downstream. This strategy is also discussed in the context of text-scripting in [Scripting Strategies](http://dynamoprimer.com/en/12_Best-Practice/12-2_Scripting-Strategies.html).
+
 **Monitor data with Watch:**
 
 * As you build the program to verify that key outputs are returning what you expected
