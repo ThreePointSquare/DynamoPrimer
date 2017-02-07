@@ -1,8 +1,6 @@
 ## Graph Strategies
 
-Prior to this chapter, the Primer has covered how to implement the powerful visual-scripting capabilities of Dynamo. A good understanding of these capabilities is a solid foundation and the first step in building robust visual programs. When we implement our visual programs in the field \(sharing them with colleagues, achieving a specific result, fixing errors, testing limits\) we have additional issues to deal with. If someone else will be using your program or you are expecting to open it six months from now, it needs to have an immediate graphic and logical clarity. Let's walk through several best practices to help you create fully-fledged visual programs.
-
-Several basic best practices have been covered in [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html)
+Prior to this chapter, the Primer has covered how to implement the powerful visual-scripting capabilities of Dynamo. A good understanding of these capabilities is a solid foundation and the first step in building robust visual programs. When we implement our visual programs in the field by sharing them with colleagues, achieving a specific result, fixing errors, or testing limits we have additional issues to deal with. If someone else will be using your program or you are expecting to open it six months from now, it needs to have an immediate graphic and logical clarity. Let's walk through several best practices to help you create fully-fledged visual programs.
 
 ![groups](images/12-2/noding.jpg)
 

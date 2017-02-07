@@ -1,16 +1,12 @@
 ## Scripting Strategies
 
-Text-based scripting within the visual-scripting environment enables complex, efficient, and visual relationships. The user can visually expose elements (input sliders), condense large or complex operations (Node to Code), and access powerful tools and libraries (Python) all within the same workspace. If done effectively this can lend a great deal of customization and clarity to the overall program. The following are a set of guidelines to help you augment your visual-script with text-script.
-
-An in-depth guide for libraries, labeling, and styling in text-scripting can be found in [Scripting Reference](http://dynamoprimer.com/en/12_Best-Practice/12-3_Scripting-Reference.html).
+Text-based scripting within the visual-scripting environment enables powerful and visual relationships. The user can expose elements such as input sliders, condense large operations into DesignScript, and access powerful tools and libraries with Python all within the same workspace. If managed effectively, combining these strategies can lend a great deal of customization and clarity to the overall program. The following are a set of guidelines to help you augment your visual-script with text-script.
 
 ![](images/12-1/coding.jpg)
 
-> For how to implement Python scripting, refer to [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
-
 ### Know When to Script
 
-Text-scripting is capable of achieving much more complex relationships than visual programming, yet their capabilities also overlap significantly. This makes sense because nodes are effectively pre-packaged code, and we could probably write an entire Dynamo program in DesignScript or Python. However, we use visual programming because the interface of nodes and wires creates an intuitive flow of graphic information. Knowing where text-scripting's capabilities go beyond visual programming will give you major clues to when it should be used without foregoing the intuitive nature of nodes and wires.
+Text-scripting can establish relationships of a higher complexity than visual programming, yet their capabilities also overlap significantly. This makes sense because nodes are effectively pre-packaged code, and we could probably write an entire Dynamo program in DesignScript or Python. However, we use visual programming because the interface of nodes and wires creates an intuitive flow of graphic information. Knowing where text-scripting's capabilities go beyond visual programming will give you major clues to when it should be used without foregoing the intuitive nature of nodes and wires.
 
 **Scripting is useful for:**
 
