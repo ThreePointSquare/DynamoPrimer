@@ -6,7 +6,7 @@ Text-based scripting within the visual-scripting environment enables powerful an
 
 ### Know When to Script
 
-Text-scripting can establish relationships of a higher complexity than visual programming, yet their capabilities also overlap significantly. This makes sense because nodes are effectively pre-packaged code, and we could probably write an entire Dynamo program in DesignScript or Python. However, we use visual programming because the interface of nodes and wires creates an intuitive flow of graphic information. Knowing where text-scripting's capabilities go beyond visual programming will give you major clues to when it should be used without foregoing the intuitive nature of nodes and wires. The following are capabilities exclusive to text-scripting and which language can implement them.
+Text-scripting can establish relationships of a higher complexity than visual programming, yet their capabilities also overlap significantly. This makes sense because nodes are effectively pre-packaged code, and we could probably write an entire Dynamo program in DesignScript or Python. However, we use visual-scripting because the interface of nodes and wires creates an intuitive flow of graphic information. Knowing where text-scripting's capabilities go beyond visual-scripting will give you major clues to when it should be used without foregoing the intuitive nature of nodes and wires. The following are guidelines on when to script and which language to use.
 
 **Text-scripting is useful for:**
 
@@ -16,11 +16,18 @@ Text-scripting can establish relationships of a higher complexity than visual pr
 
 * Accessing external libraries
 
+**Choose a language:**
+
+|  | Looping | Recursion | Condense Nodes | Ext. Libraries | Shorthand |
+| -- | -- |
+| **DesignScript** | Yes | Yes | Yes | No | Yes |
+| **Python** | Yes | Yes | Partially | Yes | No |
+
 > Refer to [Scripting Reference](http://dynamoprimer.com/en/12_Best-Practice/12-3_Scripting-Reference.html) for a list of what each Dynamo library gives you access to.
 
 ### Think Parametrically
 
-When scripting in Dynamo, an inevitably parametric environment, it is wise to structure your code relative to the framework of nodes and wires it will be living in. Consider your the node containing your text-script as though it is any other node in the program with a few specific inputs, a function, and an expected output. This immediately gives your code inside the node a small set of variables from which to work, the key to a clean parametric system. Here are some guidelines for better integrating code into a visual program.
+When scripting in Dynamo, an inevitably parametric environment, it is wise to structure your code relative to the framework of nodes and wires it will be living in. Consider the node containing your text-script as though it is any other node in the program with a few specific inputs, a function, and an expected output. This immediately gives your code inside the node a small set of variables from which to work, the key to a clean parametric system. Here are some guidelines for better integrating code into a visual program.
 
 **Identify the external variables:**
 
