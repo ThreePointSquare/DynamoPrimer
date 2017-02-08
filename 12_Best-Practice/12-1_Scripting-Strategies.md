@@ -265,7 +265,7 @@ for i in range(xCount):
 
 > Download the example file that accompanies this exercise \(Right click and "Save Link As..."\). A full list of example files can be found in the Appendix. [SteepestPath.dyn](datasets/12-1/SteepestPath.dyn)
 
-With our best practices for text-scripting in mind, let's write the rain simulation script shown in the example in Graph Strategies. While we were able to apply best practices to a disorganized visual program, it is far more difficult to do that with text-scripting. Logical relationships established in text-scripting are less visible and can be almost impossible to untangle in messy code. With power of text-scripting comes great responsibility! We will walk through each step and apply best practices along the way. 
+With our best practices for text-scripting in mind, let's write the rain simulation script shown in the example in Graph Strategies. While we were able to apply best practices to a disorganized visual program in Graph Strategies, it is far more difficult to do that with text-scripting. Logical relationships established in text-scripting are less visible and can be almost impossible to untangle in messy code. With the power of text-scripting comes a larger responsibility in organization. We will walk through each step and apply best practices along the way.
 
 ![](/12_Best-Practice/images/12-1/gd01.JPG)
 
@@ -273,19 +273,22 @@ The first thing we need to do is import the necessary Dynamo libraries. Doing th
 
 ![](/12_Best-Practice/images/12-1/gd02.jpg)
 
-> We will need to import all the libraries that we intend on using.
+> All the libraries we intend on using need to be imported here.
 
-Next we will define the script's inputs, which will display as input ports on the node. These external inputs are the foundation for our script and the key to establishing a parametric environment.
+Next we need define the script's inputs and output, which will display as input ports on the node. These external inputs are the foundation for our script and the key to establishing a parametric environment.
 
 ![](/12_Best-Practice/images/12-1/walkthrough-inputs.jpg)
 
-> We will need to provide some key parameters:
+> Inputs and a desired output:
 >
 > 1. The surface we want to walk down.
 > 2. The number of agents we want to walk.
 > 3. The maximum number of steps the agents are allowed to take.
+> 4. An option to take the shortest path down the surface or traverse it.
+> 5. The Python Node with input identifiers that correspond to inputs in the script (IN[0], IN[1]).
+> 6. Output curves that can be displayed with a different color.
 
-Now let's create the body of our script, the agent class.
+Now let's employ the practice of modularity and create the body of our script. Simulating the shortest path down a surface for multiple start points is a significant task that will require several functions. Rather than call the different functions throughout the script, we can modularize our code by collecting them into a single class, our agent. The different functions of this class or "module" can be called with different variables or even reused in another script. 
 
 ![](/12_Best-Practice/images/12-1/gd04.jpg)
 
@@ -297,7 +300,7 @@ Now let's create the body of our script, the agent class.
 > 4. A function for taking a step.
 > 5. A function for cataloging the position of each step to a trail list.
 
-Initialize the agents by defining their start locations.
+Let's initialize the agents by defining their start location. This is a good opportunity to flex our script and make sure the agent class is working. 
 
 ![](/12_Best-Practice/images/12-1/gd05.jpg)
 
