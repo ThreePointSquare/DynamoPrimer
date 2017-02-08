@@ -265,19 +265,19 @@ for i in range(xCount):
 
 > Download the example file that accompanies this exercise \(Right click and "Save Link As..."\). A full list of example files can be found in the Appendix. [SteepestPath.dyn](datasets/12-1/SteepestPath.dyn)
 
-This script will derive the path a ball would take if released at a given point on a surface. It will construct the paths by stitching together small and discrete steps taken by walking agents.
+With our best practices for text-scripting in mind, let's write the rain simulation script shown in the example in Graph Strategies. While we were able to apply best practices to a disorganized visual program, it is far more difficult to do that with text-scripting. Logical relationships established in text-scripting are less visible and can be almost impossible to untangle in messy code. With power of text-scripting comes great responsibility! We will walk through each step and apply best practices along the way. 
 
 ![](/12_Best-Practice/images/12-1/gd01.JPG)
 
-Let’s walk through how we want it to work. The first thing we need to do is import libraries.
+The first thing we need to do is import the necessary Dynamo libraries. Doing this first will give global access to Dynamo functionality in Python. 
 
 ![](/12_Best-Practice/images/12-1/gd02.jpg)
 
 > We will need to import all the libraries that we intend on using.
 
-Next we will define the script's inputs, which will display as input ports on the node.
+Next we will define the script's inputs, which will display as input ports on the node. These external inputs are the foundation for our script and the key to establishing a parametric environment.
 
-![](/12_Best-Practice/images/12-1/gd03.jpg)
+![](/12_Best-Practice/images/12-1/walkthrough-inputs.jpg)
 
 > We will need to provide some key parameters:
 >
