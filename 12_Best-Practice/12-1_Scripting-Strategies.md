@@ -265,11 +265,11 @@ for i in range(xCount):
 
 > Download the example file that accompanies this exercise \(Right click and "Save Link As..."\). A full list of example files can be found in the Appendix. [SteepestPath.dyn](datasets/12-1/SteepestPath.dyn)
 
-With our best practices for text-scripting in mind, let's write the rain simulation script shown in the example in Graph Strategies. While we were able to apply best practices to a disorganized visual program in Graph Strategies, it is far more difficult to do that with text-scripting. Logical relationships established in text-scripting are less visible and can be almost impossible to untangle in messy code. With the power of text-scripting comes a larger responsibility in organization. We will walk through each step and apply best practices along the way.
+With our best practices for text-scripting in mind, let's write a rain simulation script. While we were able to apply best practices to a disorganized visual program in Graph Strategies, it is far more difficult to do that with text-scripting. Logical relationships established in text-scripting are less visible and can be almost impossible to untangle in messy code. With the power of text-scripting comes a larger responsibility in organization. We will walk through each step and apply best practices along the way.
 
-![](/12_Best-Practice/images/12-1/preset1-roof.JPG)
+![](/12_Best-Practice/images/12-1/gd01.JPG)
 
-> The underlying surface and geometry were generated in the [Graph Strategies](http://dynamoprimer.com/en/12_Best-Practice/12-2_Graph-Strategies.html) example.
+> Our script applied to an attractor-deformed surface.
 
 The first thing we need to do is import the necessary Dynamo libraries. Doing this first will give global access to Dynamo functionality in Python. 
 

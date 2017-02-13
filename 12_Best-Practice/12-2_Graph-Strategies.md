@@ -150,7 +150,7 @@ It is highly likely that someone else will be opening your program at some point
 
 > For how to use Presets, refer to [Managing Your Data with Presets](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-5_presets.html).
 
-**Contain groups with Custom Nodes:**
+**Contain scripts with Custom Nodes:**
 
 * If a portion of your program can be collected into a single container
 * If a portion of a program will be reused often in other programs
@@ -164,6 +164,18 @@ It is highly likely that someone else will be opening your program at some point
 > 2. Custom Node that collects this program, PointGrid
 >
 > For how to use Custom Nodes, refer to [Custom Node Introduction](http://dynamoprimer.com/en/09_Custom-Nodes/9-1_Introduction.html).
+
+**Build templates:**
+
+* To establish graphic standards across your visual programs.
+* To categorize types of Groups.
+* To Establish front-end and back-end areas.
+
+![](images/12-2/templating.jpg)
+
+> 1. The UI of the program includes a project name, input sliders, and import geometry.
+> 2. The back-end of the program.
+> 3. Group color categories.
 
 ### Exercise - Architectural Roof
 
