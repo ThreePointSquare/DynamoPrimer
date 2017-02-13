@@ -267,7 +267,9 @@ for i in range(xCount):
 
 With our best practices for text-scripting in mind, let's write the rain simulation script shown in the example in Graph Strategies. While we were able to apply best practices to a disorganized visual program in Graph Strategies, it is far more difficult to do that with text-scripting. Logical relationships established in text-scripting are less visible and can be almost impossible to untangle in messy code. With the power of text-scripting comes a larger responsibility in organization. We will walk through each step and apply best practices along the way.
 
-![](/12_Best-Practice/images/12-1/gd01.JPG)
+![](/12_Best-Practice/images/12-1/preset1-roof.JPG)
+
+> The underlying surface and geometry were generated in the [Graph Strategies](http://dynamoprimer.com/en/12_Best-Practice/12-2_Graph-Strategies.html) example.
 
 The first thing we need to do is import the necessary Dynamo libraries. Doing this first will give global access to Dynamo functionality in Python. 
 
@@ -275,7 +277,7 @@ The first thing we need to do is import the necessary Dynamo libraries. Doing th
 
 > All the libraries we intend on using need to be imported here.
 
-Next we need define the script's inputs and output, which will display as input ports on the node. These external inputs are the foundation for our script and the key to establishing a parametric environment.
+Next we need to define the script's inputs and output, which will display as input ports on the node. These external inputs are the foundation for our script and the key to establishing a parametric environment.
 
 ![](/12_Best-Practice/images/12-1/walkthrough-inputs.jpg)
 
@@ -306,8 +308,9 @@ Let's initialize the agents by defining their start location. This is a good opp
 
 > We will need to instantiate all the agents we want to observe walk down the surface and define their initial attributes:
 >
-> 1. Where they will start their journey on the surface.
-> 2. A new empty trail list.
+> 1. A new empty trail list.
+> 2. Where they will start their journey on the surface.
+> 3. We've assigned the agents list as the output to check what the script is returning here. The correct number of agents is being returned, but we'll need to flex the script again later on to verify the geometry it returns.
 
 Update each agent at each step.
 
@@ -315,7 +318,7 @@ Update each agent at each step.
 
 > We will then need to enter a nested loop where for each agent and for each step, we update and record their position into their trail list. At each step we will also make sure the agent hasn’t reached a point on the surface where it cannot take another step which will allow it to descend. If that condition is met, we will end that agent's trip.
 
-Now that our agents have completed their paths, let's graphically represent them as lines.
+Now that our agents have been fully updated, let's return geometry that represents them.
 
 ![](/12_Best-Practice/images/12-1/gd07.jpg)
 
