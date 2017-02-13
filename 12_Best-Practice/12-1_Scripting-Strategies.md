@@ -326,5 +326,9 @@ Now that our agents have been fully updated, let's return geometry that represen
 
 Our script for finding the steepest paths.
 
-![](/12_Best-Practice/images/12-1/gd08.jpg)
+![](/12_Best-Practice/images/12-1/gd07-02.jpg)
 
+> 1. A preset that simulates rainfall on the underlying surface.
+> 2. Rather than finding the steepest path, the agents can be toggled to traverse the underlying surface.
+
+![](/12_Best-Practice/images/12-1/gd08.jpg)
