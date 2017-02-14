@@ -2,7 +2,7 @@
 
 Text-based scripting within the visual-scripting environment enables powerful and visual relationships using DesignScript, Python, and ZeroTouch (C#). The user can expose elements such as input sliders, condense large operations into DesignScript, and access powerful tools and libraries with Python all within the same workspace. If managed effectively, combining these strategies can lend a great deal of customization and clarity to the overall program. The following are a set of guidelines to help you augment your visual-script with text-script.
 
-![](images/12-1/coding.jpg)
+![](images/12-1/cad-chart-textual.jpg)
 
 ### Know When to Script
 
