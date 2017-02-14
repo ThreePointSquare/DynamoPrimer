@@ -1,4 +1,4 @@
-## Graph Strategies
+ ## Graph Strategies
 
 Prior to this chapter, the Primer has covered how to implement the powerful visual-scripting capabilities of Dynamo. A good understanding of these capabilities is a solid foundation and the first step in building robust visual programs. When we use our visual programs in the field by sharing them with colleagues, achieving a specific result, fixing errors, or testing limits we have additional issues to deal with. If someone else will be using your program or you are expecting to open it six months from now, it needs to have an immediate graphic and logical clarity. Dynamo has many tools to manage the complexity of your program, and this chapter will give guidelines on when to use them.
 
@@ -173,9 +173,9 @@ It is highly likely that someone else will be opening your program at some point
 
 ![](images/12-2/templating.jpg)
 
-> 1. The UI of the program includes a project name, input sliders, and import geometry.
+> 1. The UI, or front-end, of the program includes a project name, input sliders, and import geometry.
 > 2. The back-end of the program.
-> 3. Group color categories.
+> 3. Group color categories (the general design, inputs, Python scripting, imported geometry).
 
 ### Exercise - Architectural Roof
 
