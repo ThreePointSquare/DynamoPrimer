@@ -1,6 +1,6 @@
  ## Graph Strategies
 
-Prior to this chapter, the Primer has covered how to implement the powerful visual-scripting capabilities of Dynamo. A good understanding of these capabilities is a solid foundation and the first step in building robust visual programs. When we use our visual programs in the field by sharing them with colleagues, achieving a specific result, fixing errors, or testing limits we have additional issues to deal with. If someone else will be using your program or you are expecting to open it six months from now, it needs to have an immediate graphic and logical clarity. Dynamo has many tools to manage the complexity of your program, and this chapter will give guidelines on when to use them.
+Prior to this chapter, the Primer has covered how to implement the powerful visual-scripting capabilities of Dynamo. A good understanding of these capabilities is a solid foundation and the first step in building robust visual programs. When we use our visual programs in the field, share them with colleagues, troubleshoot errors, or test limits we have additional issues to deal with. If someone else will be using your program or you are expecting to open it six months from now, it needs to have an immediate graphic and logical clarity. Dynamo has many tools to manage the complexity of your program, and this chapter will give guidelines on when to use them.
 
 ![groups](images/12-2/cad-chart-visual.jpg)
 
@@ -12,8 +12,8 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 
 * To create functionally distinct parts as you build a program
 * If you need to move large parts of the program around while maintaining modularity and alignment
-* To streamline Custom Node creation
 * Colors can be used to differentiate what Groups are doing \(inputs vs functions\)
+* To streamline Custom Node creation
 
 ![groups](images/12-2/groups.png)
 
@@ -120,7 +120,7 @@ In addition to making your program as simple and efficient as possible, strive f
 
 ### Flex Continuously
 
-While building your visual-script, it is important to verify that what is being returned is what you expected. Not all errors or issues will cause the program to fail immediately, especially null or zero values that could affect something far downstream. This strategy is also discussed in the context of text-scripting in [Scripting Strategies](http://dynamoprimer.com/en/12_Best-Practice/12-2_Scripting-Strategies.html). The following practice will help you ensure you are getting what you expected.
+While building your visual-script, it is important to verify that what is being returned is what you expected. Not all errors or issues will cause the program to fail immediately, especially null or zero values that could affect something far downstream. This strategy is also discussed in the context of text-scripting in [Scripting Strategies](http://dynamoprimer.com/en/12_Best-Practice/12-2_Scripting-Strategies.html). The following practice will help ensure that you are getting what you expected.
 
 **Monitor data with Watch:**
 
@@ -152,11 +152,11 @@ It is highly likely that someone else will be opening your program at some point
 
 > For how to use Presets, refer to [Managing Your Data with Presets](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-5_presets.html).
 
-**Contain scripts with Custom Nodes:**
+**Contain programs with Custom Nodes:**
 
-* If a portion of your program can be collected into a single container
+* If your program can be collected into a single container
 * If a portion of a program will be reused often in other programs
-* If you want to share a portion of a program with the Dynamo Community
+* If you want to share a functionality with the Dynamo Community
 
 ![customnode](images/12-2/customnode.png)
 

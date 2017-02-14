@@ -1,6 +1,6 @@
 ## Scripting Strategies
 
-Text-based scripting within the visual-scripting environment enables powerful and visual relationships using DesignScript, Python, and ZeroTouch (C#). The user can expose elements such as input sliders, condense large operations into DesignScript, and access powerful tools and libraries with Python all within the same workspace. If managed effectively, combining these strategies can lend a great deal of customization and clarity to the overall program. The following are a set of guidelines to help you augment your visual-script with text-script.
+Text-based scripting within the visual-scripting environment enables powerful and visual relationships using DesignScript, Python, and ZeroTouch (C#). The user can expose elements such as input sliders, condense large operations into DesignScript, and access powerful tools and libraries through Python or C# all within the same workspace. If managed effectively, combining these strategies can lend a great deal of customization, clarity, and efficiency to the overall program. The following are a set of guidelines to help you augment your visual-script with text-script.
 
 ![](images/12-1/cad-chart-textual.jpg)
 
@@ -132,7 +132,7 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 
 > This example creates spheres with radii and color based on the Z value of the center points.
 
-> 1. Two "worker" parent functions. One that creates spheres with radii based the centerpoint's Z value and one that displays the sphere with a color based on it's Z value.
+> 1. Two "worker" parent functions: one that creates spheres with radii and display colors based the centerpoint's Z value.
 > 2. A "manager" parent function that combines the two worker functions. Calling this will call both functions inside it.
 
 **Only show what needs to be seen:**
@@ -200,7 +200,7 @@ While developing text-scripts in Dynamo, it is wise to constantly make sure that
 
   * Quickly test to make sure it is returning data that “makes sense”.
 
-* Assign the most recent data you are working with in your script to the OUT identifier so that the node is always outputting relevant data when the script updates:
+* Assign the most recent data you are working with in your script as the output so that the node is always outputting relevant data when the script updates:
 
 ![modules](images/12-1/flex.jpg)
 
@@ -288,7 +288,7 @@ Next we need to define the script's inputs and output, which will display as inp
 
 ![](/12_Best-Practice/images/12-1/walkthrough-inputs.jpg)
 
-> Inputs and a desired output:
+> We need to define inputs that correspond to variables in the Python script and determine a desired output:
 >
 > 1. The surface we want to walk down.
 > 2. The number of agents we want to walk.
@@ -339,3 +339,5 @@ Our script for finding the steepest paths.
 > 2. Rather than finding the steepest path, the agents can be toggled to traverse the underlying surface.
 
 ![](/12_Best-Practice/images/12-1/gd08.jpg)
+
+> The full Python text-script.
