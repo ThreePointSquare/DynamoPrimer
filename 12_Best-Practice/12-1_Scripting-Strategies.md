@@ -133,8 +133,7 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 > This example creates spheres with radii and color based on the Z value of the center points.
 
 > 1. Two "worker" parent functions. One that creates spheres with radii based the centerpoint's Z value and one that displays the sphere with a color based on it's Z value.
-> 2. A "manager" parent function that combines the two worker functions.
-> 3. A single child function that calls the manager.
+> 2. A "manager" parent function that combines the two worker functions. Calling this will call both functions inside it.
 
 **Only show what needs to be seen:**
 
