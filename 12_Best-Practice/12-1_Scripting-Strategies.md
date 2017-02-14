@@ -8,7 +8,7 @@ Text-based scripting within the visual-scripting environment enables powerful an
 
 Text-scripting can establish relationships of a higher complexity than visual programming, yet their capabilities also overlap significantly. This makes sense because nodes are effectively pre-packaged code, and we could probably write an entire Dynamo program in DesignScript or Python. However, we use visual-scripting because the interface of nodes and wires creates an intuitive flow of graphic information. Knowing where text-scripting's capabilities go beyond visual-scripting will give you major clues to when it should be used without foregoing the intuitive nature of nodes and wires. The following are guidelines on when to script and which language to use.
 
-**Text-scripting is useful for:**
+**Use text-scripting for:**
 
 * Looping
 
@@ -127,6 +127,14 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 * If you find that your code does the same \(or very similar\) thing in more than once place, find ways to cluster it into a function that can be called.
 
 * "Manager" functions control program flow and primarily contain calls to "Worker" functions that handle low-level details, like moving data between structures.
+
+![](/12_Best-Practice/images/12-1/managerfunctions.jpg)
+
+> This example creates spheres with radii and color based on the Z value of the center points.
+
+> 1. Two "worker" parent functions. One that creates spheres with radii based the centerpoint's Z value and one that displays the sphere with a color based on it's Z value.
+> 2. A "manager" parent function that combines the two worker functions.
+> 3. A single child function that calls the manager.
 
 **Only show what needs to be seen:**
 

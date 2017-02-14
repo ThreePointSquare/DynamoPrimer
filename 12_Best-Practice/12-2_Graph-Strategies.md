@@ -12,10 +12,12 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 
 * To create functionally distinct parts as you build a program
 * If you need to move large parts of the program around while maintaining modularity and alignment
-* Colors can be used to differentiate what groups are doing \(inputs vs functions\)
 * To streamline Custom Node creation
+* Colors can be used to differentiate what Groups are doing \(inputs vs functions\)
 
 ![groups](images/12-2/groups.png)
+
+>  The colors in this program identify the purpose of each group. This strategy can be used to create heirarchy in any graphic standards or templates you develop.
 
 > 1. Function group \(blue\)
 > 2. Input group \(orange\)
@@ -75,7 +77,7 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 
 ### Maintain Readability
 
-In addition to making your program as simple and efficient as possible, strive for graphic clarity. Despite your best efforts to make your program intuitive with logical groupings, relationships might not be readily apparent. A simple Note inside of a Group or renaming a slider can save you or another user from unnecessary confusion or panning across the graph. The following are several tools that will help you keep track of what's happening in your program.
+In addition to making your program as simple and efficient as possible, strive for graphic clarity. Despite your best efforts to make your program intuitive with logical groupings, relationships might not be readily apparent. A simple Note inside of a Group or renaming a slider can save you or another user from unnecessary confusion or panning across the graph. The following are several tools that will help you apply graphic consistency within and across your programs.
 
 **Visual continuity with Node Alignment:**
 
