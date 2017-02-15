@@ -1,32 +1,34 @@
 ## Scripting Strategies
 
-Say we want to simulate how rainfall will drain off of a surface in Dynamo. How will we set this up? What parameters will we use to drive the inputs? How will we define the shape of the surface? When will we use a visual program and when will we script using Python? Ultimately, we'll want to simulate rainfall across the roof of our building using Dynamo. But first, let's setup a tool to simulate rainfall on a generic surface. That way we can reuse the tool on another design iteration or even a completely different project. This first section will walk through basic best practices for setting up our drainage simulation tool. Other best practices for libraries, labeling, and styling can be found in [Scripting Reference](http://dynamoprimer.com/en/12_Best-Practice/12-3_Scripting-Reference.html).
+Text-based scripting within the visual-scripting environment enables powerful and visual relationships using DesignScript, Python, and ZeroTouch (C#). The user can expose elements such as input sliders, condense large operations into DesignScript, and access powerful tools and libraries through Python or C# all within the same workspace. If managed effectively, combining these strategies can lend a great deal of customization, clarity, and efficiency to the overall program. The following are a set of guidelines to help you augment your visual-script with text-script.
 
-![](images/12-1/coding.jpg)
-
-> For how to implement Python scripting, refer to [Python Node](http://dynamoprimer.com/en/09_Custom-Nodes/9-4_Python.html).
+![](images/12-1/cad-chart-textual.jpg)
 
 ### Know When to Script
 
-Python scripting is a powerful tool capable of achieving much more complex relationships than visual programming, yet their capabilities also overlap significantly. This makes sense because nodes are effectively pre-packaged code, and we could probably write an entire Dynamo program in Python. However, we use visual programming because the interface of nodes and wires creates an intuitive flow of graphic information. Knowing where Python's capabilities go beyond visual programming will give you major clues to when it should be used without foregoing the intuitive nature of nodes and wires.
+Text-scripting can establish relationships of a higher complexity than visual programming, yet their capabilities also overlap significantly. This makes sense because nodes are effectively pre-packaged code, and we could probably write an entire Dynamo program in DesignScript or Python. However, we use visual-scripting because the interface of nodes and wires creates an intuitive flow of graphic information. Knowing where text-scripting's capabilities go beyond visual-scripting will give you major clues to when it should be used without foregoing the intuitive nature of nodes and wires. The following are guidelines on when to script and which language to use.
 
-**Use certain operations:**
+**Use text-scripting for:**
 
 * Looping
 
 * Recursion
 
-> The rainfall simulation will require looping.
+* Accessing external libraries
 
-**Access external libraries:**
+**Choose a language:**
 
-* If the Dynamo libraries are lacking a certain functionality
+|  | Looping | Recursion | Condense Nodes | Ext. Libraries | Shorthand |
+| -- | -- |
+| **DesignScript** | Yes | Yes | Yes | No | Yes |
+| **Python** | Yes | Yes | Partially | Yes | No |
+| **ZeroTouch (C#)** | No | No | No | Yes | No |
 
 > Refer to [Scripting Reference](http://dynamoprimer.com/en/12_Best-Practice/12-3_Scripting-Reference.html) for a list of what each Dynamo library gives you access to.
 
 ### Think Parametrically
 
-When scripting in Dynamo, an inevitably parametric environment, it is wise to structure your code relative to the framework of nodes and wires it will be living in. Consider your Python Node as though it is any other node in the program with a few specific inputs, a function, and an expected output. This immediately gives your code inside the node a small set of variables from which to work, the key to a clean parametric system. Here are some guidelines for better integrating code into a visual program.
+When scripting in Dynamo, an inevitably parametric environment, it is wise to structure your code relative to the framework of nodes and wires it will be living in. Consider the node containing your text-script as though it is any other node in the program with a few specific inputs, a function, and an expected output. This immediately gives your code inside the node a small set of variables from which to work, the key to a clean parametric system. Here are some guidelines for better integrating code into a visual program.
 
 **Identify the external variables:**
 
@@ -110,7 +112,7 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 
 * This can be anything that should be visually separated from adjacent code \(a function, a class, a group of inputs, or the libraries you are importing\).
 
-* Developing code in modules harnesses the visual, intuitive quality of Nodes as well as the complex relationships that only textual code can achieve.
+* Developing code in modules harnesses the visual, intuitive quality of Nodes as well as the complex relationships that only text-scripting can achieve.
 
 ![modules](images/12-1/modules.JPG)
 
@@ -125,6 +127,13 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 * If you find that your code does the same \(or very similar\) thing in more than once place, find ways to cluster it into a function that can be called.
 
 * "Manager" functions control program flow and primarily contain calls to "Worker" functions that handle low-level details, like moving data between structures.
+
+![](/12_Best-Practice/images/12-1/managerfunctions.jpg)
+
+> This example creates spheres with radii and color based on the Z value of the center points.
+
+> 1. Two "worker" parent functions: one that creates spheres with radii and display colors based the centerpoint's Z value.
+> 2. A "manager" parent function that combines the two worker functions. Calling this will call both functions inside it.
 
 **Only show what needs to be seen:**
 
@@ -179,7 +188,7 @@ As your code gets longer and more complex the “big idea”, or overarching alg
 
 ### Flex Continuously
 
-While developing Python scripts in Dynamo, it is wise to constantly make sure that what is actually being created is in line with what you are expecting. This will ensure that unforeseen events-- syntax errors, logical discrepancies, value inaccuracies, anomalous outputs etc.-- are quickly discovered and dealt with as they surface rather than all at once at the end. Because Python scripts live inside nodes on the canvas, they are already integrated into the data flow of your visual program. This makes the successive monitoring of your script as simple as assigning data to be outputted, running the program, and evaluating what flows out of the Python Node using a Watch Node. Here are some tips for continuously inspecting your scripts as you construct them.
+While developing text-scripts in Dynamo, it is wise to constantly make sure that what is actually being created is in line with what you are expecting. This will ensure that unforeseen events-- syntax errors, logical discrepancies, value inaccuracies, anomalous outputs etc.-- are quickly discovered and dealt with as they surface rather than all at once at the end. Because text-scripts live inside nodes on the canvas, they are already integrated into the data flow of your visual program. This makes the successive monitoring of your script as simple as assigning data to be outputted, running the program, and evaluating what flows out of the script using a Watch Node. Here are some tips for continuously inspecting your scripts as you construct them.
 
 **Test as you go:**
 
@@ -191,7 +200,7 @@ While developing Python scripts in Dynamo, it is wise to constantly make sure th
 
   * Quickly test to make sure it is returning data that “makes sense”.
 
-* Assign the most recent data you are working with in your script to the OUT identifier so that the node is always outputting relevant data when the script updates:
+* Assign the most recent data you are working with in your script as the output so that the node is always outputting relevant data when the script updates:
 
 ![modules](images/12-1/flex.jpg)
 
@@ -215,7 +224,9 @@ While developing Python scripts in Dynamo, it is wise to constantly make sure th
 
 ### Debug Efficiently
 
-**Use watch bubble:**
+Debugging is the process of eliminating "bugs" from your script. Bugs can be errors, inefficiencies, inaccuracies, or any unintended results. Addressing a bug can be as simple as correcting a misspelled variable name to more pervasive, structural problems with your script. Ideally, flexing your script as you build it will help to catch these potential issues early, though this is no guarantee of it being bug-free. The following is a review of several best practices from above to help you address bugs systematically.
+
+**Use the watch bubble:**
 
 * Check the data returned at different places in the code by assigning it to the OUT variable, similar to the concept of flexing the program.
 
@@ -261,27 +272,32 @@ for i in range(xCount):
 
 > Download the example file that accompanies this exercise \(Right click and "Save Link As..."\). A full list of example files can be found in the Appendix. [SteepestPath.dyn](datasets/12-1/SteepestPath.dyn)
 
-This script will derive the path a ball would take if released at a given point on a surface. It will construct the paths by stitching together small and discrete steps taken by walking agents.
+With our best practices for text-scripting in mind, let's write a rain simulation script. While we were able to apply best practices to a disorganized visual program in Graph Strategies, it is far more difficult to do that with text-scripting. Logical relationships established in text-scripting are less visible and can be almost impossible to untangle in messy code. With the power of text-scripting comes a larger responsibility in organization. We will walk through each step and apply best practices along the way.
 
 ![](/12_Best-Practice/images/12-1/gd01.JPG)
 
-Let’s walk through how we want it to work. The first thing we need to do is import libraries.
+> Our script applied to an attractor-deformed surface.
+
+The first thing we need to do is import the necessary Dynamo libraries. Doing this first will give global access to Dynamo functionality in Python. 
 
 ![](/12_Best-Practice/images/12-1/gd02.jpg)
 
-> We will need to import all the libraries that we intend on using.
+> All the libraries we intend on using need to be imported here.
 
-Next we will define the script's inputs, which will display as input ports on the node.
+Next we need to define the script's inputs and output, which will display as input ports on the node. These external inputs are the foundation for our script and the key to establishing a parametric environment.
 
-![](/12_Best-Practice/images/12-1/gd03.jpg)
+![](/12_Best-Practice/images/12-1/walkthrough-inputs.jpg)
 
-> We will need to provide some key parameters:
+> We need to define inputs that correspond to variables in the Python script and determine a desired output:
 >
 > 1. The surface we want to walk down.
 > 2. The number of agents we want to walk.
 > 3. The maximum number of steps the agents are allowed to take.
+> 4. An option to take the shortest path down the surface or traverse it.
+> 5. The Python Node with input identifiers that correspond to inputs in the script (IN[0], IN[1]).
+> 6. Output curves that can be displayed with a different color.
 
-Now let's create the body of our script, the agent class.
+Now let's employ the practice of modularity and create the body of our script. Simulating the shortest path down a surface for multiple start points is a significant task that will require several functions. Rather than call the different functions throughout the script, we can modularize our code by collecting them into a single class, our agent. The different functions of this class or "module" can be called with different variables or even reused in another script. 
 
 ![](/12_Best-Practice/images/12-1/gd04.jpg)
 
@@ -293,14 +309,15 @@ Now let's create the body of our script, the agent class.
 > 4. A function for taking a step.
 > 5. A function for cataloging the position of each step to a trail list.
 
-Initialize the agents by defining their start locations.
+Let's initialize the agents by defining their start location. This is a good opportunity to flex our script and make sure the agent class is working. 
 
 ![](/12_Best-Practice/images/12-1/gd05.jpg)
 
 > We will need to instantiate all the agents we want to observe walk down the surface and define their initial attributes:
 >
-> 1. Where they will start their journey on the surface.
-> 2. A new empty trail list.
+> 1. A new empty trail list.
+> 2. Where they will start their journey on the surface.
+> 3. We've assigned the agents list as the output to check what the script is returning here. The correct number of agents is being returned, but we'll need to flex the script again later on to verify the geometry it returns.
 
 Update each agent at each step.
 
@@ -308,7 +325,7 @@ Update each agent at each step.
 
 > We will then need to enter a nested loop where for each agent and for each step, we update and record their position into their trail list. At each step we will also make sure the agent hasn’t reached a point on the surface where it cannot take another step which will allow it to descend. If that condition is met, we will end that agent's trip.
 
-Now that our agents have completed their paths, let's graphically represent them as lines.
+Now that our agents have been fully updated, let's return geometry that represents them.
 
 ![](/12_Best-Practice/images/12-1/gd07.jpg)
 
@@ -316,5 +333,11 @@ Now that our agents have completed their paths, let's graphically represent them
 
 Our script for finding the steepest paths.
 
+![](/12_Best-Practice/images/12-1/gd07-02.jpg)
+
+> 1. A preset that simulates rainfall on the underlying surface.
+> 2. Rather than finding the steepest path, the agents can be toggled to traverse the underlying surface.
+
 ![](/12_Best-Practice/images/12-1/gd08.jpg)
 
+> The full Python text-script.

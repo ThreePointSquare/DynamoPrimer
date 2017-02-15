@@ -3,12 +3,14 @@ This reference page extends the best practices covered in Scripting Strategies w
 
 ### Which Libraries to Use
 
-![](/12_Best-Practice/images/12-4/libraries.JPG)
+Standard libraries are external to Dynamo and present in the programming languages Python and C# (Zerotouch). Dynamo also has its own set of libraries that directly correspond to it's node hierarchy, enabling the user to build anything in code that could be made with nodes and wires. The following is a guide for what each Dynamo library gives access to and when to use a standard one.
 
-**Standard Libraries vs. Dynamo Libraries**
+![](/12_Best-Practice/images/12-4/textual-programming.jpg)
 
-* Flow Structures, Data Structures
-* Objects
+**Standard Libraries and Dynamo Libraries**
+
+* Standard libraries from Python and C# can be used to build advanced data and flow structures in the Dynamo environment.
+* Dynamo libraries directly correspond to the node hierarchy for creating geometry and other Dynamo objects.
 
 **Dynamo Libraries**
 
@@ -222,10 +224,6 @@ Generally speaking there is more than one way to program just about anything, th
 * Limiting the required editor window width makes it possible to have several files open side-by-side, and works well when using code review tools that present the two versions in adjacent columns.
 
 * Long lines can be broken over multiple lines by wrapping expressions in parentheses:
-
-  ```
-  CODE EXAMPLE
-  ```
 
 **Avoid obvious and redundant comments:**
 
