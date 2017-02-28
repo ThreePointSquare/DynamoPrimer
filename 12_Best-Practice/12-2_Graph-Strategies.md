@@ -1,4 +1,4 @@
- ## Graph Strategies
+## Graph Strategies
 
 Prior to this chapter, the Primer has covered how to implement the powerful visual-scripting capabilities of Dynamo. A good understanding of these capabilities is a solid foundation and the first step in building robust visual programs. When we use our visual programs in the field, share them with colleagues, troubleshoot errors, or test limits we have additional issues to deal with. If someone else will be using your program or you are expecting to open it six months from now, it needs to have an immediate graphic and logical clarity. Dynamo has many tools to manage the complexity of your program, and this chapter will give guidelines on when to use them.
 
@@ -6,30 +6,30 @@ Prior to this chapter, the Primer has covered how to implement the powerful visu
 
 ### Reduce Complexity
 
-As you develop your Dynamo program and test ideas, it can quickly grow in size and complexity. While it is important that you create a functioning program, it is equally important to do it as simply as possible. Not only will your program run faster and more predictably, you along with other users will understand its logic later on. The following are several tools that will help you clarify the logic of your program.
+As you develop your Dynamo graph and test ideas, it can quickly grow in size and complexity. While it is important that you create a functioning program, it is equally important to do it as simply as possible. Not only will your graph run faster and more predictably, you along with other users will understand its logic later on. The following are several ways that will help you clarify the logic of your graph.
 
-**Modularize with Groups:**
+#### **Modularize with Groups**
 
-* To create functionally distinct parts as you build a program
-* If you need to move large parts of the program around while maintaining modularity and alignment
-* Colors can be used to differentiate what Groups are doing \(inputs vs functions\)
-* To streamline Custom Node creation
+* Groups allow you to **create functionally distinct parts** as you build a program
+* Groups allow you to **move large parts of the program** around while maintaining modularity and alignment
+* You can change the **color of the group to differentiate** what Groups are doing \(inputs vs functions\)
+* You can use groups to start **organizing your graph to streamline Custom Node creation**
 
 ![groups](images/12-2/groups.png)
 
->  The colors in this program identify the purpose of each group. This strategy can be used to create heirarchy in any graphic standards or templates you develop.
-
+> The colors in this program identify the purpose of each group. This strategy can be used to create hierarchy in any graphic standards or templates you develop.
+>
 > 1. Function group \(blue\)
 > 2. Input group \(orange\)
 > 3. Script group \(green\)
 >
 > For how to use Groups, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
-**Develop efficiently with Code Block:**
+#### **Develop efficiently with Code Blocks**
 
-* If typing a number or node name is faster than searching \(Point.ByCoordinates, Number, String, Formula\)
-* If you have created a large collection of simple nodes they can be written in a single block \(Node to Code\)
-* If you want to define a function
+* At times, you can use a Code Block to **type a number or node method faster than searching** \(Point.ByCoordinates, Number, String, Formula\)
+
+* Code Blocks are useful **when you want to define custom functions in DesignScript to reduce the number of nodes in a graph**
 
 ![codeblock](images/12-2/codeblock.png)
 
@@ -40,16 +40,16 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 >
 > For how to use Code Block, refer to [What's a Code Block](http://dynamoprimer.com/en/07_Code-Block/7-1_what-is-a-code-block.html).
 
-**Condense with Node to Code:**
+#### **Condense with Node to Code**
 
-* If you have created many nodes that could be easily represented in a single code block 
-* If a collection of nodes can be condensed to code without eliminating the program’s clarity
-* Pros:
+* You can **reduce the complexity of a graph by using Node to Code** which will take a collection of simple nodes and write their corresponding DesignScript in a single Code Block
+* Node to Code can** condense code without eliminating the program’s clarity**
+* The following are the **pros** of using Node to Code:
   * Easily condenses code into one component that is still editable
   * Can simplify a significant portion of the graph
   * Useful if the ‘mini-program’ will not often be edited
   * Useful for incorporating other code block functionality, like functions
-* Cons:
+* The following are the **cons** of using Node to Code:
   * Generic naming makes it less legible
   * More difficult to understand for other users
   * No easy way to return to the visual programming version
@@ -61,10 +61,10 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 >
 > For how to use Node to Code, refer to [Design Script Syntax](http://dynamoprimer.com/en/07_Code-Block/7-2_Design-Script-syntax.html).
 
-**Access data flexibly with List@Level:**
+#### **Access data flexibly with List@Level**
 
-* If you need to access data at any level in a list of lists
-* Instead of the List.Map and List.Combine nodes
+* Using List@Level can help you **reduce the complexity of your graph by replacing List.Map and List.Combine nodes** which might occupy a considerable amount of canvas space
+* List@Level provides you with a** quicker way than List.Map/List.Combine to construct node logic** by allowing you to access data at any level in a list right from the input port of a node
 
 ![listatlevel](images/12-2/listatlevel.png)
 
@@ -77,14 +77,13 @@ As you develop your Dynamo program and test ideas, it can quickly grow in size a
 
 ### Maintain Readability
 
-In addition to making your program as simple and efficient as possible, strive for graphic clarity. Despite your best efforts to make your program intuitive with logical groupings, relationships might not be readily apparent. A simple Note inside of a Group or renaming a slider can save you or another user from unnecessary confusion or panning across the graph. The following are several tools that will help you apply graphic consistency within and across your programs.
+In addition to making your graph as simple and efficient as possible, strive for graphic clarity. Despite your best efforts to make your graph intuitive with logical groupings, relationships might not be readily apparent. A simple Note inside of a Group or renaming a slider can save you or another user from unnecessary confusion or panning across the graph. The following are several ways that will help you apply graphic consistency within and across your graphs.
 
-**Visual continuity with Node Alignment:**
+#### **Visual continuity with Node Alignment**
 
-* Often and while building your program
-* Prior to shipping the program to another user
-* Cleanup Node Layout will automatically align your graph, though less precisely than doing it yourself
-* Implies a flow
+* To reduce your work after you finished building your graph, you should try to ensure the node layout is legible by** aligning nodes often and as you go**
+* If others are going to be working with your graph, you should **ensure that your node-wire layout flows easily before shipping**
+* To help you with alignment, **use the "Cleanup Node Layout" feature to automatically align** your graph, though less precisely than doing it yourself
 
 ![alignment](images/12-2/alignment.png)
 
@@ -93,10 +92,10 @@ In addition to making your program as simple and efficient as possible, strive f
 >
 > For how to use Node Alignment, refer to [Managing Your Program](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-4_best_practices.html).
 
-**Descriptive labeling by renaming:**
+#### **Descriptive labeling by renaming**
 
-* Useful on inputs, especially if what they plug into will be off the screen
-* Be wary of renaming nodes other than an inputs. An alternative to this is creating a custom node from a node cluster and renaming that; it will be understood that it contains something else
+* Renaming inputs can help others easily understand your graph, **especially if what they plug into will be off the screen**
+* **Be wary of renaming nodes other than an inputs.** An alternative to this is creating a custom node from a node cluster and renaming that; it will be understood that it contains something else
 
 ![inputs](images/12-2/inputs.png)
 
@@ -106,10 +105,10 @@ In addition to making your program as simple and efficient as possible, strive f
 >
 > To rename a node, right click on its name and choose "Rename Node...".
 
-**Explain with Notes:**
+#### **Explain with Notes**
 
-* If something in the program requires a plain language explanation
-* If a node group is large and can’t be easily understood right away
+* You should add a Note if something in the **graph requires a plain language explanation** that the nodes can not express
+* You should add a Note if a collection of **nodes or a Group is too large or complex and can’t be easily understood right away**
 
 ![notes](images/12-2/notes.png)
 
@@ -122,9 +121,9 @@ In addition to making your program as simple and efficient as possible, strive f
 
 While building your visual-script, it is important to verify that what is being returned is what you expected. Not all errors or issues will cause the program to fail immediately, especially null or zero values that could affect something far downstream. This strategy is also discussed in the context of text-scripting in [Scripting Strategies](http://dynamoprimer.com/en/12_Best-Practice/12-2_Scripting-Strategies.html). The following practice will help ensure that you are getting what you expected.
 
-**Monitor data with Watch:**
+#### **Monitor data with Watch and Preview Bubbles**
 
-* As you build the program to verify that key outputs are returning what you expected
+* Use Watch or Preview Bubbles as you build the program to** verify that key outputs are returning what you expected**
 
 ![watch](images/12-2/watch.png)
 
@@ -139,24 +138,23 @@ While building your visual-script, it is important to verify that what is being 
 
 It is highly likely that someone else will be opening your program at some point, even if you are working independently. They should be able to quickly understand what the program needs and produces from its inputs and outputs. This is especially important when developing a Custom Node to be shared with the Dynamo community and used in someone else’s program. These practices lead to robust, reusable programs and nodes.
 
-**Manage the I/O:**
+#### **Manage the I/O**
 
-* Minimize inputs and outputs as much as possible
-* Determine which inputs and outputs will go into scripts
-* Keep inputs generic
+* To ensure legibility and scalability, you should try and** minimize inputs and outputs as much as possible**
+* You should try to **strategize how you are going to build the logic by first creating a rough outline** of how the logic could work before you even add a single node to the canvas. As you develop the rough outline, you should keep track of which inputs and outputs will go into scripts
 
-**Use Presets to embed input values:**
+#### **Use Presets to embed input values**
 
-* If there are particular forms or conditions that you want embedded in the file
-* To avoid adjusting the sliders in a program with long run times
+* If there are **particular options or conditions that you want embedded in the graph**, you should use Presets for quick access
+* You can also use Presets to **reduce complexity by caching specific slider values** in a graph with long run times
 
 > For how to use Presets, refer to [Managing Your Data with Presets](http://dynamoprimer.com/en/03_Anatomy-of-a-Dynamo-Definition/3-5_presets.html).
 
-**Contain programs with Custom Nodes:**
+#### **Contain programs with Custom Nodes**
 
-* If your program can be collected into a single container
-* If a portion of a program will be reused often in other programs
-* If you want to share a functionality with the Dynamo Community
+* You should use a Custom Node if your **program can be collected into a single container**
+* You should use a a Custom Node **when a portion of the graph will be reused often** in other programs
+* You should use a Custom Node if you want to s**hare a functionality with the Dynamo Community**
 
 ![customnode](images/12-2/customnode.png)
 
@@ -167,17 +165,17 @@ It is highly likely that someone else will be opening your program at some point
 >
 > For how to use Custom Nodes, refer to [Custom Node Introduction](http://dynamoprimer.com/en/09_Custom-Nodes/9-1_Introduction.html).
 
-**Build templates:**
+#### **Build templates**
 
-* To establish graphic standards across your visual programs.
-* To categorize types of Groups.
-* To Establish front-end and back-end areas.
+* You can build templates to **establish graphic standards across your visual graphs to ensure collaborators have a standardized way of understanding graph**
+* When building a template, you can standardize **group colors and font sizes** to categorize types of workflows or data actions.
+* When building a template, you can even standardize how you want to **label, color, or style the difference between front-end and back-end workflows** in your graph.
 
 ![](images/12-2/templating.jpg)
 
 > 1. The UI, or front-end, of the program includes a project name, input sliders, and import geometry.
 > 2. The back-end of the program.
-> 3. Group color categories (the general design, inputs, Python scripting, imported geometry).
+> 3. Group color categories \(the general design, inputs, Python scripting, imported geometry\).
 
 ### Exercise - Architectural Roof
 
