@@ -1,15 +1,16 @@
 ## Scripting Reference
-This reference page extends the best practices covered in Scripting Strategies with greater detail on code libraries, labeling, and styling.
+
+This reference page extends the best practices covered in Scripting Strategies with greater detail on code libraries, labeling, and styling. We will be using Python to illustrate the concepts below, but the same principles would apply in Python and C\#\(Zerotouch\) but in different syntax.
 
 ### Which Libraries to Use
 
-Standard libraries are external to Dynamo and present in the programming languages Python and C# (Zerotouch). Dynamo also has its own set of libraries that directly correspond to it's node hierarchy, enabling the user to build anything in code that could be made with nodes and wires. The following is a guide for what each Dynamo library gives access to and when to use a standard one.
+Standard libraries are external to Dynamo and are present in the programming languages Python and C\# \(Zerotouch\). Dynamo also has its own set of libraries that directly correspond to it's node hierarchy, enabling the user to build anything in code that could be made with nodes and wires. The following is a guide for what each Dynamo library gives access to and when to use a standard one.
 
 ![](/12_Best-Practice/images/12-4/textual-programming.jpg)
 
 **Standard Libraries and Dynamo Libraries**
 
-* Standard libraries from Python and C# can be used to build advanced data and flow structures in the Dynamo environment.
+* Standard libraries from Python and C\# can be used to build advanced data and flow structures in the Dynamo environment.
 * Dynamo libraries directly correspond to the node hierarchy for creating geometry and other Dynamo objects.
 
 **Dynamo Libraries**
@@ -210,6 +211,7 @@ Generally speaking there is more than one way to program just about anything, th
   ```
 
 * Always surround these binary operators with a single space on either side:
+
   ```
   assignment ( = )
   augmented assignment ( += , -= etc.)
@@ -261,3 +263,6 @@ Generally speaking there is more than one way to program just about anything, th
   * Question whether or not each convention is working for the needs at hand.
 
   * Is functionality/efficiency being compromised?
+
+
+
