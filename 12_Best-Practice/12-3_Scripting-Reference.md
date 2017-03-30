@@ -107,24 +107,34 @@ agents_dead = ...
 
 ```
 ### BAD
-CODE EXAMPLE
+from RevitServices.Persistence import DocumentManager
+
+DocumentManager = DM
+
+doc = DM.Instance.CurrentDBDocument
+uiapp = DM.Instance.CurrentUIApplication
 ```
 
 ```
 ### GOOD
-CODE EXAMPLE
+from RevitServices.Persistence import DocumentManager as DM
+
+doc = DM.Instance.CurrentDBDocument
+uiapp = DM.Instance.CurrentUIApplication
 ```
+
+> Aliasing can quickly lead to very confusing and non-standard programs.
 
 **Only use necessary words:**
 
 ```
 ### BAD
-CODE EXAMPLE
+rotateToCoord = rotateFromCoord.Rotate(solid.ContextCoordinateSystem.Origin,Vector.ByCoordinates(0,0,1),5)
 ```
 
 ```
 ### GOOD
-CODE EXAMPLE
+toCoord = fromCoord.Rotate(solid.ContextCoordinateSystem.Origin,Vector.ByCoordinates(0,0,1),5)
 ```
 
 > “Everything should be made as simple as possible, but not simpler.” – Albert Einstein
@@ -265,4 +275,11 @@ Generally speaking there is more than one way to program just about anything, th
   * Is functionality/efficiency being compromised?
 
 
+### C# (Zerotouch) Standards
+
+**Check out these wiki pages for guidance on writing C# for Zerotouch and contributing to Dynamo:**
+
+  * This wiki covers some general coding standards for documenting and testing your code: [https://github.com/DynamoDS/Dynamo/wiki/Coding-Standards](https://github.com/DynamoDS/Dynamo/wiki/Coding-Standards)
+
+  * This wiki specifically covers naming standards for libraries, categories, node names, port names, and abbreviations: [https://github.com/DynamoDS/Dynamo/wiki/Naming-Standards](https://github.com/DynamoDS/Dynamo/wiki/Naming-Standards)
 
